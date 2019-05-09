@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
-11151548125
+6729607212
 
-61419746290
+11-489272045
 15-2036313467
-MainWindow.xaml;
+Views\MainWindow.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\Register_02.xaml;Views\RegisterViews\Register_03.xaml;Views\StartWd.xaml;
 
 False
 
