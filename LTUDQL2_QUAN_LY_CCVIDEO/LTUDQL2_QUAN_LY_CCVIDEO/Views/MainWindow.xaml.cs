@@ -138,7 +138,11 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
 
             sb.Begin();
             Thread.Sleep(timebegin);
-            me?.Play();
+            if(me!= null)
+            {
+                me.Play();
+            }
+            
 
 
         }
@@ -178,7 +182,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             var gr = sender as Grid;
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Collapsed;
-            me?.Pause();
+            if(me!=null)
+            {
+                me.Pause();
+            }
 
             var sxDA = new DoubleAnimation();
             sxDA.Duration = TimeSpan.FromMilliseconds(300);

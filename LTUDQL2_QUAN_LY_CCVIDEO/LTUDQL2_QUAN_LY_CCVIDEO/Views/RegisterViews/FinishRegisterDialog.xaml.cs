@@ -38,6 +38,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 
         private void btnOut_Click(object sender, RoutedEventArgs e)
         {
+            
+            var wd = new MainWindow();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
             this.Close();
         }
     }
