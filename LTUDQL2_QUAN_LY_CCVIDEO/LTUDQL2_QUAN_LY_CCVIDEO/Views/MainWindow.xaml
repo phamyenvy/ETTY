@@ -23,7 +23,7 @@
                 <Grid.LayoutTransform>
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
-<<<<<<< HEAD
+
                 <Grid  Margin="3,0">
                     <Grid.Background>
                         <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\poster.jpg"/>
@@ -40,7 +40,7 @@
                     </Grid.RowDefinitions>
 
 
-                    <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" Source="D:\FILM\exam.mp4" Stretch="Fill" LoadedBehavior="Manual"/>
+                    <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\exam.mp4" Stretch="Fill" LoadedBehavior="Manual"/>
                     <ToggleButton  Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                               ToolTip="MaterialDesignFlatPrimaryToggleButton"
                               IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
@@ -50,47 +50,9 @@
                                                     Width="17" Foreground="#FFFFE11C" />
                     </ToggleButton>
                 </Grid>
-=======
-                <Border BorderThickness="1"
-                    BorderBrush="Gray" CornerRadius="2"
-                    Margin="3,0">
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Title}"/>
-                        <TextBlock Text="{Binding Path=Description}"/>
-                    </StackPanel>
-                </Border>
-                <Image Name="img" Source="D:\Nam3-HK2\LTUDQL2\DoAn\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\bin\Debug\img.jpg" Height="500" Width="1200"  Margin="5,0"/>
-                <MediaElement Name="video" Source="video.mp4" Stretch="Fill" LoadedBehavior="Manual"/>
->>>>>>> 8ad3ce6d930058dda4931fdd88e70a3111f57beb
+                
             </Grid>
-            <!--<DataTemplate.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Trigger.EnterActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="Scroll"
-                                                         Storyboard.TargetProperty="LayoutTransform.ScaleX"
-                                                         To="1.5" Duration="0:0:0.3"/>
-                                <DoubleAnimation Storyboard.TargetName="Scroll"
-                                                         Storyboard.TargetProperty="LayoutTransform.ScaleY"
-                                                         To="1.5" Duration="0:0:0.3"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </Trigger.EnterActions>
-                    <Trigger.ExitActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="Scroll"
-                                                         Storyboard.TargetProperty="LayoutTransform.ScaleX"
-                                                         Duration="0:0:0.3"/>
-                                <DoubleAnimation Storyboard.TargetName="Scroll"
-                                                         Storyboard.TargetProperty="LayoutTransform.ScaleY"
-                                                         Duration="0:0:0.3"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </Trigger.ExitActions>
-                </Trigger>
-            </DataTemplate.Triggers>-->
+            
         </DataTemplate>
         
     </Window.Resources>
@@ -109,12 +71,9 @@
                 </materialDesign:PopupBox>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-<<<<<<< HEAD
                         <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Height="70" Width="100" Margin="0"/>
 
-=======
-                        <Image Name="img2" Source="D:\Nam3-HK2\LTUDQL2\DoAn\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\bin\Debug\img.jpg" Height="70" Width="100" Margin="0"/>
->>>>>>> 8ad3ce6d930058dda4931fdd88e70a3111f57beb
+
                     </StackPanel>
                 </StackPanel>
                 <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"

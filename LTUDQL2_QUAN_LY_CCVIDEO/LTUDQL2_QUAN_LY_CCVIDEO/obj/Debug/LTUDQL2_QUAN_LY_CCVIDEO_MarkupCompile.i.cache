@@ -4,26 +4,17 @@
 winexe
 C#
 .cs
-D:\Nam3-HK2\LTUDQL2\DoAn\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
+C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
 LTUDQL2_QUAN_LY_CCVIDEO
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
 10310051601
 
 19-1172382048
 15-2036313467
 Views\MainWindow.xaml;Views\ProfileSetting.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\Register_02.xaml;Views\RegisterViews\Register_03.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;
-=======
-D:\Nam3-HK2\LTUDQL2\DoAn\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
-6729607212
-
-15454906523
-15-451797753
-Views\MainWindow.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\Register_02.xaml;Views\RegisterViews\Register_03.xaml;Views\StartWd.xaml;
->>>>>>> 8ad3ce6d930058dda4931fdd88e70a3111f57beb
 
 True
 
