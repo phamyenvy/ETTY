@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
-        Title="ETTY" Height="800" Width="1200" ResizeMode="CanMinimize">
+        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
     <Window.Resources>
         <DataTemplate DataType="{x:Type m:VideoInfo}">
             <Grid Width="200" Height="120" Name="Scroll">
@@ -23,6 +23,7 @@
                 <Grid.LayoutTransform>
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
+<<<<<<< HEAD
                 <Grid  Margin="3,0">
                     <Grid.Background>
                         <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\poster.jpg"/>
@@ -49,6 +50,18 @@
                                                     Width="17" Foreground="#FFFFE11C" />
                     </ToggleButton>
                 </Grid>
+=======
+                <Border BorderThickness="1"
+                    BorderBrush="Gray" CornerRadius="2"
+                    Margin="3,0">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Title}"/>
+                        <TextBlock Text="{Binding Path=Description}"/>
+                    </StackPanel>
+                </Border>
+                <Image Name="img" Source="D:\Nam3-HK2\LTUDQL2\DoAn\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\bin\Debug\img.jpg" Height="500" Width="1200"  Margin="5,0"/>
+                <MediaElement Name="video" Source="video.mp4" Stretch="Fill" LoadedBehavior="Manual"/>
+>>>>>>> 8ad3ce6d930058dda4931fdd88e70a3111f57beb
             </Grid>
             <!--<DataTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -96,8 +109,12 @@
                 </materialDesign:PopupBox>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+<<<<<<< HEAD
                         <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Height="70" Width="100" Margin="0"/>
 
+=======
+                        <Image Name="img2" Source="D:\Nam3-HK2\LTUDQL2\DoAn\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\bin\Debug\img.jpg" Height="70" Width="100" Margin="0"/>
+>>>>>>> 8ad3ce6d930058dda4931fdd88e70a3111f57beb
                     </StackPanel>
                 </StackPanel>
                 <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
