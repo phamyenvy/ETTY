@@ -63,8 +63,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\ProfileSetting.xaml.cs">
+      <DependentUpon>ProfileSetting.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterViews\FinishRegisterDialog.xaml.cs">
       <DependentUpon>FinishRegisterDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterViews\ForgotPass.xaml.cs">
+      <DependentUpon>ForgotPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterViews\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
@@ -74,6 +83,9 @@
     </Compile>
     <Compile Include="Views\RegisterViews\Register_03.xaml.cs">
       <DependentUpon>Register_03.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectProfile.xaml.cs">
+      <DependentUpon>SelectProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StartWd.xaml.cs">
       <DependentUpon>StartWd.xaml</DependentUpon>
@@ -90,7 +102,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ProfileSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RegisterViews\FinishRegisterDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterViews\ForgotPass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterViews\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegisterViews\Register_03.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

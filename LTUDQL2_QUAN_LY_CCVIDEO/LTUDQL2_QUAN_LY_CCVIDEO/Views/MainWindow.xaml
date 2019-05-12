@@ -23,16 +23,32 @@
                 <Grid.LayoutTransform>
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
-                <Border BorderThickness="1"
-                    BorderBrush="Gray" CornerRadius="2"
-                    Margin="3,0">
-                    <StackPanel>
-                        <TextBlock Text="{Binding Path=Title}"/>
-                        <TextBlock Text="{Binding Path=Description}"/>
-                    </StackPanel>
-                </Border>
-                <Image  Source="D:\study\LTUDQL2\img_1908.jpg" Height="500" Width="1200"  Margin="5,0"/>
-                <MediaElement Name="video" Source="D:\FILM\exam.mp4" Stretch="Fill" LoadedBehavior="Manual"/>
+                <Grid  Margin="3,0">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\poster.jpg"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+
+                    <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" Source="D:\FILM\exam.mp4" Stretch="Fill" LoadedBehavior="Manual"/>
+                    <ToggleButton  Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                              IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
+                                                    Width="25" Background="#FFF17171" Visibility="Collapsed">
+                        <materialDesign:PackIcon Kind="Heart"
+                                                    Height="17"
+                                                    Width="17" Foreground="#FFFFE11C" />
+                    </ToggleButton>
+                </Grid>
             </Grid>
             <!--<DataTemplate.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -80,7 +96,8 @@
                 </materialDesign:PopupBox>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                        <Image Source="D:\study\LTUDQL2\a.png" Height="70" Width="100" Margin="0"/>
+                        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Height="70" Width="100" Margin="0"/>
+
                     </StackPanel>
                 </StackPanel>
                 <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
@@ -165,8 +182,8 @@
                                             <ItemsPresenter VerticalAlignment="Center"/>
                                         </ScrollViewer>
 
-                                        <Grid>
-                                            <Grid.Resources>
+                                        <Grid Height="180">
+                                            <!--<Grid.Resources>
                                                 <Style TargetType="{x:Type RepeatButton}">
                                                     <Setter Property="Template">
                                                         <Setter.Value>
@@ -184,7 +201,10 @@
                                                                         </Border.Effect>
 
                                                                     </Border>
-                                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                    <ContentPresenter HorizontalAlignment="Stretch" 
+                                                                                      VerticalAlignment="Center" 
+                                                                                      Width="150"
+                                                                                      />
                                                                 </Grid>
 
                                                             </ControlTemplate>
@@ -194,21 +214,25 @@
                                                     
 
                                                 </Style>
-                                            </Grid.Resources>
+                                            </Grid.Resources>-->
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="80"/>
                                                 <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="80"/>
                                             </Grid.ColumnDefinitions>
                                             <RepeatButton x:Name="scl" Command="{x:Static ScrollBar.LineLeftCommand}"
-                                        CommandTarget="{Binding ElementName=scrollViewer}"
-                                              ClickMode="Hover" Grid.Column="0" FontSize="50" Visibility="Collapsed">
-                                                <materialDesign:PackIcon Kind="ChevronDoubleLeft" Width="50" Height="50" Foreground="Gainsboro" />
+                                        CommandTarget="{Binding ElementName=scrollViewer}" Background="Transparent" BorderBrush="Transparent"
+                                              ClickMode="Hover" Grid.Column="0"  Visibility="Collapsed" Height="180">
+                                                <materialDesign:PackIcon Kind="ChevronDoubleLeft" Width="70" Height="70" 
+                                                                         Foreground="Gainsboro" Background="Transparent"
+                                                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </RepeatButton>
                                             <RepeatButton x:Name="scr" Command="{x:Static ScrollBar.LineRightCommand}"
-                                        CommandTarget="{Binding ElementName=scrollViewer}"
-                                              ClickMode="Hover" Grid.Column="2" FontSize="30" Background="White" Visibility="Collapsed">
-                                                <materialDesign:PackIcon Kind="ChevronDoubleRight" Foreground="Gainsboro" Opacity="2" Width="50" Height="50" HorizontalAlignment="Center"/>
+                                        CommandTarget="{Binding ElementName=scrollViewer}" BorderBrush="Transparent"
+                                              ClickMode="Hover" Grid.Column="2" Visibility="Collapsed" Background="Transparent" Height="180">
+                                                <materialDesign:PackIcon Kind="ChevronDoubleRight" Foreground="Gainsboro" Opacity="2" Background="Transparent"
+                                                                         Width="70" Height="70" 
+                                                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </RepeatButton>
                                         </Grid>
                                     </Grid>

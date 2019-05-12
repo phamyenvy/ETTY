@@ -16,14 +16,14 @@
                 <GradientStop Color="#FFCBAC00" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="D:\study\LTUDQL2\a.png" VerticalAlignment="Top" Height="170" OpacityMask="#FFACA741"/>
+        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" VerticalAlignment="Top" Height="170" OpacityMask="#FFACA741"/>
 
         <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"
                 materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
                 HorizontalAlignment="Center" Width="500" Margin="347,170,347,0" Height="520">
             <StackPanel Background="#FF231E03">
-                <StackPanel Height="50"/>
+                <StackPanel Height="40"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label>
@@ -33,7 +33,7 @@
 
 
                 </StackPanel>
-                <StackPanel Height="50"/>
+                <StackPanel Height="40"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label>
@@ -43,12 +43,21 @@
 
 
                 </StackPanel>
-                <StackPanel Height="50"/>
+                <StackPanel Height="40"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <Label>
                         <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
                     </Label>
                     <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+                </StackPanel>
+                <StackPanel Height="40"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <Label>
+                        <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
+                    </Label>
+                    <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  x:Name="txtRpPassword" materialDesign:HintAssist.Hint="Repeat Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
 
 
                 </StackPanel>

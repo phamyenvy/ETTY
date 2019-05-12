@@ -103,15 +103,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Visible;
 
-            
 
 
-            timebegin = 500;
+            timebegin = 1000;
 
 
             if (isEnter)
             {
-                timebegin = 0;
+                timebegin = 500;
             }
 
 
@@ -133,7 +132,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             var sb = new Storyboard();
             sb.Children.Add(sxDA);
             sb.Children.Add(syDA);
-
+            
 
 
             sb.Begin();
