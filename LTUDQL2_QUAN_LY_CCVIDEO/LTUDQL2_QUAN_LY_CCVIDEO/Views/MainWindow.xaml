@@ -44,7 +44,8 @@
                     <ToggleButton  Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                               ToolTip="MaterialDesignFlatPrimaryToggleButton"
                               IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
-                                                    Width="25" Background="#FFF17171" Visibility="Collapsed">
+                              Width="25" Background="#FFF17171" Visibility="Collapsed"
+                              x:Name="btnHeart">
                         <materialDesign:PackIcon Kind="Heart"
                                                     Height="17"
                                                     Width="17" Foreground="#FFFFE11C" />
@@ -120,7 +121,7 @@
 
         </materialDesign:ColorZone>
         <Grid Name="Content" >
-            <ScrollViewer Height="670" Background="Transparent">
+            <ScrollViewer Height="570" Background="Transparent">
                 <ScrollViewer.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -159,38 +160,6 @@
                                         </ScrollViewer>
 
                                         <Grid Height="180">
-                                            <!--<Grid.Resources>
-                                                <Style TargetType="{x:Type RepeatButton}">
-                                                    <Setter Property="Template">
-                                                        <Setter.Value>
-                                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-
-                                                                <Grid>
-                                                                    <Border Width="{TemplateBinding Width}"
-                                                                Height="{TemplateBinding Height}"
-                                                                HorizontalAlignment="Center"
-                                                                VerticalAlignment="Center"
-                                                                BorderThickness="1" BorderBrush="AliceBlue"
-                                                                CornerRadius="2">
-                                                                        <Border.Effect>
-                                                                            <BlurEffect Radius="10"/>
-                                                                        </Border.Effect>
-
-                                                                    </Border>
-                                                                    <ContentPresenter HorizontalAlignment="Stretch" 
-                                                                                      VerticalAlignment="Center" 
-                                                                                      Width="150"
-                                                                                      />
-                                                                </Grid>
-
-                                                            </ControlTemplate>
-                                                        </Setter.Value>
-                                                        
-                                                    </Setter>
-                                                    
-
-                                                </Style>
-                                            </Grid.Resources>-->
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="80"/>
                                                 <ColumnDefinition Width="*"/>
@@ -259,47 +228,25 @@
                                             <ItemsPresenter VerticalAlignment="Center"/>
                                         </ScrollViewer>
 
-                                        <Grid>
-                                            <Grid.Resources>
-                                                <Style TargetType="{x:Type RepeatButton}">
-                                                    <Setter Property="Template">
-                                                        <Setter.Value>
-                                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-
-                                                                <Grid>
-                                                                    <Border Width="{TemplateBinding Width}"
-                                                                Height="{TemplateBinding Height}"
-                                                                HorizontalAlignment="Center"
-                                                                VerticalAlignment="Center"
-                                                                BorderThickness="1" BorderBrush="AliceBlue"
-                                                                CornerRadius="2">
-                                                                        <Border.Effect>
-                                                                            <BlurEffect Radius="10"/>
-                                                                        </Border.Effect>
-
-                                                                    </Border>
-                                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                                </Grid>
-
-                                                            </ControlTemplate>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </Style>
-                                            </Grid.Resources>
+                                        <Grid Height="180">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="80"/>
                                                 <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="80"/>
                                             </Grid.ColumnDefinitions>
                                             <RepeatButton x:Name="scl" Command="{x:Static ScrollBar.LineLeftCommand}"
-                                        CommandTarget="{Binding ElementName=scrollViewer}"
-                                              ClickMode="Hover" Grid.Column="0" FontSize="50" Visibility="Collapsed">
-                                                <materialDesign:PackIcon Kind="ChevronDoubleLeft" Width="50" Height="50" Foreground="Gainsboro" />
+                                        CommandTarget="{Binding ElementName=scrollViewer}" Background="Transparent" BorderBrush="Transparent"
+                                              ClickMode="Hover" Grid.Column="0"  Visibility="Collapsed" Height="180">
+                                                <materialDesign:PackIcon Kind="ChevronDoubleLeft" Width="70" Height="70" 
+                                                                         Foreground="Gainsboro" Background="Transparent"
+                                                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </RepeatButton>
                                             <RepeatButton x:Name="scr" Command="{x:Static ScrollBar.LineRightCommand}"
-                                        CommandTarget="{Binding ElementName=scrollViewer}"
-                                              ClickMode="Hover" Grid.Column="2" FontSize="30" Background="White" Visibility="Collapsed">
-                                                <materialDesign:PackIcon Kind="ChevronDoubleRight" Foreground="Gainsboro" Opacity="2" Width="50" Height="50" HorizontalAlignment="Center"/>
+                                        CommandTarget="{Binding ElementName=scrollViewer}" BorderBrush="Transparent"
+                                              ClickMode="Hover" Grid.Column="2" Visibility="Collapsed" Background="Transparent" Height="180">
+                                                <materialDesign:PackIcon Kind="ChevronDoubleRight" Foreground="Gainsboro" Opacity="2" Background="Transparent"
+                                                                         Width="70" Height="70" 
+                                                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             </RepeatButton>
                                         </Grid>
                                     </Grid>
@@ -351,47 +298,27 @@
                                         </ScrollViewer>
 
                                         <Grid>
-                                            <Grid.Resources>
-                                                <Style TargetType="{x:Type RepeatButton}">
-                                                    <Setter Property="Template">
-                                                        <Setter.Value>
-                                                            <ControlTemplate TargetType="{x:Type RepeatButton}">
-
-                                                                <Grid>
-                                                                    <Border Width="{TemplateBinding Width}"
-                                                            Height="{TemplateBinding Height}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"
-                                                            BorderThickness="1" BorderBrush="AliceBlue"
-                                                            CornerRadius="2">
-                                                                        <Border.Effect>
-                                                                            <BlurEffect Radius="10"/>
-                                                                        </Border.Effect>
-
-                                                                    </Border>
-                                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                                </Grid>
-
-                                                            </ControlTemplate>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </Style>
-                                            </Grid.Resources>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                            </Grid.ColumnDefinitions>
-                                            <RepeatButton x:Name="scl" Command="{x:Static ScrollBar.LineLeftCommand}"
-                                        CommandTarget="{Binding ElementName=scrollViewer}"
-                                              ClickMode="Hover" Grid.Column="0" FontSize="50" Visibility="Collapsed" >
-                                                <materialDesign:PackIcon Kind="ChevronDoubleLeft" Width="50" Height="50" Foreground="Gainsboro" />
-                                            </RepeatButton>
-                                            <RepeatButton x:Name="scr" Command="{x:Static ScrollBar.LineRightCommand}"
-                                        CommandTarget="{Binding ElementName=scrollViewer}"
-                                              ClickMode="Hover" Grid.Column="2" FontSize="30"  Visibility="Collapsed" >
-                                                <materialDesign:PackIcon Kind="ChevronDoubleRight" Foreground="Gainsboro" Opacity="2" Width="50" Height="50" HorizontalAlignment="Center"/>
-                                            </RepeatButton>
+                                            <Grid Height="180">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="80"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="80"/>
+                                                </Grid.ColumnDefinitions>
+                                                <RepeatButton x:Name="scl" Command="{x:Static ScrollBar.LineLeftCommand}"
+                                        CommandTarget="{Binding ElementName=scrollViewer}" Background="Transparent" BorderBrush="Transparent"
+                                              ClickMode="Hover" Grid.Column="0"  Visibility="Collapsed" Height="180">
+                                                    <materialDesign:PackIcon Kind="ChevronDoubleLeft" Width="70" Height="70" 
+                                                                         Foreground="Gainsboro" Background="Transparent"
+                                                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </RepeatButton>
+                                                <RepeatButton x:Name="scr" Command="{x:Static ScrollBar.LineRightCommand}"
+                                        CommandTarget="{Binding ElementName=scrollViewer}" BorderBrush="Transparent"
+                                              ClickMode="Hover" Grid.Column="2" Visibility="Collapsed" Background="Transparent" Height="180">
+                                                    <materialDesign:PackIcon Kind="ChevronDoubleRight" Foreground="Gainsboro" Opacity="2" Background="Transparent"
+                                                                         Width="70" Height="70" 
+                                                                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </RepeatButton>
+                                            </Grid>
                                         </Grid>
                                     </Grid>
                                     <ControlTemplate.Triggers>

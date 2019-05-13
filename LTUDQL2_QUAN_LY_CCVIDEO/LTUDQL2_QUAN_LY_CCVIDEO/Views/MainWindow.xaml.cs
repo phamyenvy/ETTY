@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -98,8 +99,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         int timebegin = 500, timeDuration = 300;
         bool isEnter = false;
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
-        {
+        { 
+
+
             var gr = sender as Grid;
+
+            var heart = gr.FindName("btnHeart") as ToggleButton;
+            heart.Visibility = Visibility.Visible;
+
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Visible;
 
@@ -179,6 +186,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
             var gr = sender as Grid;
+
+            var heart = gr.FindName("btnHeart") as ToggleButton;
+            heart.Visibility = Visibility.Collapsed;
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Collapsed;
             if(me!=null)
