@@ -183,6 +183,18 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             isEnter = true;
         }
 
+        private void VolumeSilder_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var gr = sender as Grid;
+
+            
+            var me = gr.FindName("video") as MediaElement;
+            var sli = gr.FindName("VolumeSilder") as Slider;
+
+            me.Volume = (double)sli.Value;
+            
+        }
+
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
             var gr = sender as Grid;

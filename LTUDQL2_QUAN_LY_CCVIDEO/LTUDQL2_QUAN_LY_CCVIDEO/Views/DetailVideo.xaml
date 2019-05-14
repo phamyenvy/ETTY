@@ -1,0 +1,130 @@
+﻿
+<Window x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.DetailVideo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        FontSize="20"
+        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
+    <Window.CommandBindings>
+        <CommandBinding Command="MediaCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
+        <CommandBinding Command="MediaCommands.Pause" CanExecute="Pause_CanExecute" Executed="Pause_Executed" />
+        <CommandBinding Command="MediaCommands.Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
+    </Window.CommandBindings>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF3E3D3B"/>
+                <GradientStop Color="#FFCBAC00" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
+                       VerticalAlignment="Top" Height="170" 
+                       OpacityMask="#FFACA741" Margin="0,-38,0,0"/>
+        <ScrollViewer Background="Transparent" >
+            <StackPanel>
+                <Grid>
+                    <MediaElement  Name="mediaVideo" Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\exam.mp4" 
+                               Stretch="Fill" Height="530" 
+                               LoadedBehavior="Manual"
+                               MouseDown="mediaVideo_MouseDown"
+                               MouseLeave="mediaVideo_MouseLeave" 
+                               Margin="0,100,0,10" />
+                    <ToggleButton x:Name="btnPlayorPause" Height="80" Width="80" 
+                              Background="Transparent" Command="MediaCommands.Play"
+                              Style="{StaticResource MaterialDesignActionToggleButton}" 
+                              Click="btnPlayorPause_Click"
+                              ClickMode="Press"
+                              MouseEnter="btnPlayorPause_MouseEnter" Margin="546,316,551,214">
+                        <ToggleButton.Content>
+                            <materialDesign:PackIcon  Height="80" Width="80" Kind="Play"  Foreground="#FFE7E8EC"/>
+                        </ToggleButton.Content>
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Height="80" Width="80" Kind="Pause" Foreground="#FFE7E8EC"/>
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                </Grid>
+                <Grid Height="50" Background="Transparent">
+                    <StackPanel Orientation="Horizontal" Height="50">
+                        <Label x:Name="lblTenVideo" FontSize="30" FontWeight="Thin">Example</Label>
+                    </StackPanel>
+                    
+                    <StatusBar Width="800" Background="Transparent">
+                        <StatusBarItem>
+                            <Button Command="MediaCommands.Play" Background="Transparent" BorderBrush="Transparent" Foreground="#FFFED700">
+                                <materialDesign:PackIcon Kind="Play" Height="28" Width="28" />
+
+                            </Button>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Button Command="MediaCommands.Pause" Background="Transparent" BorderBrush="Transparent" Foreground="#FF21AA33">
+                                <materialDesign:PackIcon Kind="Pause" Height="28" Width="28"/>
+
+                            </Button>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Button Command="MediaCommands.Stop" Background="Transparent" BorderBrush="Transparent" Foreground="#FFE81010">
+                                <materialDesign:PackIcon Kind="Stop"  Height="28" Width="28"/>
+                            </Button>
+                           
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <TextBlock Height="Auto" Width="50" Name="lblProgressStatus">00:00:00</TextBlock>
+                        </StatusBarItem>
+                        <StatusBarItem>
+                            <Slider Name="sliderTime" Margin="2,0,0,0" VerticalAlignment="Center"
+                             Width="500" Height="Auto" Thumb.DragStarted="sliderTime_DragStarted"  
+                                Thumb.DragCompleted="sliderTime_DragCompleted"  
+                                ValueChanged="sliderTime_ValueChanged" Foreground="#FF35294B" />
+                        </StatusBarItem>
+                        
+
+                    </StatusBar>
+                    
+                </Grid>
+                <StackPanel Orientation="Horizontal" Height="Auto">
+
+                    
+
+                    <Button  Style="{StaticResource MaterialDesignFloatingActionLightButton}" Background="Transparent" BorderBrush="Transparent" >
+                        <materialDesign:PackIcon Kind="VolumeHigh" Height="17" Width="17" />
+                    </Button>
+                    <Slider Margin="10" TickFrequency="5" Width="300" VerticalAlignment="Center"  Orientation="Horizontal" Maximum="100" Minimum="0" Value="20" ValueChanged="Slider_ValueChanged" x:Name="sliderVolume"/>
+                    <TextBlock x:Name="volumevalue"></TextBlock>
+                    <ToggleButton  Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                              ToolTip="Add to your favorite list"
+                              IsChecked="False" VerticalAlignment="Center" 
+                              HorizontalAlignment="Left" Height="50"
+                              Width="50" Background="#FFF17171"  Visibility="Visible"
+                              BorderBrush="#FFF17171" BorderThickness="1"
+                              x:Name="btnHeart" Margin="30,0,10,0">
+                        <materialDesign:PackIcon Kind="Heart"
+                                                    Height="17"
+                                                    Width="17" Foreground="#FFFFE11C" />
+                    </ToggleButton>
+                    <TextBlock VerticalAlignment="Center" Foreground="#FF4A4736">Rating :</TextBlock>
+                    <materialDesign:RatingBar Value="3"  x:Name="BasicRatingBar" Margin="5,0" VerticalAlignment="Center" 
+                              HorizontalAlignment="Left" Foreground="#FFFFE11C" />
+                    <Button  Style="{StaticResource MaterialDesignFloatingActionLightButton}" Background="#FFFED700" BorderBrush="#FFFED700" >
+                        <materialDesign:PackIcon Kind="ShareVariant" Height="17" Width="17" />
+                    </Button>
+                </StackPanel>
+                <Expander HorizontalAlignment="Left" Background="Transparent" Width="500" Height="Auto" Header="Description">
+                    <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="24,8,24,16">
+                        <TextBlock Text="Your Content" />
+                        <TextBlock  Opacity=".68" Text="" TextWrapping="Wrap" >
+                            zxcvbnmqwertyuiopasdfghjklzxcvbnmlkjhgfdsaPOIUYTREWQ
+                        </TextBlock>
+                    </StackPanel>
+                </Expander>
+
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</Window>
