@@ -1,4 +1,5 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -182,32 +183,26 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         {
             isEnter = true;
         }
-
-        private void VolumeSilder_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var gr = sender as Grid;
 
-            
-            var me = gr.FindName("video") as MediaElement;
-            var sli = gr.FindName("VolumeSilder") as Slider;
-
-            me.Volume = (double)sli.Value;
-            
         }
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
             var gr = sender as Grid;
 
-            var heart = gr.FindName("btnHeart") as ToggleButton;
+            var heart = gr.FindName("btnHeart") as ToggleButton                ;
             heart.Visibility = Visibility.Collapsed;
+
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Collapsed;
             if(me!=null)
             {
-                me.Pause();
+                me.Stop();
             }
-
+            
             var sxDA = new DoubleAnimation();
             sxDA.Duration = TimeSpan.FromMilliseconds(300);
             Storyboard.SetTarget(sxDA, gr);

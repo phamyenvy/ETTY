@@ -34,35 +34,46 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             timer.Start();
 
         }
-        int isPlay = 0;
         private void btnPlayorPause_MouseEnter(object sender, MouseEventArgs e)
         {
             btnPlayorPause.Visibility = Visibility.Visible;
+            stusBar.Visibility = Visibility.Visible;
         }
 
         private void mediaVideo_MouseDown(object sender, MouseButtonEventArgs e)
         {
             btnPlayorPause.Visibility = Visibility.Visible;
+            stusBar.Visibility = Visibility.Visible;
 
         }
 
         private void mediaVideo_MouseLeave(object sender, MouseEventArgs e)
         {
-            btnPlayorPause.Visibility = Visibility.Collapsed;
-
+            if (mediaPlayerIsPlaying)
+            {
+                btnPlayorPause.Visibility = Visibility.Collapsed;
+                stusBar.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                btnPlayorPause.Visibility = Visibility.Visible;
+                stusBar.Visibility = Visibility.Visible;
+            }
         }
 
         private void btnPlayorPause_Click(object sender, RoutedEventArgs e)
         {
-            if (isPlay == 0)
+            if (mediaPlayerIsPlaying == false)
             {
                 mediaVideo.Play();
-                isPlay = 1;
+                mediaPlayerIsPlaying = true;
+
             }
             else
             {
                 mediaVideo.Pause();
-                isPlay = 0;
+                mediaPlayerIsPlaying = false;
+
             }
 
         }
@@ -70,6 +81,25 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
            mediaVideo.Volume = sliderVolume.Value;
+           if(sliderVolume.Value == 0)
+            {
+                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMute;
+            }
+            if(sliderVolume.Value > 0 && sliderVolume.Value <20)
+            {
+                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeLow;
+
+            }
+            if (sliderVolume.Value > 20 && sliderVolume.Value < 50)
+            {
+                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMedium;
+
+            }
+            if(sliderVolume.Value > 50)
+            {
+                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeHigh;
+
+            }
         }
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -80,14 +110,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
                 sliderTime.Value = mediaVideo.Position.TotalSeconds;
             }
         }
-
-        private void Open_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
         
-
         private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = (mediaVideo != null) && (mediaVideo.Source != null);
@@ -136,5 +159,19 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             lblProgressStatus.Text = TimeSpan.FromSeconds(sliderTime.Value).ToString(@"hh\:mm\:ss");
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(sliderVolume.Value != 0)
+            {
+                sliderVolume.Value = 0;
+                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMute;
+            }
+            else
+            {
+                sliderVolume.Value = 49;
+                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMedium;
+
+            }
+        }
     }
 }

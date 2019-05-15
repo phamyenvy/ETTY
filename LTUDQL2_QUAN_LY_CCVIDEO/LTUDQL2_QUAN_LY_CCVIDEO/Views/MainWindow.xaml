@@ -40,17 +40,19 @@
                     </Grid.RowDefinitions>
 
 
-                    <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\exam.mp4" Stretch="Fill" LoadedBehavior="Manual"/>
-                    <ToggleButton  Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                    <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" 
+                                  Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\exam.mp4" 
+                                  Stretch="Fill" LoadedBehavior="Manual"/>
+                    <ToggleButton  Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                               ToolTip="MaterialDesignFlatPrimaryToggleButton"
                               IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
                               Width="25" Background="#FFF17171" Visibility="Collapsed"
                               x:Name="btnHeart">
                         <materialDesign:PackIcon Kind="Heart"
                                                     Height="17"
-                                                    Width="17" Foreground="#FFFFE11C" />
+                                                    Width="17" Foreground="Red" Background="Transparent" />
                     </ToggleButton>
-                    <Slider x:Name="VolumeSilder" ValueChanged="VolumeSilder_ValueChanged" Grid.Column="2" Grid.RowSpan="3" HorizontalAlignment="Right" TickFrequency="25" TickPlacement="TopLeft"  Orientation="Vertical"  Minimum="1"  Maximum="100" Height="100"  />
+                    <Label Content="{Binding Title}" Grid.ColumnSpan="3" Grid.Row="2"></Label>
                 </Grid>
                 
             </Grid>
