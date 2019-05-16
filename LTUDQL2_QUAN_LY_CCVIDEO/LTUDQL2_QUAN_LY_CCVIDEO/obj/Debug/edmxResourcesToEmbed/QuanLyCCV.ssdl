@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyCCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CapDoTaiKhoan">
+    <Key>
+      <PropertyRef Name="MaCapDo" />
+    </Key>
+    <Property Name="MaCapDo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenCapDo" Type="nvarchar" MaxLength="255" />
+    <Property Name="GiaTienDuyTri" Type="int" />
+  </EntityType>
+  <EntityType Name="LoaiVideo">
+    <Key>
+      <PropertyRef Name="MaLoaiVideo" />
+    </Key>
+    <Property Name="MaLoaiVideo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiVideo" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="MaProfile" />
+    </Key>
+    <Property Name="MaProfile" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHienThi" Type="varchar" MaxLength="255" />
+    <Property Name="AvatarLink" Type="varchar" MaxLength="255" />
+    <Property Name="TaiKhoan" Type="int" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTaiKhoan" Type="nvarchar" MaxLength="255" />
+    <Property Name="LoaiTaiKhoan" Type="int" Nullable="false" />
+    <Property Name="CapDo" Type="int" />
+    <Property Name="NgayHetHan" Type="datetime" />
+    <Property Name="Password" Type="varchar" MaxLength="255" />
+    <Property Name="TenHienThi" Type="nvarchar" MaxLength="255" />
+    <Property Name="IDThe" Type="varchar" MaxLength="255" />
+    <Property Name="MaXacNhan" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThanhToan">
+    <Key>
+      <PropertyRef Name="MaThanhToan" />
+    </Key>
+    <Property Name="MaThanhToan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenThanhToan" Type="nvarchar" MaxLength="255" />
+    <Property Name="TaiKhoan" Type="int" />
+    <Property Name="CapDoMua" Type="int" />
+    <Property Name="IDThe" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="The">
+    <Key>
+      <PropertyRef Name="IDCard" />
+    </Key>
+    <Property Name="IDCard" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Code" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="MaVideo" />
+    </Key>
+    <Property Name="MaVideo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenVideo" Type="nvarchar" MaxLength="255" />
+    <Property Name="LinkVideo" Type="varchar" MaxLength="255" />
+    <Property Name="MaLoai_Video" Type="int" />
+    <Property Name="LinkImage" Type="varchar" MaxLength="255" />
+    <Property Name="LinkTrailer" Type="varchar" MaxLength="255" />
+    <Property Name="CapDoVideo" Type="int" />
+    <Property Name="Like" Type="int" Nullable="false" />
+    <Property Name="Dislike" Type="int" Nullable="false" />
+    <Property Name="NgaySanXuat" Type="datetime" />
+    <Property Name="NgayUpload" Type="datetime" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="4000" />
+    <Property Name="LuotXem" Type="int" />
+  </EntityType>
+  <EntityType Name="YeuThich_XemGanDay">
+    <Key>
+      <PropertyRef Name="MaProfile" />
+      <PropertyRef Name="MaVideo" />
+      <PropertyRef Name="LoaiLuuTru" />
+    </Key>
+    <Property Name="MaProfile" Type="int" Nullable="false" />
+    <Property Name="MaVideo" Type="int" Nullable="false" />
+    <Property Name="LoaiLuuTru" Type="int" Nullable="false" />
+    <Property Name="ThoiGian" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Profile__TaiKhoa__59FA5E80">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="TaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaiKhoan__CapDo__5AEE82B9">
+    <End Role="CapDoTaiKhoan" Type="Self.CapDoTaiKhoan" Multiplicity="0..1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CapDoTaiKhoan">
+        <PropertyRef Name="MaCapDo" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="CapDo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TaiKhoan__IDThe__5BE2A6F2">
+    <End Role="The" Type="Self.The" Multiplicity="0..1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="The">
+        <PropertyRef Name="IDCard" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="IDThe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ThanhToan__IDThe__5CD6CB2B">
+    <End Role="The" Type="Self.The" Multiplicity="0..1" />
+    <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="The">
+        <PropertyRef Name="IDCard" />
+      </Principal>
+      <Dependent Role="ThanhToan">
+        <PropertyRef Name="IDThe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ThanhToan__TaiKh__5DCAEF64">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="ThanhToan">
+        <PropertyRef Name="TaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Video__CapDoVide__24927208">
+    <End Role="CapDoTaiKhoan" Type="Self.CapDoTaiKhoan" Multiplicity="0..1" />
+    <End Role="Video" Type="Self.Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CapDoTaiKhoan">
+        <PropertyRef Name="MaCapDo" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="CapDoVideo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Video__MaLoai_Vi__25869641">
+    <End Role="LoaiVideo" Type="Self.LoaiVideo" Multiplicity="0..1" />
+    <End Role="Video" Type="Self.Video" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiVideo">
+        <PropertyRef Name="MaLoaiVideo" />
+      </Principal>
+      <Dependent Role="Video">
+        <PropertyRef Name="MaLoai_Video" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__YeuThich___MaPro__60A75C0F">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="YeuThich_XemGanDay" Type="Self.YeuThich_XemGanDay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="MaProfile" />
+      </Principal>
+      <Dependent Role="YeuThich_XemGanDay">
+        <PropertyRef Name="MaProfile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__YeuThich___MaVid__276EDEB3">
+    <End Role="Video" Type="Self.Video" Multiplicity="1" />
+    <End Role="YeuThich_XemGanDay" Type="Self.YeuThich_XemGanDay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Video">
+        <PropertyRef Name="MaVideo" />
+      </Principal>
+      <Dependent Role="YeuThich_XemGanDay">
+        <PropertyRef Name="MaVideo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyCCVModelStoreContainer">
+    <EntitySet Name="CapDoTaiKhoan" EntityType="Self.CapDoTaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiVideo" EntityType="Self.LoaiVideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="The" EntityType="Self.The" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YeuThich_XemGanDay" EntityType="Self.YeuThich_XemGanDay" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Profile__TaiKhoa__59FA5E80" Association="Self.FK__Profile__TaiKhoa__59FA5E80">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="Profile" EntitySet="Profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaiKhoan__CapDo__5AEE82B9" Association="Self.FK__TaiKhoan__CapDo__5AEE82B9">
+      <End Role="CapDoTaiKhoan" EntitySet="CapDoTaiKhoan" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TaiKhoan__IDThe__5BE2A6F2" Association="Self.FK__TaiKhoan__IDThe__5BE2A6F2">
+      <End Role="The" EntitySet="The" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ThanhToan__IDThe__5CD6CB2B" Association="Self.FK__ThanhToan__IDThe__5CD6CB2B">
+      <End Role="The" EntitySet="The" />
+      <End Role="ThanhToan" EntitySet="ThanhToan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ThanhToan__TaiKh__5DCAEF64" Association="Self.FK__ThanhToan__TaiKh__5DCAEF64">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="ThanhToan" EntitySet="ThanhToan" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Video__CapDoVide__24927208" Association="Self.FK__Video__CapDoVide__24927208">
+      <End Role="CapDoTaiKhoan" EntitySet="CapDoTaiKhoan" />
+      <End Role="Video" EntitySet="Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Video__MaLoai_Vi__25869641" Association="Self.FK__Video__MaLoai_Vi__25869641">
+      <End Role="LoaiVideo" EntitySet="LoaiVideo" />
+      <End Role="Video" EntitySet="Video" />
+    </AssociationSet>
+    <AssociationSet Name="FK__YeuThich___MaPro__60A75C0F" Association="Self.FK__YeuThich___MaPro__60A75C0F">
+      <End Role="Profile" EntitySet="Profile" />
+      <End Role="YeuThich_XemGanDay" EntitySet="YeuThich_XemGanDay" />
+    </AssociationSet>
+    <AssociationSet Name="FK__YeuThich___MaVid__276EDEB3" Association="Self.FK__YeuThich___MaVid__276EDEB3">
+      <End Role="Video" EntitySet="Video" />
+      <End Role="YeuThich_XemGanDay" EntitySet="YeuThich_XemGanDay" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
       <Private>True</Private>
@@ -44,7 +50,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +72,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CapDoTaiKhoan.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiVideo.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCCV.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCCV.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCCV.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyCCV.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyCCV.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhToan.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="The.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Video.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
     <Compile Include="Views\DetailVideo.xaml.cs">
       <DependentUpon>DetailVideo.xaml</DependentUpon>
     </Compile>
@@ -98,6 +143,9 @@
     </Compile>
     <Compile Include="Views\StartWd.xaml.cs">
       <DependentUpon>StartWd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YeuThich_XemGanDay.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
     <Page Include="Views\DetailVideo.xaml">
       <SubType>Designer</SubType>
@@ -185,11 +233,30 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <EntityDeploy Include="QuanLyCCV.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyCCV.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanLyCCV.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyCCV.edmx</DependentUpon>
+      <LastGenOutput>QuanLyCCV.Context.cs</LastGenOutput>
+    </None>
+    <None Include="QuanLyCCV.edmx.diagram">
+      <DependentUpon>QuanLyCCV.edmx</DependentUpon>
+    </None>
+    <None Include="QuanLyCCV.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyCCV.edmx</DependentUpon>
+      <LastGenOutput>QuanLyCCV.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

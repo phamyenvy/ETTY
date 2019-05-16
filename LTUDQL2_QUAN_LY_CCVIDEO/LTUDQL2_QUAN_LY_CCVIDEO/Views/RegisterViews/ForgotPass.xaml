@@ -83,7 +83,7 @@
                         <materialDesign:PackIcon Kind="Barcode" Width="50" Height="50" Foreground="#FFACA741" />
                     </Label>
                     <TextBox Width="300" 
-                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"  
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"   x:Name="txtCode"
                                  materialDesign:HintAssist.Hint="Code" Foreground="#FFCDCDCD"  BorderBrush="White" 
                                  CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" 
                                  Background="{x:Null}" 
@@ -103,7 +103,7 @@
                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="150" 
                     Content="Submit" Background="#FFF5D005" 
                     BorderBrush="Transparent" FontSize="15" 
-                    Foreground="#FF231E03" Click="Button_Click" Visibility="Collapsed"/>
+                    Foreground="#FF231E03" Click="btnXacNhan_Click" Visibility="Collapsed"/>
 
 
             </StackPanel>
