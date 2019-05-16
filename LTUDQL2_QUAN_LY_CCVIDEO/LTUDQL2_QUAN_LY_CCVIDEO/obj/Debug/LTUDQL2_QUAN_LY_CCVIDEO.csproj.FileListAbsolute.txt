@@ -14,8 +14,6 @@ C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\ob
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\ForgotPass.g.cs
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Login.g.cs
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Register.g.cs
-C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Register_02.g.cs
-C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Register_03.g.cs
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\SelectProfile.g.cs
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\StartWd.g.cs
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\App.g.cs
@@ -31,8 +29,6 @@ C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\ob
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\ForgotPass.baml
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Login.baml
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Register.baml
-C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Register_02.baml
-C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\Register_03.baml
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\SelectProfile.baml
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\StartWd.baml
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\LTUDQL2_QUAN_LY_CCVIDEO.g.resources
@@ -40,3 +36,9 @@ C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\ob
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\LTUDQL2_QUAN_LY_CCVIDEO.csproj.GenerateResource.Cache
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\LTUDQL2_QUAN_LY_CCVIDEO.exe
 C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\LTUDQL2_QUAN_LY_CCVIDEO.pdb
+C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\uc_register2.g.cs
+C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\uc_register3.g.cs
+C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\uc_register2.baml
+C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\uc_register3.baml
+C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\uc_register1.g.cs
+C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\Views\RegisterViews\uc_register1.baml

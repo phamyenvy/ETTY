@@ -23,5 +23,40 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         {
             InitializeComponent();
         }
+
+        private void btnNext_Click(object sender, RoutedEventArgs e)
+        {
+            if(uc1.Visibility == Visibility.Visible)
+            {
+                uc1.Visibility = Visibility.Collapsed;
+                uc2.Visibility = Visibility.Visible;
+                uc3.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                if (uc2.Visibility == Visibility.Visible)
+                {
+                    uc1.Visibility = Visibility.Collapsed;
+                    uc2.Visibility = Visibility.Collapsed;
+                    uc3.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    if (uc3.Visibility == Visibility.Visible)
+                    {
+                        uc1.Visibility = Visibility.Collapsed;
+                        uc2.Visibility = Visibility.Collapsed;
+                        uc3.Visibility = Visibility.Visible;
+                    }
+                }
+                
+            }
+            
+        }
+
+        private void btnPre_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

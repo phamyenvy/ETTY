@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 {
     /// <summary>
-    /// Interaction logic for Register_03.xaml
+    /// Interaction logic for uc_register3.xaml
     /// </summary>
-    public partial class Register_03 : Window
+    public partial class uc_register3 : UserControl
     {
-        public Register_03()
+        public uc_register3()
         {
             InitializeComponent();
         }

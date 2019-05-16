@@ -21,54 +21,29 @@
         <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"
                 materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
-                HorizontalAlignment="Center" Width="500" Margin="347,170,347,0" Height="520">
-            <StackPanel Background="#FF231E03">
-                <StackPanel Height="40"/>
-
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label>
-                        <materialDesign:PackIcon Kind="AccountBoxOutline" Width="50" Height="50" Foreground="#FFACA741" />
-                    </Label>
-                    <TextBox Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="txtNameRegister" materialDesign:HintAssist.Hint="Name" Foreground="#FFCDCDCD" BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
-
-
-                </StackPanel>
-                <StackPanel Height="40"/>
-
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label>
-                        <materialDesign:PackIcon Kind="Email" Width="50" Height="50" Foreground="#FFACA741" />
-                    </Label>
-                    <TextBox Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  x:Name="txtMail" materialDesign:HintAssist.Hint="Email" Foreground="#FFCDCDCD" BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
-
-
-                </StackPanel>
-                <StackPanel Height="40"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <Label>
-                        <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
-                    </Label>
-                    <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
-
-
-                </StackPanel>
-                <StackPanel Height="40"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <Label>
-                        <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
-                    </Label>
-                    <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  x:Name="txtRpPassword" materialDesign:HintAssist.Hint="Repeat Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
-
-
-                </StackPanel>
-                <StackPanel Height="50"/>
-                <Button
-                    Style="{DynamicResource MaterialDesignRaisedButton}"
-                    materialDesign:ShadowAssist.ShadowDepth="Depth3" Margin="316,0,78,0" Content="Next" Background="#FFA8A343" BorderBrush="Transparent" FontSize="15" Foreground="#FF231E03"/>
-
-
-
+                HorizontalAlignment="Center" Width="500" Margin="347,170,347,0" Height="550" Background="#FF231E03">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="100">
+                <Button x:Name="btnPre" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                    Width="70" Height="70" Margin="15" BorderBrush="Transparent"
+                    Foreground="#FF27230A" Background="Transparent" Click="btnPre_Click">
+                <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FFFFD702" 
+                                         Height="40" Width="50" 
+                                         VerticalAlignment="Center" HorizontalAlignment="Center"
+                                         />
+            </Button>
+            <Button x:Name="btnNext" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                    Width="70" Height="70" Margin="15" BorderBrush="Transparent"
+                    Foreground="#FF27230A" Background="Transparent" Click="btnNext_Click">
+                <materialDesign:PackIcon Kind="ArrowRight" Foreground="#FFFFD702" 
+                                         Height="40" Width="50"  
+                                         VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Button>
             </StackPanel>
         </materialDesign:Card>
+        <local:uc_register1 x:Name="uc1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500" Margin="347,170,347,81" Height="450" Visibility="Visible"/>
+
+        <local:uc_register2 x:Name="uc2" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500" Margin="347,170,347,81" Height="450" Visibility="Collapsed"/>
+
+        <local:uc_register3 x:Name="uc3" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500" Margin="347,170,347,81" Height="450" Visibility="Collapsed"/>
     </Grid>
 </Window>

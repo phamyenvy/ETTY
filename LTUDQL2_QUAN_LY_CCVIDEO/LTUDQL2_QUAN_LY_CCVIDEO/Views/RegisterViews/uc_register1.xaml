@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews.uc_register1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="500">
+    <StackPanel Background="#FF231E03">
+        <StackPanel Height="40"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>
+                <materialDesign:PackIcon Kind="AccountBoxOutline" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <TextBox Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}" x:Name="txtNameRegister" materialDesign:HintAssist.Hint="Name" Foreground="#FFCDCDCD" BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="40"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>
+                <materialDesign:PackIcon Kind="Email" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <TextBox Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  x:Name="txtMail" materialDesign:HintAssist.Hint="Email" Foreground="#FFCDCDCD" BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="40"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Label>
+                <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="40"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Label>
+                <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  x:Name="txtRpPassword" materialDesign:HintAssist.Hint="Repeat Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="50"/>
+
+
+
+    </StackPanel>
+</UserControl>

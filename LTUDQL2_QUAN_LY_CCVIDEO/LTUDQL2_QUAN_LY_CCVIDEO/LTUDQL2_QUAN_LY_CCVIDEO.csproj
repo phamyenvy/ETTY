@@ -84,11 +84,14 @@
     <Compile Include="Views\RegisterViews\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegisterViews\Register_02.xaml.cs">
-      <DependentUpon>Register_02.xaml</DependentUpon>
+    <Compile Include="Views\RegisterViews\uc_register1.xaml.cs">
+      <DependentUpon>uc_register1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RegisterViews\Register_03.xaml.cs">
-      <DependentUpon>Register_03.xaml</DependentUpon>
+    <Compile Include="Views\RegisterViews\uc_register2.xaml.cs">
+      <DependentUpon>uc_register2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterViews\uc_register3.xaml.cs">
+      <DependentUpon>uc_register3.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SelectProfile.xaml.cs">
       <DependentUpon>SelectProfile.xaml</DependentUpon>
@@ -136,11 +139,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RegisterViews\Register_02.xaml">
+    <Page Include="Views\RegisterViews\uc_register1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RegisterViews\Register_03.xaml">
+    <Page Include="Views\RegisterViews\uc_register2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterViews\uc_register3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

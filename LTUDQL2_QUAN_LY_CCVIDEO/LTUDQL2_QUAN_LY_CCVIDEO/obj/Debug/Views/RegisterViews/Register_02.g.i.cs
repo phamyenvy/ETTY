@@ -44,7 +44,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
     public partial class Register_02 : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 76 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+        #line 68 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock tblStandard;
         
@@ -52,7 +52,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
         #line hidden
         
         
-        #line 83 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+        #line 75 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock tblStandard_1;
         
@@ -60,7 +60,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
         #line hidden
         
         
-        #line 87 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+        #line 79 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock tblPremium;
         
@@ -68,7 +68,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
         #line hidden
         
         
-        #line 94 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+        #line 86 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock tblPremium_1;
         
@@ -76,7 +76,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
         #line hidden
         
         
-        #line 100 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+        #line 92 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock tblVIP;
         
@@ -84,7 +84,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
         #line hidden
         
         
-        #line 107 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+        #line 99 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock tblVIP_1;
         
@@ -123,7 +123,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
             {
             case 1:
             
-            #line 33 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+            #line 25 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
             ((System.Windows.Controls.ListBoxItem)(target)).Selected += new System.Windows.RoutedEventHandler(this.ListBoxItem_Selected);
             
             #line default
@@ -131,7 +131,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
             return;
             case 2:
             
-            #line 44 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+            #line 36 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
             ((System.Windows.Controls.ListBoxItem)(target)).Selected += new System.Windows.RoutedEventHandler(this.ListBoxItem_Selected_1);
             
             #line default
@@ -139,7 +139,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews {
             return;
             case 3:
             
-            #line 55 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
+            #line 47 "..\..\..\..\Views\RegisterViews\Register_02.xaml"
             ((System.Windows.Controls.ListBoxItem)(target)).Selected += new System.Windows.RoutedEventHandler(this.ListBoxItem_Selected_2);
             
             #line default

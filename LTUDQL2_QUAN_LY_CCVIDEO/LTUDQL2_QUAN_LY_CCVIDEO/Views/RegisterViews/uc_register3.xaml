@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews.uc_register3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="500">
+    <StackPanel Background="#FF231E03">
+        <StackPanel Height="17"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>
+                <materialDesign:PackIcon Kind="Bank" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <ComboBox Foreground="#FFCDCDCD"
+                              materialDesign:HintAssist.Hint="Bank"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" Width="300" BorderBrush="White">
+                <ComboBoxItem>
+                    Sacombank
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Agribank
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Viettin Bank
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Dong A Bank
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Occean Bank
+                </ComboBoxItem>
+            </ComboBox>
+
+
+        </StackPanel>
+        <StackPanel Height="30"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>
+                <materialDesign:PackIcon Kind="CreditCard" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <TextBox Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  x:Name="txtIDCard" materialDesign:HintAssist.Hint="ID Card" Foreground="#FFCDCDCD" BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="30"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>
+                <materialDesign:PackIcon Kind="AccountCheck" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <TextBox Width="300"  x:Name="txtFistName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="First Name" Foreground="#FFCDCDCD" BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="30"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>
+                <materialDesign:PackIcon Kind="AccountCheck" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <TextBox Width="300"  x:Name="txtLastName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Last Name" Foreground="#FFCDCDCD" BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="30"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Label>
+                <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
+            </Label>
+            <PasswordBox Width="300"  x:Name="txtCodeThe" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+
+
+        </StackPanel>
+        <StackPanel Height="30"/>
+    </StackPanel>
+</UserControl>
