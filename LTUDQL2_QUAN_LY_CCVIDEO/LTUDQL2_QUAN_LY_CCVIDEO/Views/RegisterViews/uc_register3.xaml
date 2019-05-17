@@ -10,7 +10,7 @@
     <StackPanel Background="#FF231E03">
         <StackPanel Height="17"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Label>
+            <!--<Label>
                 <materialDesign:PackIcon Kind="Bank" Width="50" Height="50" Foreground="#FFACA741" />
             </Label>
             <ComboBox Foreground="#FFCDCDCD"
@@ -31,7 +31,7 @@
                 <ComboBoxItem>
                     Occean Bank
                 </ComboBoxItem>
-            </ComboBox>
+            </ComboBox>-->
 
 
         </StackPanel>

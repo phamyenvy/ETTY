@@ -19,9 +19,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0" IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" >
+            <ListBox x:Name="lbLevel" Grid.Column="0" IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" SelectionChanged="lbLevel_SelectionChanged" >
 
-                <ListBoxItem Height="150" Selected="ListBoxItem_Selected">
+                <ListBoxItem x:Name="Standard" Height="150" Selected="ListBoxItem_Selected">
                     <Grid Height="90" Width="241">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -32,7 +32,7 @@
                     </Grid>
 
                 </ListBoxItem>
-                <ListBoxItem Height="150" Selected="ListBoxItem_Selected_1" >
+                <ListBoxItem x:Name="Premium" Height="150" Selected="ListBoxItem_Selected_1" >
                     <Grid Height="90" Width="241">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -43,7 +43,7 @@
 
                     </Grid>
                 </ListBoxItem>
-                <ListBoxItem Height="150" Selected="ListBoxItem_Selected_2">
+                <ListBoxItem x:Name="VIP" Height="150" Selected="ListBoxItem_Selected_2">
                     <Grid Height="90" Width="241">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>

@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
-        Title="ETTY" Height="800" Width="1200" ResizeMode="CanMinimize">
+        Title="ETTY" Height="800" Width="1200" ResizeMode="CanMinimize" Loaded="Window_Loaded">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -23,14 +23,14 @@
                 materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
                 HorizontalAlignment="Center" Width="500" Margin="347,170,347,0" Height="550" Background="#FF231E03">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="100">
-                <Button x:Name="btnPre" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                <!--<Button x:Name="btnPre" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
                     Width="70" Height="70" Margin="15" BorderBrush="Transparent"
                     Foreground="#FF27230A" Background="Transparent" Click="btnPre_Click">
                 <materialDesign:PackIcon Kind="ArrowLeft" Foreground="#FFFFD702" 
                                          Height="40" Width="50" 
                                          VerticalAlignment="Center" HorizontalAlignment="Center"
                                          />
-            </Button>
+            </Button>-->
             <Button x:Name="btnNext" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
                     Width="70" Height="70" Margin="15" BorderBrush="Transparent"
                     Foreground="#FF27230A" Background="Transparent" Click="btnNext_Click">

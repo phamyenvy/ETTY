@@ -30,7 +30,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
             tblStandard_1.Visibility = Visibility.Collapsed;
             tblStandard.Visibility = Visibility.Collapsed;
         }
-
+        public string TenCapDo = "";
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
 
@@ -44,22 +44,29 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
-            tblPremium.Visibility = Visibility.Collapsed;
-            tblPremium_1.Visibility = Visibility.Collapsed;
-            tblVIP.Visibility = Visibility.Visible;
-            tblVIP_1.Visibility = Visibility.Visible;
-            tblStandard_1.Visibility = Visibility.Collapsed;
-            tblStandard.Visibility = Visibility.Collapsed;
-        }
-
-        private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
-        {
             tblPremium.Visibility = Visibility.Visible;
             tblPremium_1.Visibility = Visibility.Visible;
             tblVIP.Visibility = Visibility.Collapsed;
             tblVIP_1.Visibility = Visibility.Collapsed;
             tblStandard_1.Visibility = Visibility.Collapsed;
             tblStandard.Visibility = Visibility.Collapsed;
+        }
+
+        private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
+        {
+            tblPremium.Visibility = Visibility.Collapsed;
+            tblPremium_1.Visibility = Visibility.Collapsed;
+            tblVIP.Visibility = Visibility.Visible;
+            tblVIP_1.Visibility = Visibility.Visible;
+            tblStandard_1.Visibility = Visibility.Collapsed;
+            tblStandard.Visibility = Visibility.Collapsed;
+      
+        }
+
+        private void lbLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBoxItem lb =lbLevel.SelectedItem as ListBoxItem;
+            TenCapDo=lb.Name.ToString();
         }
     }
 }
