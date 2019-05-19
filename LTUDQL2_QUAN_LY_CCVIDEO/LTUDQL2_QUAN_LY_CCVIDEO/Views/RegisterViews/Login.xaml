@@ -44,14 +44,14 @@
 
                 </StackPanel>
                 <StackPanel Height="100"/>
-                <Button FontWeight="ExtraBold"
+                <Button Name="btnLogin" FontWeight="ExtraBold"
                     Style="{DynamicResource MaterialDesignRaisedButton}"
-                    materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="150" Content="Login" Background="#FFF5D005" BorderBrush="Transparent" FontSize="15" Foreground="#FF231E03"/>
+                    materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="150" Content="Login" Background="#FFF5D005" BorderBrush="Transparent" FontSize="15" Foreground="#FF231E03" Click="btnLogin_Click"/>
                 <StackPanel Height="20"/>
 
                 <Button FontWeight="ExtraBold"
                     Style="{DynamicResource MaterialDesignRaisedButton}"
-                    materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="160" Content="Forgot Password" Background="Transparent" BorderBrush="Transparent" FontSize="15" Foreground="#FFF5D005"/>
+                    materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="160" Content="Forgot Password" Background="Transparent" BorderBrush="Transparent" FontSize="15" Foreground="#FFF5D005" Click="Button_Click"/>
 
 
             </StackPanel>
