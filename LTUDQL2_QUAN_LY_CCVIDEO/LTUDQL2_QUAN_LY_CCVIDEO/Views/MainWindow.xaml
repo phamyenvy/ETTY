@@ -11,6 +11,9 @@
         FontSize="20"
         Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
     <Window.Resources>
+        <!--<ObjectDataProvider x:Key="Video"
+        ObjectType="{x:Type m:DBProvider}"
+        MethodName="getVideoTrending"/>-->
         <DataTemplate DataType="{x:Type m:VideoInfo}">
             <Grid Width="200" Height="120" Name="Scroll">
                 <Grid.Style>
@@ -26,7 +29,7 @@
 
                 <Grid  Margin="3,0">
                     <Grid.Background>
-                        <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\poster.jpg"/>
+                        <ImageBrush ImageSource="{Binding Path=Path}"/>
                     </Grid.Background>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -41,7 +44,7 @@
 
 
                     <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" 
-                                  Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\exam.mp4" 
+                                  Source="{Binding Path=PathVideo}"
                                   Stretch="Fill" LoadedBehavior="Manual"/>
                     <ToggleButton  Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                               ToolTip="MaterialDesignFlatPrimaryToggleButton"
@@ -52,7 +55,7 @@
                                                     Height="17"
                                                     Width="17" Foreground="Red" Background="Transparent" />
                     </ToggleButton>
-                    <Label Content="{Binding Title}" Grid.ColumnSpan="3" Grid.Row="2"></Label>
+                    <Label Content="{Binding Path= Title}" Grid.ColumnSpan="3" Grid.Row="2"></Label>
                 </Grid>
                 
             </Grid>
@@ -137,7 +140,7 @@
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="300" Name="spMyList">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">My List</Label>
-                        <ItemsControl ItemsSource="{Binding}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        <ItemsControl ItemsSource="{Binding Path=[0]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -206,7 +209,7 @@
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="300" Name="spThinhHanh">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">Trending Now</Label>
-                        <ItemsControl ItemsSource="{Binding}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        <ItemsControl ItemsSource="{Binding Path=[1]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -275,7 +278,7 @@
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="300" Name="spMoiNhat">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">New Realease</Label>
-                        <ItemsControl ItemsSource="{Binding}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        <ItemsControl ItemsSource="{Binding Path=[2]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>

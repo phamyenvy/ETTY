@@ -25,77 +25,87 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+
+        public MainWindow(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
+
+            List<List<VideoInfo>> lst = new List<List<VideoInfo>>();
+            lst.Add(DBProvider.getMyVideo(pf));
+            lst.Add(DBProvider.getTrendingVideo());
+            lst.Add(DBProvider.getNewVideo());
+            DataContext = lst;
+
+
             
-            DataContext = new List<VideoInfo>
-            {
-                new VideoInfo
-                {
+            
+            //DataContext = new List<VideoInfo>
+            //{
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                new VideoInfo
-                {
+            //    },
+            //    new VideoInfo
+            //    {
 
-                },
-                 new VideoInfo
-                {
+            //    },
+            //     new VideoInfo
+            //    {
 
-                },
-                  new VideoInfo
-                {
+            //    },
+            //      new VideoInfo
+            //    {
 
-                },
-                   new VideoInfo
-                {
+            //    },
+            //       new VideoInfo
+            //    {
 
-                },
-                    new VideoInfo
-                {
+            //    },
+            //        new VideoInfo
+            //    {
 
-                },
-                    new VideoInfo
-                {
+            //    },
+            //        new VideoInfo
+            //    {
 
-                }
-            };
+            //    }
+            //};
         }
         int timebegin = 500, timeDuration = 300;
         bool isEnter = false;
@@ -218,6 +228,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             sb.Children.Add(syDA);
             sb.Begin();
         }
+
+
+
         
     }
 }

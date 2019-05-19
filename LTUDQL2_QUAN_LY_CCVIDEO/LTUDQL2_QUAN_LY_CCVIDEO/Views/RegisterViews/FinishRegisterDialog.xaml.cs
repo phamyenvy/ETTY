@@ -30,7 +30,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
-            pbLoad.Value = 100;
+            pbLoad.Value = 50;
             btnStop.Visibility = Visibility.Collapsed;
             tick.Visibility = Visibility.Visible;
             success.Visibility = Visibility.Visible;
@@ -38,8 +38,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 
         private void btnOut_Click(object sender, RoutedEventArgs e)
         {
-            
-            var wd = new MainWindow();
+            TaiKhoan tk = null;
+            Profile pf = null;
+            var wd = new MainWindow(tk,pf);
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
             this.Close();

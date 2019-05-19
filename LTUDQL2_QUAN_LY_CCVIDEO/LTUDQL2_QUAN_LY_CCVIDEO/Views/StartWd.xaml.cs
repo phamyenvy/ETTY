@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,22 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         public StartWd()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var wd = new Login();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            var wd = new Register();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
         }
     }
 }

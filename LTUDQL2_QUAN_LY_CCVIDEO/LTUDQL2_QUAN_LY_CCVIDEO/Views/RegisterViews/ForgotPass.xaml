@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
-        Title="ETTY" Height="800" Width="1200" ResizeMode="CanMinimize">
+        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
    
     <Grid>
         <Grid.Background>
