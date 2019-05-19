@@ -108,6 +108,9 @@
     <Compile Include="Video.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\Adminstator\Admin.xaml.cs">
+      <DependentUpon>Admin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\DetailVideo.xaml.cs">
       <DependentUpon>DetailVideo.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
     <Compile Include="YeuThich_XemGanDay.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
+    <Page Include="Views\Adminstator\Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\DetailVideo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
