@@ -22,6 +22,33 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         public Admin()
         {
             InitializeComponent();
+            VideoGeneral a = new VideoGeneral();
+            content.Children.Clear();
+            content.Children.Add(a);
+        }
+
+        
+
+        private void UploadItem_Selected(object sender, RoutedEventArgs e)
+        {
+            UploadVideo  a = new UploadVideo();
+            content.Children.Clear();
+            content.Children.Add(a);
+
+        }
+
+        private void GeneralItem_Selected(object sender, RoutedEventArgs e)
+        {
+            VideoGeneral a = new VideoGeneral();
+            content.Children.Clear();
+            content.Children.Add(a);
+        }
+
+        private void AccountItem_Selected(object sender, RoutedEventArgs e)
+        {
+            AccountGeneral a = new AccountGeneral();
+            content.Children.Clear();
+            content.Children.Add(a);
         }
     }
 }

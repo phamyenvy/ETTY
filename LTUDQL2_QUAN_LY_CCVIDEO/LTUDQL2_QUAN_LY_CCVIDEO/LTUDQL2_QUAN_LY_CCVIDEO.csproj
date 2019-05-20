@@ -109,8 +109,17 @@
     <Compile Include="Video.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\Adminstator\AccountGeneral.xaml.cs">
+      <DependentUpon>AccountGeneral.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Adminstator\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Adminstator\UploadVideo.xaml.cs">
+      <DependentUpon>UploadVideo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Adminstator\VideoGeneral.xaml.cs">
+      <DependentUpon>VideoGeneral.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailVideo.xaml.cs">
       <DependentUpon>DetailVideo.xaml</DependentUpon>
@@ -151,7 +160,19 @@
     <Compile Include="YeuThich_XemGanDay.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
+    <Page Include="Views\Adminstator\AccountGeneral.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Adminstator\Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Adminstator\UploadVideo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Adminstator\VideoGeneral.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

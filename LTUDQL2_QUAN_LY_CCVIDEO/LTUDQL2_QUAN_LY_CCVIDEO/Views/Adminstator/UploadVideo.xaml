@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator.UploadVideo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator"
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="561" d:DesignWidth="945">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            
+            <TextBlock Grid.Column="0" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" FontSize="30" Margin="50,0">Name :</TextBlock>
+            <TextBox Grid.Column="1" VerticalAlignment="Center" Width="700"
+                      
+                     Height="50" Margin="20"></TextBox>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnOpenPoster" Click="btnOpenPoster_Click"
+                Grid.Column="0" Grid.Row="0" Margin="40,10"  
+                    BorderBrush="#FFFED700" BorderThickness="3" 
+                    Background="Transparent" Foreground="#DD0E0A0A" FontSize="15">
+                Open poster
+            </Button>
+            <Button x:Name="btnOpenTrailer" Click="btnOpenTrailer_Click"
+                Grid.Column="1" Grid.Row="0" Margin="40,10"  
+                    BorderBrush="#FFFED700" BorderThickness="3" 
+                    Background="Transparent" Foreground="#DD0E0A0A" FontSize="15">
+                Open trailer
+            </Button>
+            <Button x:Name="btnOpenFilm" Click="btnOpenFilm_Click"
+                Grid.Column="2" Grid.Row="0" Margin="40,10"  
+                    BorderBrush="#FFFED700" BorderThickness="3" 
+                    Background="Transparent" Foreground="#DD0E0A0A" FontSize="15">
+                Open film
+            </Button>
+            <Label Name="lblLinkPoster" Grid.Column="0" Grid.Row="1" Margin="5" FontSize="11" Foreground="#FF6666FF"/>
+            <Label Name="lblLinkTrailer" Grid.Column="1" Grid.Row="1" Margin="5" FontSize="11" Foreground="#FF6666FF"/>
+            <Label Name="lblLinkFilm" Grid.Column="2" Grid.Row="1" Margin="5" FontSize="11" Foreground="#FF6666FF"/>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Label>Categories :</Label>
+            <ComboBox Grid.Column="1" Margin="25" Height="40" FontSize="20"
+                    materialDesign:HintAssist.Hint="Search"
+                    IsEditable="True"
+                    materialDesign:HintAssist.HintOpacity=".26" BorderBrush="Black" >
+                <ComboBoxItem>
+                    Apple
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Banana
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Pear
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Orange
+                </ComboBoxItem>
+            </ComboBox>
+            
+            <Label Grid.Column="2" Grid.Row="1">Level:</Label>
+            <ComboBox Grid.Column="3" Grid.Row="1" Margin="25" Height="40" FontSize="20"
+                    materialDesign:HintAssist.Hint="Search"
+                    IsEditable="True"
+                    materialDesign:HintAssist.HintOpacity=".26" BorderBrush="Black" >
+                <ComboBoxItem>
+                    Apple
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Banana
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Pear
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Orange
+                </ComboBoxItem>
+            </ComboBox>
+            <Label Grid.Column="2" Grid.Row="0">MFG:</Label>
+            <DatePicker Grid.Column="3" Grid.Row="0" Margin="20" Height="40"></DatePicker>
+            <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Margin="0,20,0,0">Description :</Label>
+            <RichTextBox Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="30" ></RichTextBox>
+            <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="60">Upload : </Label>
+            <Button  Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+  ToolTip="Upload Now!" Grid.Column="3" Height="80" Width="80" Grid.Row="2"
+                    BorderBrush="#FFFED700" HorizontalAlignment="Right" Margin="0,0,30,0" Background="#FFFED700" >
+                <materialDesign:PackIcon Kind="Upload"  Height="50" Width="50"/>
+            </Button>
+            
+        </Grid>
+    </Grid>
+</UserControl>
