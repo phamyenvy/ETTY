@@ -35,6 +35,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             lst.Add(DBProvider.getMyVideo(pf));
             lst.Add(DBProvider.getTrendingVideo());
             lst.Add(DBProvider.getNewVideo());
+            lst.Add(DBProvider.getMainVideo());
+
             DataContext = lst;
             
         }

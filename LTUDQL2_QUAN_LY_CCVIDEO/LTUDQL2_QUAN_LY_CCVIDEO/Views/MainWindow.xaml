@@ -125,6 +125,7 @@
             </DockPanel>
 
         </materialDesign:ColorZone>
+        
         <Grid Name="Content" >
             <ScrollViewer Height="570" Background="Transparent">
                 <ScrollViewer.BorderBrush>
@@ -134,7 +135,12 @@
                     </LinearGradientBrush>
                 </ScrollViewer.BorderBrush>
                 <StackPanel>
-                    <StackPanel  Name="spMainVideo" Height="250">
+                    <StackPanel Name="spMainVideo" Height="250">
+                        <ItemsControl ItemsSource="{Binding Path=[3][0]}" 
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+
+                        </ItemsControl>
 
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="300" Name="spMyList">
@@ -208,7 +214,8 @@
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="300" Name="spThinhHanh">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">Trending Now</Label>
-                        <ItemsControl ItemsSource="{Binding Path=[1]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        <ItemsControl ItemsSource="{Binding Path=[1]}"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
