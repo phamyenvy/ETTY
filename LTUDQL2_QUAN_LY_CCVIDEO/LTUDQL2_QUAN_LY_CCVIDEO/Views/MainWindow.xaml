@@ -13,7 +13,7 @@
     <Window.CommandBindings>
         <CommandBinding Command="MediaCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
         <CommandBinding Command="MediaCommands.Pause" CanExecute="Pause_CanExecute" Executed="Pause_Executed" />
-
+        <CommandBinding Command="MediaCommands.Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
     </Window.CommandBindings>
     <Window.Resources>
                 <ObjectDataProvider x:Key="Video"
@@ -140,34 +140,86 @@
                     </LinearGradientBrush>
                 </ScrollViewer.BorderBrush>
                 <StackPanel>
-                    <UniformGrid Margin="20" Columns="2" Name="spMainVideo">
-                        <!--<ItemsControl ItemsSource="{Binding Path=[3]}" 
-                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-
-
-                        </ItemsControl>-->
+                    <Grid Margin="20"  Name="spMainVideo">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0.4*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid Width="700">
                             <Image Source="{Binding Source={StaticResource Video}, Path=[0].LinkImage}"></Image>
-                            <MediaElement Name="mediaVideo" Source="{Binding Source={StaticResource Video}, Path=[0].LinkTrailer}"></MediaElement>
-                            <Button Command="MediaCommands.Stop" Margin="5"
+                            <MediaElement Name="mediaVideo" MouseDown="mediaVideo_MouseDown"
+                               MouseLeave="mediaVideo_MouseLeave"  Source="{Binding Source={StaticResource Video}, Path=[0].LinkTrailer}" Width="Auto" LoadedBehavior="Manual"></MediaElement>
+                            <ToggleButton x:Name="btnPlayorPause" Height="80" Width="80" 
+                              Background="Transparent"
+                              Style="{StaticResource MaterialDesignActionToggleButton}" 
+                              Click="btnPlayorPause_Click"
+                              ClickMode="Press"
+                              MouseEnter="btnPlayorPause_MouseEnter">
+                                <ToggleButton.Content>
+                                    <materialDesign:PackIcon   Height="50" Width="50" Kind="Play"  Foreground="#FFFCD700"/>
+                                </ToggleButton.Content>
+                                <materialDesign:ToggleButtonAssist.OnContent>
+                                    <materialDesign:PackIcon Height="50" Width="50" Kind="Pause" Foreground="#FFFCD700"/>
+                                </materialDesign:ToggleButtonAssist.OnContent>
+                            </ToggleButton>
+                            <StatusBar x:Name="stusBar" Width="Auto" Height="50"  
+                                   BorderBrush="#FFEECB0A" BorderThickness="1"
+                                   Background="Transparent" VerticalAlignment="Bottom"
+                                   MouseEnter="btnPlayorPause_MouseEnter"
+                                   MouseLeave="mediaVideo_MouseLeave">
+
+                                <StatusBarItem>
+                                    <Button Command="MediaCommands.Pause" Margin="5" 
                                         BorderBrush="Transparent"
-                                    Background="Transparent" Foreground="Black" >
-                                <materialDesign:PackIcon Kind="Pause"  Height="28" Width="28" />
-                            </Button>
+                                        Background="Transparent" Foreground="#FFFCD700" >
+                                        <materialDesign:PackIcon Kind="Pause" Height="28" Width="28" />
+
+                                    </Button>
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <Button Command="MediaCommands.Play" Margin="5" 
+                                        BorderBrush="Transparent"
+                                         Background="Transparent"  Foreground="#FFFCD700">
+                                        <materialDesign:PackIcon Kind="Play" Height="28" Width="28"  />
+
+                                    </Button>
+                                </StatusBarItem>
+
+                                <StatusBarItem>
+                                    <Button Command="MediaCommands.Stop" Margin="5"
+                                        BorderBrush="Transparent"
+                                    Background="Transparent" Foreground="#FFFCD700" >
+                                        <materialDesign:PackIcon Kind="Stop"  Height="28" Width="28" />
+                                    </Button>
+
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <TextBlock Height="Auto" Width="50" Foreground="White"
+                                               Name="lblProgressStatus">00:00:00</TextBlock>
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <Slider Name="sliderTime" Margin="2,0,0,0" VerticalAlignment="Center"
+                             Width="400" Height="Auto" Thumb.DragStarted="sliderTime_DragStarted"  
+                                Thumb.DragCompleted="sliderTime_DragCompleted"  
+                                ValueChanged="sliderTime_ValueChanged" Foreground="#FFEECB0A" />
+                                </StatusBarItem>
+
+
+                            </StatusBar>
                         </Grid>
                         
 
-                        <StackPanel>
+                        <StackPanel Grid.Column="1">
                             <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].TenVideo}"></TextBlock>
                             <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].LuotXem}"></TextBlock>
                             <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].NgaySanXuat}"></TextBlock>
                             <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].MoTa}"></TextBlock>
                         </StackPanel>
-                    </UniformGrid>
+                    </Grid>
                     <StackPanel  Background="Transparent" Height="300" Name="spMyList">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">My List</Label>
                         <ItemsControl ItemsSource="{Binding Path=[0]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50">
+                          ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,10">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <VirtualizingStackPanel Orientation="Horizontal"/>
@@ -237,7 +289,7 @@
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">Trending Now</Label>
                         <ItemsControl ItemsSource="{Binding Path=[1]}"
                                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50">
+                          ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,10">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <VirtualizingStackPanel Orientation="Horizontal"/>
@@ -306,7 +358,7 @@
                     <StackPanel  Background="Transparent" Height="300" Name="spMoiNhat">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">New Realease</Label>
                         <ItemsControl ItemsSource="{Binding Path=[2]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                          ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,50">
+                          ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,10">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <VirtualizingStackPanel Orientation="Horizontal"/>

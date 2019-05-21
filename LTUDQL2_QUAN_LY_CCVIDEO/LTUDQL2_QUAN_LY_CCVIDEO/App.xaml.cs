@@ -19,7 +19,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         { 
-            var wd = new ProfileSettingWd();
+            var wd = new StartWd();
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
         }

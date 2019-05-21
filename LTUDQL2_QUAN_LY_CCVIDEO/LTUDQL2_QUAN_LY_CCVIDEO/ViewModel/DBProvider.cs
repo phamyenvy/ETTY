@@ -15,7 +15,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             {
                 List<Video> vd = (from v in qlccv.Videos
                                   orderby v.LuotXem descending
-                                  select v).Take(15).ToList();
+                                  select v).Take(10).ToList();
 
                 List<VideoInfo> vdinfo = new List<VideoInfo>();
 
@@ -53,30 +53,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return info;
             }
         }
-        //public static List<VideoInfo> getMainVideo()
-        //{
-        //    using (var qlccv = new QuanLyCCVEntities())
-        //    {
-        //        List<Video> vd = (from v in qlccv.Videos
-        //                          orderby v.LuotXem descending
-        //                          select v).Take(1).ToList();
-
-        //        List<VideoInfo> vdinfo = new List<VideoInfo>();
-
-        //        foreach (Video v in vd)
-        //        {
-        //            VideoInfo info = new VideoInfo();
-        //            info.ID = v.MaVideo.ToString();
-        //            info.Title = v.TenVideo;
-        //            info.Path = v.LinkImage;
-        //            info.PathVideo = v.LinkTrailer;
-        //            info.Description = v.MoTa;
-        //            vdinfo.Add(info);
-        //        }
-
-        //        return vdinfo;
-        //    }
-        //}
+        
 
         public static List<Video> getMainVideo()
         {
@@ -92,7 +69,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             {
                 List<Video> vd = (from v in qlccv.Videos
                                   orderby v.NgaySanXuat descending
-                                  select v).Take(15).ToList();
+                                  select v).Take(10).ToList();
 
                 List<VideoInfo> vdinfo = new List<VideoInfo>();
 

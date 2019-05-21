@@ -33,7 +33,7 @@
                        OpacityMask="#FFACA741" Margin="0,-38,0,0"/>
         <ScrollViewer>
 
-            <materialDesign:Card Margin="20,120,20,0" Height="1000" >
+            <materialDesign:Card Margin="20,120,20,0" Height="Auto" >
                 <materialDesign:Card.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0"/>
@@ -66,14 +66,14 @@
                         </ToggleButton>
                         <StatusBar x:Name="stusBar" Width="Auto" Height="50"  
                                    BorderBrush="#FFEECB0A" BorderThickness="1"
-                                   Background="Transparent" Margin="10,470,0,0"
+                                   Background="Transparent" Margin="10,470,20,0"
                                    MouseEnter="btnPlayorPause_MouseEnter"
                                    MouseLeave="mediaVideo_MouseLeave">
                             
                             <StatusBarItem>
                                 <Button Command="MediaCommands.Pause" Margin="5" 
                                         BorderBrush="Transparent"
-                                        Background="Transparent" Foreground="Black" >
+                                        Background="Transparent" Foreground="#FFFCD700" >
                                     <materialDesign:PackIcon Kind="Pause" Height="28" Width="28" />
 
                                 </Button>
@@ -81,7 +81,7 @@
                             <StatusBarItem>
                                 <Button Command="MediaCommands.Play" Margin="5" 
                                         BorderBrush="Transparent"
-                                         Background="Transparent"  Foreground="Black">
+                                         Background="Transparent"  Foreground="#FFFCD700">
                                     <materialDesign:PackIcon Kind="Play" Height="28" Width="28"  />
 
                                 </Button>
@@ -90,13 +90,13 @@
                             <StatusBarItem>
                                 <Button Command="MediaCommands.Stop" Margin="5"
                                         BorderBrush="Transparent"
-                                    Background="Transparent" Foreground="Black" >
+                                    Background="Transparent" Foreground="#FFFCD700" >
                                     <materialDesign:PackIcon Kind="Stop"  Height="28" Width="28" />
                                 </Button>
 
                             </StatusBarItem>
                             <StatusBarItem>
-                                <TextBlock Height="Auto" Width="50" Name="lblProgressStatus">00:00:00</TextBlock>
+                                    <TextBlock Height="Auto" Width="50" Name="lblProgressStatus" Foreground="#FFFCD700">00:00:00</TextBlock>
                             </StatusBarItem>
                             <StatusBarItem>
                                 <Slider Name="sliderTime" Margin="2,0,0,0" VerticalAlignment="Center"
@@ -111,11 +111,8 @@
                     </Border>
                     <Grid Height="50" Background="Transparent">
                         <StackPanel Orientation="Horizontal" Height="50">
-                            <Label x:Name="lblTenVideo" FontSize="30" FontWeight="Thin">Example</Label>
+                            <Label x:Name="lblTenVideo" Content="{Binding Path=Title}" FontSize="30" FontWeight="Thin"/>
                         </StackPanel>
-
-                        
-
                     </Grid>
                     <StackPanel Orientation="Horizontal" Height="Auto">
                         <Button  Style="{StaticResource MaterialDesignFloatingActionLightButton}" Background="Transparent" 
@@ -138,28 +135,9 @@
                                                     Width="17" Foreground="#FFFF1C1C" />
                         </ToggleButton>
                         <TextBlock VerticalAlignment="Center" Foreground="#FF4A4736">Rating :</TextBlock>
-                        <materialDesign:RatingBar Value="3"  x:Name="BasicRatingBar" Margin="5,0" VerticalAlignment="Center" 
-                              HorizontalAlignment="Left" Foreground="#FFFF1C1C"  />
                         
-                        <materialDesign:PopupBox Margin="10" Style="{StaticResource MaterialDesignMultiFloatingActionAccentPopupBox}" PlacementMode="RightAndAlignMiddles" ToggleCheckedContentCommandParameter="wowsers"
-                                                 ToolTip="Share" Background="#FFFF1C1C" 
-                                                 BorderBrush="Transparent" Foreground="#FFFCD700">
-                            <materialDesign:PopupBox.ToggleCheckedContent>
-                                <materialDesign:PackIcon Kind="ShareVariant" Height="22" Width="22" Foreground="#FFFCD700" />
-
-                            </materialDesign:PopupBox.ToggleCheckedContent>
-                            <StackPanel>
-                                <Button ToolTip="One" BorderBrush="Transparent" Background="#FFFF4343">
-                                    1
-                                </Button>
-                                <Button ToolTip="One" BorderBrush="Transparent" Background="#FFFF4343">
-                                    2
-                                </Button>
-                                <Button ToolTip="One" BorderBrush="Transparent" Background="#FFFF4343">
-                                    3
-                                </Button>
-                            </StackPanel>
-                        </materialDesign:PopupBox>
+                        
+                        
                     </StackPanel>
                     <Expander IsExpanded="True" HorizontalAlignment="Left" Background="Transparent" Width="500" Height="Auto" Header="Description">
                         <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="24,8,24,16">

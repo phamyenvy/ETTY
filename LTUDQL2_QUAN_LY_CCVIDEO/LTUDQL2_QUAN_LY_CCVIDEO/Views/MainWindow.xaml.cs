@@ -18,6 +18,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace LTUDQL2_QUAN_LY_CCVIDEO
 {
@@ -38,7 +39,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             //lst.Add(DBProvider.getMainVideo());
 
             DataContext = lst;
-            
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += timer_Tick;
+            timer.Start();
+
         }
         int timebegin = 500, timeDuration = 300;
         bool isEnter = false;
@@ -169,6 +175,62 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID));
             dv.ShowDialog();
         }
+        //Nhóm sự kiện cho video main
+        private bool userIsDraggingSlider = false;
+        private void btnPlayorPause_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnPlayorPause.Visibility = Visibility.Visible;
+            stusBar.Visibility = Visibility.Visible;
+        }
+
+        private void mediaVideo_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            btnPlayorPause.Visibility = Visibility.Visible;
+            stusBar.Visibility = Visibility.Visible;
+
+        }
+
+        private void mediaVideo_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (mediaPlayerIsPlaying)
+            {
+                btnPlayorPause.Visibility = Visibility.Collapsed;
+                stusBar.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                btnPlayorPause.Visibility = Visibility.Visible;
+                stusBar.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnPlayorPause_Click(object sender, RoutedEventArgs e)
+        {
+            if (mediaPlayerIsPlaying == false)
+            {
+                mediaVideo.Play();
+                mediaPlayerIsPlaying = true;
+
+            }
+            else
+            {
+                mediaVideo.Pause();
+                mediaPlayerIsPlaying = false;
+
+            }
+
+        }
+
+        
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if ((mediaVideo.Source != null) && (mediaVideo.NaturalDuration.HasTimeSpan) && (!userIsDraggingSlider))
+            {
+                sliderTime.Minimum = 0;
+                sliderTime.Maximum = mediaVideo.NaturalDuration.TimeSpan.TotalSeconds;
+                sliderTime.Value = mediaVideo.Position.TotalSeconds;
+            }
+        }
 
         private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -189,6 +251,33 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         private void Pause_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             mediaVideo.Pause();
+        }
+
+        private void Stop_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = mediaPlayerIsPlaying;
+        }
+
+        private void Stop_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            mediaVideo.Stop();
+            mediaPlayerIsPlaying = false;
+        }
+
+        private void sliderTime_DragStarted(object sender, DragStartedEventArgs e)
+        {
+            userIsDraggingSlider = true;
+        }
+
+        private void sliderTime_DragCompleted(object sender, DragCompletedEventArgs e)
+        {
+            userIsDraggingSlider = false;
+            mediaVideo.Position = TimeSpan.FromSeconds(sliderTime.Value);
+        }
+
+        private void sliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblProgressStatus.Text = TimeSpan.FromSeconds(sliderTime.Value).ToString(@"hh\:mm\:ss");
         }
     }
 }
