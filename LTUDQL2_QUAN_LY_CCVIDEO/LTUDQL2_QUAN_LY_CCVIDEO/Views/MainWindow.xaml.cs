@@ -26,7 +26,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        private bool mediaPlayerIsPlaying = false;
         public MainWindow(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             lst.Add(DBProvider.getMyVideo(pf));
             lst.Add(DBProvider.getTrendingVideo());
             lst.Add(DBProvider.getNewVideo());
-            lst.Add(DBProvider.getMainVideo());
+            //lst.Add(DBProvider.getMainVideo());
 
             DataContext = lst;
             
@@ -170,6 +170,25 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             dv.ShowDialog();
         }
 
+        private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (mediaVideo != null) && (mediaVideo.Source != null);
+        }
 
+        private void Play_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            mediaVideo.Play();
+            mediaPlayerIsPlaying = true;
+        }
+
+        private void Pause_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = mediaPlayerIsPlaying;
+        }
+
+        private void Pause_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            mediaVideo.Pause();
+        }
     }
 }

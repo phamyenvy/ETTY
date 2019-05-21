@@ -163,9 +163,8 @@
                     </StackPanel>
                     <Expander IsExpanded="True" HorizontalAlignment="Left" Background="Transparent" Width="500" Height="Auto" Header="Description">
                         <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="24,8,24,16">
-                            <TextBlock Text="[Produce 101] SAMEUL FANCAM" />
-                            <TextBlock  Opacity=".68" Text="" TextWrapping="Wrap" >
-                            Đây là Sameul, em bé đáng eo nhất trên đời
+                            <TextBlock Text="{Binding Path=Title}"/>
+                            <TextBlock  Opacity=".68" Text="{Binding Path=Description}" TextWrapping="Wrap" >
                             </TextBlock>
                         </StackPanel>
                     </Expander>
