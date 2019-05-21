@@ -118,7 +118,8 @@
             <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Margin="0,20,0,0">Description :</Label>
             <RichTextBox Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="30" ></RichTextBox>
             <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="60">Upload : </Label>
-            <Button  Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+            <Button Name="btnUpload"  Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                     Click="btnUpload_Click"
   ToolTip="Upload Now!" Grid.Column="3" Height="80" Width="80" Grid.Row="2"
                     BorderBrush="#FFFED700" HorizontalAlignment="Right" Margin="0,0,30,0" Background="#FFFED700" >
                 <materialDesign:PackIcon Kind="Upload"  Height="50" Width="50"/>

@@ -78,7 +78,7 @@
     <Compile Include="LoaiVideo.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\DBProvider.cs" />
+    <Compile Include="ViewModel\DBProvider.cs" />
     <Compile Include="Profile.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
@@ -238,7 +238,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\VideoInfo.cs" />
+    <Compile Include="ViewModel\VideoInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

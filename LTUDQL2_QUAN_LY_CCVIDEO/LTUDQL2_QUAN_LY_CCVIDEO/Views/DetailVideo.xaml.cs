@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         private bool mediaPlayerIsPlaying = false;
         private bool userIsDraggingSlider = false;
 
-        public DetailVideo()
+        public DetailVideo(VideoInfo vd)
         {
             InitializeComponent();
+            DataContext = vd;
+
+
+
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;

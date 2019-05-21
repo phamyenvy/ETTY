@@ -46,7 +46,7 @@
                     <Border BorderBrush="Black" BorderThickness="1">
                     <Grid>
                         <MediaElement Margin="5"  Name="mediaVideo" 
-                                       Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\exam.mp4" 
+                                      Source="{Binding Path=PathVideo}"
                                Stretch="Fill" Height="530" 
                                LoadedBehavior="Manual"
                                MouseDown="mediaVideo_MouseDown"

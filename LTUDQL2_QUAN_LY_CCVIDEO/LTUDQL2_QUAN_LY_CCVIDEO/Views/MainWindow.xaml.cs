@@ -1,4 +1,5 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -35,77 +36,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             lst.Add(DBProvider.getTrendingVideo());
             lst.Add(DBProvider.getNewVideo());
             DataContext = lst;
-
-
             
-            
-            //DataContext = new List<VideoInfo>
-            //{
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //    new VideoInfo
-            //    {
-
-            //    },
-            //     new VideoInfo
-            //    {
-
-            //    },
-            //      new VideoInfo
-            //    {
-
-            //    },
-            //       new VideoInfo
-            //    {
-
-            //    },
-            //        new VideoInfo
-            //    {
-
-            //    },
-            //        new VideoInfo
-            //    {
-
-            //    }
-            //};
         }
         int timebegin = 500, timeDuration = 300;
         bool isEnter = false;
@@ -229,8 +160,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             sb.Begin();
         }
 
+        private void Grid_MouseLeftButtonDown(object sender, MouseEventArgs e)
+        {
+            Grid a = sender as Grid;
+            int ID = Int32.Parse(a.Tag.ToString());
+            DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID));
+            dv.ShowDialog();
+        }
 
 
-        
     }
 }

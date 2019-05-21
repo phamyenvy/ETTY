@@ -33,7 +33,26 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return vdinfo;
             }
         }
+        public static VideoInfo getVideo(int ID)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Video vd = qlccv.Videos.Where(v => v.MaVideo == ID).SingleOrDefault();
 
+
+
+
+                    VideoInfo info = new VideoInfo();
+                    info.ID = vd.MaVideo.ToString();
+                    info.Title = vd.TenVideo;
+                    info.Path = vd.LinkImage;
+                    info.PathVideo = vd.LinkTrailer;
+                    info.Description = vd.MoTa;
+ 
+
+                return info;
+            }
+        }
         public static List<VideoInfo> getNewVideo()
         {
             using (var qlccv = new QuanLyCCVEntities())

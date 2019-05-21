@@ -61,5 +61,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
                 lblLinkFilm.Content = openFileDialog.FileName.ToString();
             }
         }
+
+        private void btnUpload_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -15,18 +15,17 @@
         ObjectType="{x:Type m:DBProvider}"
         MethodName="getVideoTrending"/>-->
         <DataTemplate DataType="{x:Type m:VideoInfo}">
-            <Grid Width="200" Height="120" Name="Scroll">
+            <Grid Width="200" Height="120" Name="Scroll" Tag="{Binding Path=ID}">
                 <Grid.Style>
                     <Style TargetType="{x:Type Grid}">
                         <EventSetter Event="MouseEnter" Handler="Grid_MouseEnter"/>
                         <EventSetter Event="MouseLeave"  Handler="Grid_MouseLeave"/>
-
+                        <EventSetter Event="MouseLeftButtonDown" Handler="Grid_MouseLeftButtonDown" />
                     </Style>
                 </Grid.Style>
                 <Grid.LayoutTransform>
                     <ScaleTransform/>
                 </Grid.LayoutTransform>
-
                 <Grid  Margin="3,0">
                     <Grid.Background>
                         <ImageBrush ImageSource="{Binding Path=Path}"/>
