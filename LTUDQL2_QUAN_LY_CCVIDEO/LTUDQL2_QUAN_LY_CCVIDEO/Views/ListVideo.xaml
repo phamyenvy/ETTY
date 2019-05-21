@@ -12,59 +12,7 @@
         WindowStartupLocation="CenterScreen"
         FontSize="20"
         Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
-    <Window.Resources>
-        <!--<ObjectDataProvider x:Key="Video"
-        ObjectType="{x:Type m:DBProvider}"
-        MethodName="getVideoTrending"/>-->
-        <DataTemplate DataType="{x:Type m:VideoInfo}">
-            <Grid Width="300" Height="210" Margin="10,5" Name="Scroll" Tag="{Binding Path=ID}">
-                <Grid.Style>
-                    <Style TargetType="{x:Type Grid}">
-                        <EventSetter Event="MouseEnter" Handler="Grid_MouseEnter"/>
-                        <EventSetter Event="MouseLeave"  Handler="Grid_MouseLeave"/>
-                        <EventSetter Event="MouseLeftButtonDown" Handler="Grid_MouseLeftButtonDown" />
-                    </Style>
-                </Grid.Style>
-                <Grid.LayoutTransform>
-                    <ScaleTransform/>
-                </Grid.LayoutTransform>
-                <Grid  Margin="0,30">
-                    <Grid.Background>
-                        <ImageBrush ImageSource="{Binding Path=Path}"/>
-                    </Grid.Background>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" 
-                                  Source="{Binding Path=PathVideo}"
-                                  Stretch="Fill" LoadedBehavior="Manual"/>
-                    <ToggleButton  Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
-                              ToolTip="MaterialDesignFlatPrimaryToggleButton"
-                              IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
-                              Width="25" Background="#FFF17171" Visibility="Collapsed"
-                              x:Name="btnHeart">
-                        <materialDesign:PackIcon Kind="Heart"
-                                                    Height="17"
-                                                    Width="17" Foreground="Red" Background="Transparent" />
-                    </ToggleButton>
-                </Grid>
-                <Label Content="{Binding Path= Title}" VerticalAlignment="Bottom" Foreground="White"
-                       FontWeight="DemiBold"></Label>
-
-
-            </Grid>
-            
-
-        </DataTemplate>
-
-    </Window.Resources>
+    
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -72,23 +20,75 @@
                 <GradientStop Color="#FFCBAC00" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
-                       VerticalAlignment="Top" Height="170" 
-                       OpacityMask="#FFACA741" Margin="0,-38,0,0"/>
-        <ScrollViewer Background="Transparent" >
-            <StackPanel VerticalAlignment="Bottom" Height="550">
-                               
-                    <ItemsControl ItemsSource="{Binding Path=[0]}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <UniformGrid HorizontalAlignment="Center" Columns="4" 
-                                             VerticalAlignment="Center" ></UniformGrid>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                    
-                
-            </StackPanel>
-        </ScrollViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Mode="Inverted" Height="90" Padding="16">
+            <DockPanel>
+                <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
+                    <ListBox >
+                        <ListBoxItem>
+                            Thông tin tài khoản
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            Đăng xuất
+                        </ListBoxItem>
+                    </ListBox>
+                </materialDesign:PopupBox>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Height="70" Width="100" Margin="0"/>
+
+
+                    </StackPanel>
+                </StackPanel>
+                <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
+                                   Margin="7"
+                                   materialDesign:ShadowAssist.ShadowDepth="Depth1" Background="#DCDCDC">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Button Style="{DynamicResource MaterialDesignToolButton}">
+                            <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
+                        </Button>
+                        <TextBox Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
+                                     materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0"
+                                     MinWidth="200" VerticalAlignment="Center" />
+                    </Grid>
+                </materialDesign:ColorZone>
+
+                <Menu Background="Black" Margin="0" Foreground="White" VerticalAlignment="Center">
+
+                    <MenuItem Header="Home"></MenuItem>
+                    <MenuItem Header="Categories">
+                        <TextBlock FontWeight="Medium">Romantic</TextBlock>
+                        <TextBlock FontWeight="Medium">Action</TextBlock>
+                        <TextBlock FontWeight="Medium">Viễn tưởng</TextBlock>
+                        <TextBlock FontWeight="Medium">Phiêu lưu</TextBlock>
+                        <TextBlock FontWeight="Medium">Music</TextBlock>
+                        <TextBlock FontWeight="Medium">Hài hước</TextBlock>
+                        <TextBlock FontWeight="Medium">History</TextBlock>
+                        <TextBlock FontWeight="Medium">Catoons</TextBlock>
+                        <TextBlock FontWeight="Medium">Kinh dị</TextBlock>
+                        <TextBlock FontWeight="Medium">Thần thoại</TextBlock>
+                        <TextBlock FontWeight="Medium">Hình sự</TextBlock>
+                        <TextBlock FontWeight="Medium">Huyền bí</TextBlock>
+                    </MenuItem>
+                    <MenuItem Header="My List"></MenuItem>
+
+                </Menu>
+
+
+            </DockPanel>
+
+        </materialDesign:ColorZone>
+        <Label x:Name="contentLst" FontSize="20"  Grid.Row="1"/>
+        <local:uc_ListVideo Grid.Row="2"/>
+
     </Grid>
 </Window>

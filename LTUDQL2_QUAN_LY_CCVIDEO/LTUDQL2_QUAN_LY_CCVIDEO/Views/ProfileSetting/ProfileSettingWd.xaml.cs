@@ -12,16 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
+namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 {
     /// <summary>
-    /// Interaction logic for ProfileSetting.xaml
+    /// Interaction logic for ProfileSettingWd.xaml
     /// </summary>
-    public partial class ProfileSetting : Window
+    public partial class ProfileSettingWd : Window
     {
-        public ProfileSetting()
+        public ProfileSettingWd()
         {
             InitializeComponent();
+        }
+
+        private void General_Selected(object sender, RoutedEventArgs e)
+        {
+            uc_General uc = new uc_General();
+            content.Children.Clear();
+            content.Children.Add(uc);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Views;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         { 
-            var wd = new StartWd();
+            var wd = new ProfileSettingWd();
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
         }

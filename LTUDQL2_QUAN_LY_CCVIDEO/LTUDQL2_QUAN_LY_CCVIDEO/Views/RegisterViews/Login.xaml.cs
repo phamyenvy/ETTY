@@ -71,5 +71,11 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
             else
                 return (false);
         }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Register re = new Register();
+            re.ShowDialog();
+        }
     }
 }

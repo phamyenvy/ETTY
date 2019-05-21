@@ -127,8 +127,11 @@
     <Compile Include="Views\ListVideo.xaml.cs">
       <DependentUpon>ListVideo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProfileSetting.xaml.cs">
-      <DependentUpon>ProfileSetting.xaml</DependentUpon>
+    <Compile Include="Views\ProfileSetting\ProfileSettingWd.xaml.cs">
+      <DependentUpon>ProfileSettingWd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileSetting\uc_General.xaml.cs">
+      <DependentUpon>uc_General.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews\FinishRegisterDialog.xaml.cs">
       <DependentUpon>FinishRegisterDialog.xaml</DependentUpon>
@@ -156,6 +159,9 @@
     </Compile>
     <Compile Include="Views\StartWd.xaml.cs">
       <DependentUpon>StartWd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\uc_ListVideo.xaml.cs">
+      <DependentUpon>uc_ListVideo.xaml</DependentUpon>
     </Compile>
     <Compile Include="YeuThich_XemGanDay.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
@@ -196,7 +202,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\ProfileSetting.xaml">
+    <Page Include="Views\ProfileSetting\ProfileSettingWd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileSetting\uc_General.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,6 +243,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\StartWd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\uc_ListVideo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -286,6 +300,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -48,12 +48,14 @@
                     Style="{DynamicResource MaterialDesignRaisedButton}"
                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="150" Content="Login" Background="#FFF5D005" BorderBrush="Transparent" FontSize="15" Foreground="#FF231E03" Click="btnLogin_Click"/>
                 <StackPanel Height="20"/>
-
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button FontWeight="ExtraBold"
                     Style="{DynamicResource MaterialDesignRaisedButton}"
                     materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="160" Content="Forgot Password" Background="Transparent" BorderBrush="Transparent" FontSize="15" Foreground="#FFF5D005" Click="Button_Click"/>
-
-
+                <Button FontWeight="ExtraBold" x:Name="btnRegister" Margin="2"
+                    Style="{DynamicResource MaterialDesignRaisedButton}"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth3" Width="160" Content="Register" Background="#FF978C4F" BorderBrush="Transparent" FontSize="15" Foreground="#FFF5D005" Click="btnRegister_Click"/>
+                </StackPanel>
             </StackPanel>
         </materialDesign:Card>
     </Grid>

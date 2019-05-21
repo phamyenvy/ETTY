@@ -1,35 +1,28 @@
-﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
+namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 {
     /// <summary>
-    /// Interaction logic for ListVideo.xaml
+    /// Interaction logic for uc_General.xaml
     /// </summary>
-    public partial class ListVideo : Window
+    public partial class uc_General : UserControl
     {
-        public ListVideo()
+        public uc_General()
         {
             InitializeComponent();
-            
         }
-        
-        
-
     }
 }
