@@ -10,10 +10,15 @@
         WindowStartupLocation="CenterScreen"
         FontSize="20"
         Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
+    <Window.CommandBindings>
+        <CommandBinding Command="MediaCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
+        <CommandBinding Command="MediaCommands.Pause" CanExecute="Pause_CanExecute" Executed="Pause_Executed" />
+
+    </Window.CommandBindings>
     <Window.Resources>
-        <!--<ObjectDataProvider x:Key="Video"
+                <ObjectDataProvider x:Key="Video"
         ObjectType="{x:Type m:DBProvider}"
-        MethodName="getVideoTrending"/>-->
+        MethodName="getMainVideo"/>
         <DataTemplate DataType="{x:Type m:VideoInfo}">
             <Grid Width="200" Height="120" Name="Scroll" Tag="{Binding Path=ID}">
                 <Grid.Style>
@@ -135,14 +140,30 @@
                     </LinearGradientBrush>
                 </ScrollViewer.BorderBrush>
                 <StackPanel>
-                    <StackPanel Name="spMainVideo" Height="250">
-                        <ItemsControl ItemsSource="{Binding Path=[3][0]}" 
+                    <UniformGrid Margin="20" Columns="2" Name="spMainVideo">
+                        <!--<ItemsControl ItemsSource="{Binding Path=[3]}" 
                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
 
-                        </ItemsControl>
+                        </ItemsControl>-->
+                        <Grid Width="700">
+                            <Image Source="{Binding Source={StaticResource Video}, Path=[0].LinkImage}"></Image>
+                            <MediaElement Name="mediaVideo" Source="{Binding Source={StaticResource Video}, Path=[0].LinkTrailer}"></MediaElement>
+                            <Button Command="MediaCommands.Stop" Margin="5"
+                                        BorderBrush="Transparent"
+                                    Background="Transparent" Foreground="Black" >
+                                <materialDesign:PackIcon Kind="Pause"  Height="28" Width="28" />
+                            </Button>
+                        </Grid>
+                        
 
-                    </StackPanel>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].TenVideo}"></TextBlock>
+                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].LuotXem}"></TextBlock>
+                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].NgaySanXuat}"></TextBlock>
+                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].MoTa}"></TextBlock>
+                        </StackPanel>
+                    </UniformGrid>
                     <StackPanel  Background="Transparent" Height="300" Name="spMyList">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">My List</Label>
                         <ItemsControl ItemsSource="{Binding Path=[0]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
