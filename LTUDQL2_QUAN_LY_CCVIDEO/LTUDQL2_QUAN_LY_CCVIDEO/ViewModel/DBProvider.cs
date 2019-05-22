@@ -147,5 +147,78 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
         }
 
 
+        public static Video getVideoByID(int ID)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Video vd = qlccv.Videos.Where(v => v.MaVideo == ID).SingleOrDefault();
+
+                return vd;
+            }
+        }
+
+
+        public static bool comparePermissionVideo(TaiKhoan tk, Video vd)
+        {
+            if(tk.CapDo>=vd.CapDoVideo)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static string getNameLevel(Video vd)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                CapDoTaiKhoan cdtk = qlccv.CapDoTaiKhoans.Where(v => v.MaCapDo == vd.CapDoVideo).SingleOrDefault();
+
+                return cdtk.TenCapDo;
+            }
+        }
+
+        public static void setAutoLevelAccount(TaiKhoan tk)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                TaiKhoan t = qlccv.TaiKhoans.Where(o => o.MaTaiKhoan == tk.MaTaiKhoan).SingleOrDefault();
+                
+                if(t.LoaiTaiKhoan!=0)
+                {
+                    if (t.NgayHetHan <= DateTime.Now)
+                    {
+                        t.LoaiTaiKhoan = 0;
+                        qlccv.SaveChanges();
+                    }
+                }
+             
+            }
+        }
+
+        public static bool isPaid(TaiKhoan tk)
+        {
+            setAutoLevelAccount(tk);
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                TaiKhoan t = qlccv.TaiKhoans.Where(o => o.MaTaiKhoan == tk.MaTaiKhoan).SingleOrDefault();
+
+                if(t.LoaiTaiKhoan==1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+        }
+
+
+
+
     }
 }

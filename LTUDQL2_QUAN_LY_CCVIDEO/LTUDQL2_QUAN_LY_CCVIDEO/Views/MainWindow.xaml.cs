@@ -27,11 +27,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     /// </summary>
     public partial class MainWindow : Window
     {
+        public TaiKhoan tk = null;
+        public Profile pf = null;
         private bool mediaPlayerIsPlaying = false;
         public MainWindow(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
-
+            this.tk = tk;
+            this.pf = pf;
             List<List<VideoInfo>> lst = new List<List<VideoInfo>>();
             lst.Add(DBProvider.getMyVideo(pf));
             lst.Add(DBProvider.getTrendingVideo());
@@ -172,8 +175,21 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         {
             Grid a = sender as Grid;
             int ID = Int32.Parse(a.Tag.ToString());
-            DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID));
-            dv.ShowDialog();
+            if(DBProvider.comparePermissionVideo(tk,DBProvider.getVideoByID(ID)))
+            {
+                DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID));
+                dv.ShowDialog();
+            }
+            else
+            {
+                //-Show cái gì đó khi cấp độ video không hổ trợ
+
+                //-Code tạm
+                Video vd = DBProvider.getVideoByID(ID);
+                
+                MessageBox.Show(string.Format("Vui lòng nâng cấp lên gói {0} để xem đc video",DBProvider.getNameLevel(vd)));
+            }
+            
         }
         //Nhóm sự kiện cho video main
         private bool userIsDraggingSlider = false;
