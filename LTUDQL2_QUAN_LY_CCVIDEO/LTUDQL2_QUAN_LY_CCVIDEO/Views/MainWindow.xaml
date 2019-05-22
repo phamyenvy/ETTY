@@ -16,9 +16,7 @@
         <CommandBinding Command="MediaCommands.Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
     </Window.CommandBindings>
     <Window.Resources>
-                <ObjectDataProvider x:Key="Video"
-        ObjectType="{x:Type m:DBProvider}"
-        MethodName="getMainVideo"/>
+                <ObjectDataProvider x:Key="Video" ObjectType="{x:Type m:DBProvider}" MethodName="getMainVideo"/>
         <DataTemplate DataType="{x:Type m:VideoInfo}">
             <Grid Width="200" Height="120" Name="Scroll" Tag="{Binding Path=ID}">
                 <Grid.Style>
@@ -73,10 +71,13 @@
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
                     <ListBox >
                         <ListBoxItem>
-                            Thông tin tài khoản
+                            Setting
                         </ListBoxItem>
-                        <ListBoxItem>
-                            Đăng xuất
+                        <ListBoxItem Name="lstItemSelProfile" Selected="lstItemSelProfile_Selected">
+                            Select other profile
+                        </ListBoxItem>
+                        <ListBoxItem Name="lstItemLogOut" Selected="lstItemLogOut_Selected">
+                            Log out
                         </ListBoxItem>
                     </ListBox>
                 </materialDesign:PopupBox>
@@ -210,13 +211,31 @@
                         
 
                         <StackPanel Grid.Column="1">
-                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].TenVideo}"></TextBlock>
-                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].LuotXem}"></TextBlock>
-                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].NgaySanXuat}"></TextBlock>
-                            <TextBlock Text="{Binding Source={StaticResource Video}, Path=[0].MoTa}"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Foreground="Red" FontSize="25" FontWeight="DemiBold" FontStyle="Italic"  HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource Video}, Path=[0].TenVideo}"></TextBlock>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontWeight="Bold">Views : </TextBlock>
+                                <TextBlock Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource Video}, Path=[0].LuotXem}"></TextBlock>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontWeight="Bold">MFG :</TextBlock>
+
+                                <TextBlock Margin="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource Video}, Path=[0].NgaySanXuat}"></TextBlock>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock FontWeight="Bold">Description :</TextBlock>
+
+                                <TextBlock TextWrapping="WrapWithOverflow"  Width="320" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource Video}, Path=[0].MoTa}"></TextBlock>
+
+                            </StackPanel>
+                            
                         </StackPanel>
                     </Grid>
-                    <StackPanel  Background="Transparent" Height="300" Name="spMyList">
+                    <StackPanel  Background="Transparent" Height="250" Name="spMyList">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">My List</Label>
                         <ItemsControl ItemsSource="{Binding Path=[0]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,10">
@@ -285,7 +304,7 @@
                         </ItemsControl>
 
                     </StackPanel>
-                    <StackPanel  Background="Transparent" Height="300" Name="spThinhHanh">
+                    <StackPanel  Background="Transparent" Height="250" Name="spThinhHanh">
                         <Label FontSize="35" FontWeight="ExtraBlack" Foreground="Black">Trending Now</Label>
                         <ItemsControl ItemsSource="{Binding Path=[1]}"
                                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
