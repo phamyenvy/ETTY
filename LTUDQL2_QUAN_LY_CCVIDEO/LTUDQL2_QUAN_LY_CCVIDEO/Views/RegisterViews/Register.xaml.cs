@@ -141,8 +141,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 
                             MessageBox.Show("Tạo tài khoản thành công");
 
-                            Profile pf = tk.Profiles.SingleOrDefault();
 
+                            Profile pf = tk.Profiles.SingleOrDefault();
                             var wd = new MainWindow(tk,pf);
                             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                             wd.Show();

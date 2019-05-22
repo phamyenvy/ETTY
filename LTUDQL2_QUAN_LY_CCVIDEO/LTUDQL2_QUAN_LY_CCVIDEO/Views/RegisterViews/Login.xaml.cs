@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,12 +50,19 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                 }
                 else
                 {
+                    if(DBProvider.isPaid(tk))
+                    {
+                        Profile pf = tk.Profiles.SingleOrDefault();
+                        var wd = new MainWindow(tk, pf);
+                        wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        wd.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mở trang thanh toán");
+                    }
                     
-                    Profile pf = tk.Profiles.SingleOrDefault();
-                    var wd = new MainWindow(tk, pf);
-                    wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    wd.Show();
-                    this.Close();
                 }
             }
         }
