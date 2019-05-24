@@ -217,8 +217,72 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             }
         }
 
+        public static bool setYeuThichVideo(int MaProfile, int IDVideo,int LoaiLuuTru)
+        {
+            YeuThich_XemGanDay yt = new YeuThich_XemGanDay();
+            yt.MaProfile = MaProfile;
+            yt.MaVideo = IDVideo;
+            yt.LoaiLuuTru = LoaiLuuTru;
+            yt.ThoiGian = DateTime.Now;
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                YeuThich_XemGanDay ytcheck = qlccv.YeuThich_XemGanDay.Where(a => a.MaProfile == MaProfile && a.MaVideo == IDVideo && a.LoaiLuuTru == LoaiLuuTru).SingleOrDefault();
+                if(ytcheck==null)
+                {
+                    qlccv.YeuThich_XemGanDay.Add(yt);
+                    qlccv.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    if(ytcheck.LoaiLuuTru==3)
+                    {
+                        yt.ThoiGian = DateTime.Now;
+                        qlccv.SaveChanges();
+                        return false;
+                    }
+                    
+                    return false;
+                }
+                
+            }
+        }
 
+        public static bool isYeuThichVideo(int MaProfile, int IDVideo, int LoaiLuuTru)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                YeuThich_XemGanDay ytcheck = qlccv.YeuThich_XemGanDay.Where(a => a.MaProfile == MaProfile && a.MaVideo == IDVideo && a.LoaiLuuTru == LoaiLuuTru).SingleOrDefault();
+                if (ytcheck != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
+            }
+        }
+
+        public static bool removeYeuThichVideo(int MaProfile, int IDVideo, int LoaiLuuTru)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                YeuThich_XemGanDay ytcheck = qlccv.YeuThich_XemGanDay.Where(a => a.MaProfile == MaProfile && a.MaVideo == IDVideo && a.LoaiLuuTru == LoaiLuuTru).SingleOrDefault();
+                if (ytcheck != null)
+                {
+                    qlccv.YeuThich_XemGanDay.Remove(ytcheck);
+                    qlccv.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+        }
 
     }
 }

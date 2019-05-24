@@ -26,11 +26,16 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         private bool mediaPlayerIsPlaying = false;
         private bool userIsDraggingSlider = false;
 
-        public DetailVideo(VideoInfo vd)
+        public TaiKhoan tk = null;
+        public Profile pf = null;
+        public DetailVideo(VideoInfo vd,TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
+            this.tk = tk;
+            this.pf = pf;
             DataContext = vd;
 
+            DBProvider.setYeuThichVideo(pf.MaProfile, int.Parse(vd.ID), 3);
 
 
             DispatcherTimer timer = new DispatcherTimer();
@@ -176,6 +181,30 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
                 sliderVolume.Value = 49;
                 icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMedium;
 
+            }
+        }
+
+        private void btnHeart_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (a.IsChecked == true)
+            {
+                DBProvider.setYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+            else
+            {
+                DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+        }
+
+        private void btnHeart_Loaded(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (DBProvider.isYeuThichVideo(pf.MaProfile, ID, 2))
+            {
+                a.IsChecked = true;
             }
         }
     }

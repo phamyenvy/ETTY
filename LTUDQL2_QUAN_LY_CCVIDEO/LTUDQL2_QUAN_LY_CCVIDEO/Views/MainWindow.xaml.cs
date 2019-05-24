@@ -177,7 +177,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             int ID = Int32.Parse(a.Tag.ToString());
             if(DBProvider.comparePermissionVideo(tk,DBProvider.getVideoByID(ID)))
             {
-                DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID));
+                DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID),tk,pf);
                 dv.ShowDialog();
             }
             else
@@ -308,6 +308,30 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         private void sliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             lblProgressStatus.Text = TimeSpan.FromSeconds(sliderTime.Value).ToString(@"hh\:mm\:ss");
+        }
+
+        private void btnHeart_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if(a.IsChecked==true)
+            {
+                DBProvider.setYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+            else
+            {
+                DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+        }
+
+        private void btnHeart_Loaded(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (DBProvider.isYeuThichVideo(pf.MaProfile, ID, 2))
+            {
+                a.IsChecked = true;
+            }
         }
     }
 }

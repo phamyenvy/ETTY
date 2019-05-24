@@ -23,9 +23,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
     /// </summary>
     public partial class uc_ListVideo : UserControl
     {
-        public uc_ListVideo()
+        public TaiKhoan tk = null;
+        public Profile pf = null;
+        public uc_ListVideo(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
+            this.tk = tk;
+            this.pf = pf;
             List<List<VideoInfo>> lst = new List<List<VideoInfo>>();
 
             lst.Add(DBProvider.getListVideo());
@@ -85,8 +89,32 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         {
             Grid a = sender as Grid;
             int ID = Int32.Parse(a.Tag.ToString());
-            DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID));
+            DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID),tk,pf);
             dv.ShowDialog();
+        }
+
+        private void btnHeart_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (a.IsChecked == true)
+            {
+                DBProvider.setYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+            else
+            {
+                DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+        }
+
+        private void btnHeart_Loaded(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (DBProvider.isYeuThichVideo(pf.MaProfile, ID, 2))
+            {
+                a.IsChecked = true;
+            }
         }
     }
 }

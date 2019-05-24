@@ -146,7 +146,7 @@
                               HorizontalAlignment="Left" Height="50"
                               Width="50" Background="#FFE8DCDC"  Visibility="Visible"
                               BorderBrush="#FFF17171" BorderThickness="1"
-                              x:Name="btnHeart" Margin="10,0,10,0">
+                              Tag="{Binding Path=ID}" x:Name="btnHeart" Margin="10,0,10,0" Click="btnHeart_Click" Loaded="btnHeart_Loaded">
                             <materialDesign:PackIcon Kind="Heart"
                                                     Height="17"
                                                     Width="17" Foreground="#FFFF1C1C" />
