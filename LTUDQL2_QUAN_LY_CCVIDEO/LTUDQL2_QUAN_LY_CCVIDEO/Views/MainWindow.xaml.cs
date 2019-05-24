@@ -291,6 +291,20 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             mediaVideo.Position = TimeSpan.FromSeconds(sliderTime.Value);
         }
 
+        private void lstItemLogOut_Selected(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            StartWd a = new StartWd();
+            a.Show();
+        }
+
+        private void lstItemSelProfile_Selected(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            SelectProfile a = new SelectProfile();
+            a.Show();
+        }
+
         private void sliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             lblProgressStatus.Text = TimeSpan.FromSeconds(sliderTime.Value).ToString(@"hh\:mm\:ss");

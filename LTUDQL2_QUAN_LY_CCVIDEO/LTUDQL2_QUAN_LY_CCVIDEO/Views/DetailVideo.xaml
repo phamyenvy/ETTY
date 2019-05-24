@@ -20,6 +20,7 @@
         <CommandBinding Command="MediaCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
         <CommandBinding Command="MediaCommands.Pause" CanExecute="Pause_CanExecute" Executed="Pause_Executed" />
         <CommandBinding Command="MediaCommands.Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
+
     </Window.CommandBindings>
     <Grid>
         <Grid.Background>
@@ -100,13 +101,29 @@
                             </StatusBarItem>
                             <StatusBarItem>
                                 <Slider Name="sliderTime" Margin="2,0,0,0" VerticalAlignment="Center"
-                             Width="850" Height="Auto" Thumb.DragStarted="sliderTime_DragStarted"  
+                             Width="650" Height="Auto" Thumb.DragStarted="sliderTime_DragStarted"  
                                 Thumb.DragCompleted="sliderTime_DragCompleted"  
                                 ValueChanged="sliderTime_ValueChanged" Foreground="#FFEECB0A" />
                             </StatusBarItem>
+                                <StatusBarItem>
+                                    <Button Command="MediaCommands.Stop" Margin="5"
+                                        BorderBrush="Transparent"
+                                    Background="Transparent" Foreground="#FFFCD700" >
+                                        <materialDesign:PackIcon Kind="Fullscreen"  Height="28" Width="28" />
+                                    </Button>
+
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <Button Command="MediaCommands.Stop" Margin="1"
+                                        BorderBrush="Transparent"
+                                    Background="Transparent" Foreground="#FFFCD700" >
+                                        <materialDesign:PackIcon Kind="FullscreenExit"  Height="28" Width="28" />
+                                    </Button>
+
+                                </StatusBarItem>
 
 
-                        </StatusBar>
+                            </StatusBar>
                     </Grid>
                     </Border>
                     <Grid Height="50" Background="Transparent">
