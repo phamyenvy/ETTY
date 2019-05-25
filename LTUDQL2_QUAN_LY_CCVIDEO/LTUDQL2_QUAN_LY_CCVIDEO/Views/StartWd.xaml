@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
-        Title="ETTY" Height="800" Width="1200" ResizeMode="CanMinimize"
+        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize"
         >
     <Grid>
         
@@ -34,18 +34,9 @@
 
                     </Image>
                 </Grid>
-                <Border>
-                <Grid Height="120">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Button Name="Register" Grid.Column="0" Width="150" HorizontalAlignment="Right" Margin="10" BorderBrush="Black" Background="Black" Click="Register_Click">Register</Button>
-                    <Button Grid.Column="1" Width="150" HorizontalAlignment="Left" Margin="10" Background="#FF2FEE10" BorderBrush="#FF2FEE10" Click="Button_Click">Log in</Button>
-                </Grid>
-                </Border>
-                <Grid Height="120">
-                    <Grid.ColumnDefinitions>
+
+            <Grid Height="120" Margin="0,50">
+                <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -104,14 +95,22 @@
 
             </Grid>
                 <Grid>
-                <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Margin="488,-798,445,764"/>
-                    <Label Foreground="White" FontWeight="DemiBold" FontSize="100" HorizontalAlignment="Center" Margin="235,-572,166,620" Width="776">Try your channel</Label>
-                    <materialDesign:PopupBox  DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges"  Margin="1123,-782,20,830" Foreground="White" FontSize="72" HorizontalAlignment="Stretch" RenderTransformOrigin="-1.588,0.765">
+                <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Margin="450,-800,450,700"/>
+                    <Label Foreground="White" FontWeight="DemiBold" FontSize="100" HorizontalAlignment="Center" Margin="200,-500,200,600" Width="776">Try your channel</Label>
+                    <Grid Height="80" Margin="0,-400,0,459">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="Register" Grid.Column="0" Width="150" HorizontalAlignment="Right" Margin="10" BorderBrush="Black" Background="Black" Click="Register_Click" Content="Register"/>
+                        <Button Grid.Column="1" Width="150" HorizontalAlignment="Left" Margin="10" Background="#FF2FEE10" BorderBrush="#FF2FEE10" Click="Button_Click" Content="Log in"/>
+                    </Grid>
+                <materialDesign:PopupBox  DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges"  Margin="1123,-782,20,830" Foreground="White" FontSize="72" HorizontalAlignment="Stretch" RenderTransformOrigin="-1.588,0.765">
                         <ListBox >
-                            <ListBoxItem>
+                            <ListBoxItem Selected="Button_Click">
                                 Login
                             </ListBoxItem>
-                            <ListBoxItem>
+                            <ListBoxItem Selected="Register_Click">
                                 Register
                             </ListBoxItem>
                         </ListBox>

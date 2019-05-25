@@ -133,6 +133,9 @@
     <Compile Include="Views\ProfileSetting\uc_General.xaml.cs">
       <DependentUpon>uc_General.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProfileSetting\uc_Profile.xaml.cs">
+      <DependentUpon>uc_Profile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterViews\FinishRegisterDialog.xaml.cs">
       <DependentUpon>FinishRegisterDialog.xaml</DependentUpon>
     </Compile>
@@ -160,8 +163,8 @@
     <Compile Include="Views\StartWd.xaml.cs">
       <DependentUpon>StartWd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\uc_ListVideo.xaml.cs">
-      <DependentUpon>uc_ListVideo.xaml</DependentUpon>
+    <Compile Include="Views\VideoFullScreen.xaml.cs">
+      <DependentUpon>VideoFullScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="YeuThich_XemGanDay.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
@@ -210,6 +213,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ProfileSetting\uc_Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RegisterViews\FinishRegisterDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,7 +253,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\uc_ListVideo.xaml">
+    <Page Include="Views\VideoFullScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -23,7 +23,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
         {
             InitializeComponent();
         }
-
+        public ProfileSettingWd(TaiKhoan tk) //đi từ register thành công
+        {
+            InitializeComponent();
+        }
         private void General_Selected(object sender, RoutedEventArgs e)
         {
             uc_General uc = new uc_General();

@@ -22,7 +22,7 @@
         <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"
                 materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
-                HorizontalAlignment="Center" Width="500" Margin="347,170,347,0" Height="520">
+                HorizontalAlignment="Center" Width="450" Margin="347,160,347,0" Height="450">
             <StackPanel Background="#FF231E03">
                 <StackPanel Height="50"/>
 

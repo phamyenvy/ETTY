@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
-        Title="ETTY" Height="800" Width="1200" ResizeMode="CanMinimize" Loaded="Window_Loaded">
+        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize" Loaded="Window_Loaded">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -21,7 +21,7 @@
         <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"
                 materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
-                HorizontalAlignment="Center" Width="500" Margin="347,170,347,0" Height="550" Background="#FF231E03">
+                HorizontalAlignment="Center" Width="450" Margin="347,160,347,0" Height="450" Background="#FF231E03">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="100">
                 <!--<Button x:Name="btnPre" VerticalAlignment="Bottom" HorizontalAlignment="Right" 
                     Width="70" Height="70" Margin="15" BorderBrush="Transparent"
@@ -40,10 +40,10 @@
             </Button>
             </StackPanel>
         </materialDesign:Card>
-        <local:uc_register1 x:Name="uc1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500" Margin="347,170,347,81" Height="450" Visibility="Visible"/>
+        <local:uc_register1 x:Name="uc1" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Margin="347,160,347,81" Height="380" Visibility="Visible"/>
 
-        <local:uc_register2 x:Name="uc2" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500" Margin="347,170,347,81" Height="450" Visibility="Collapsed"/>
+        <local:uc_register2 x:Name="uc2" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Margin="347,160,347,81" Height="380" Visibility="Collapsed"/>
 
-        <local:uc_register3 x:Name="uc3" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500" Margin="347,170,347,81" Height="450" Visibility="Collapsed"/>
+        <local:uc_register3 x:Name="uc3" VerticalAlignment="Top" HorizontalAlignment="Center" Width="450" Margin="347,160,347,81" Height="380" Visibility="Collapsed"/>
     </Grid>
 </Window>

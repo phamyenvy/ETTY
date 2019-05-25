@@ -63,6 +63,37 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return vd;
             }
         }
+        public static List<LoaiVideo> getLoaiVideo()
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<LoaiVideo> loai = (from v in qlccv.LoaiVideos
+                                  select v).ToList();
+                return loai;
+            }
+        }
+        public static List<VideoInfo> getMainVideo_Phu()
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<Video> vd = qlccv.Videos.OrderByDescending(x => x.LuotXem).Take(1).ToList();
+                List<VideoInfo> vdinfo = new List<VideoInfo>();
+
+                foreach (Video v in vd)
+                {
+                    VideoInfo info = new VideoInfo();
+                    info.ID = v.MaVideo.ToString();
+                    info.Title = v.TenVideo;
+                    info.Path = v.LinkImage;
+                    info.PathVideo = v.LinkTrailer;
+                    info.Description = v.MoTa;
+                    vdinfo.Add(info);
+
+                }
+                return vdinfo;
+
+            }
+        }
         public static List<VideoInfo> getNewVideo()
         {
             using (var qlccv = new QuanLyCCVEntities())
@@ -119,7 +150,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 if((from v in qlccv.YeuThich_XemGanDay
                                                   join vd in qlccv.Videos on v.MaVideo equals vd.MaVideo
                                                   where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 1
-                                                  select vd).ToList()==null)
+                                                  orderby v.ThoiGian descending
+                                                    select vd).ToList()==null)
                 {
                     return null;
                 }
@@ -127,7 +159,41 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 List<Video> video = (from v in qlccv.YeuThich_XemGanDay
                                                   join vd in qlccv.Videos on v.MaVideo equals vd.MaVideo
                                                   where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 1
-                                                  select vd).ToList();
+                                     orderby v.ThoiGian descending
+                                     select vd).ToList();
+
+                List<VideoInfo> vdinfo = new List<VideoInfo>();
+
+                foreach (Video v in video)
+                {
+                    VideoInfo info = new VideoInfo();
+                    info.ID = v.MaVideo.ToString();
+                    info.Title = v.TenVideo;
+                    info.Path = v.LinkImage;
+                    info.PathVideo = v.LinkTrailer;
+                    info.Description = v.MoTa;
+                    vdinfo.Add(info);
+                }
+
+                return vdinfo;
+            }
+        }
+        public static List<VideoInfo> getRecently(Profile pf)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                if ((from v in qlccv.YeuThich_XemGanDay
+                     join vd in qlccv.Videos on v.MaVideo equals vd.MaVideo
+                     where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 0
+                     select vd).ToList() == null)
+                {
+                    return null;
+                }
+
+                List<Video> video = (from v in qlccv.YeuThich_XemGanDay
+                                     join vd in qlccv.Videos on v.MaVideo equals vd.MaVideo
+                                     where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 0
+                                     select vd).ToList();
 
                 List<VideoInfo> vdinfo = new List<VideoInfo>();
 
@@ -214,6 +280,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     return false;
                 }
                 
+            }
+        }
+        public static List<Profile> getProfile(TaiKhoan tk)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<Profile> pro = qlccv.Profiles.Where(o => o.TaiKhoan == tk.MaTaiKhoan).ToList();
+
+                return pro;
             }
         }
 

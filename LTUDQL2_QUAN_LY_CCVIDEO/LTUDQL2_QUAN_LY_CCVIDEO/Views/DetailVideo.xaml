@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
-        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
+        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize" WindowStyle="None">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,9 +29,9 @@
                 <GradientStop Color="#FFCBAC00" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
-                       VerticalAlignment="Top" Height="170" 
-                       OpacityMask="#FFACA741" Margin="0,-38,0,0"/>
+
+
+
         <ScrollViewer>
 
             <materialDesign:Card Margin="20,120,20,0" Height="Auto" >
@@ -45,76 +45,79 @@
 
                 <StackPanel>
                     <Border BorderBrush="Black" BorderThickness="1">
-                    <Grid>
-                        <MediaElement Margin="5"  Name="mediaVideo" 
+                        <Grid>
+                            <Grid.Background>
+                                <ImageBrush ImageSource="{Binding Path=Path}"/>
+                            </Grid.Background>
+                            <MediaElement Margin="5"  Name="mediaVideo" 
                                       Source="{Binding Path=PathVideo}"
                                Stretch="Fill" Height="530" 
                                LoadedBehavior="Manual"
                                MouseDown="mediaVideo_MouseDown"
                                MouseLeave="mediaVideo_MouseLeave"  />
-                        <ToggleButton x:Name="btnPlayorPause" Height="80" Width="80" 
+                            <ToggleButton x:Name="btnPlayorPause" Height="80" Width="80" 
                               Background="Transparent"
                               Style="{StaticResource MaterialDesignActionToggleButton}" 
                               Click="btnPlayorPause_Click"
                               ClickMode="Press"
                               MouseEnter="btnPlayorPause_MouseEnter">
-                            <ToggleButton.Content>
-                                <materialDesign:PackIcon   Height="50" Width="50" Kind="Play"  Foreground="#FFFCD700"/>
-                            </ToggleButton.Content>
-                            <materialDesign:ToggleButtonAssist.OnContent>
-                                <materialDesign:PackIcon Height="50" Width="50" Kind="Pause" Foreground="#FFFCD700"/>
-                            </materialDesign:ToggleButtonAssist.OnContent>
-                        </ToggleButton>
-                        <StatusBar x:Name="stusBar" Width="Auto" Height="50"  
+                                <ToggleButton.Content>
+                                    <materialDesign:PackIcon   Height="50" Width="50" Kind="Play"  Foreground="#FFFCD700"/>
+                                </ToggleButton.Content>
+                                <materialDesign:ToggleButtonAssist.OnContent>
+                                    <materialDesign:PackIcon Height="50" Width="50" Kind="Pause" Foreground="#FFFCD700"/>
+                                </materialDesign:ToggleButtonAssist.OnContent>
+                            </ToggleButton>
+                            <StatusBar x:Name="stusBar" Width="Auto" Height="50"  
                                    BorderBrush="#FFEECB0A" BorderThickness="1"
                                    Background="Transparent" Margin="10,470,20,0"
                                    MouseEnter="btnPlayorPause_MouseEnter"
                                    MouseLeave="mediaVideo_MouseLeave">
-                            
-                            <StatusBarItem>
-                                <Button Command="MediaCommands.Pause" Margin="5" 
+
+                                <StatusBarItem>
+                                    <Button Command="MediaCommands.Pause" Margin="5" 
                                         BorderBrush="Transparent"
                                         Background="Transparent" Foreground="#FFFCD700" >
-                                    <materialDesign:PackIcon Kind="Pause" Height="28" Width="28" />
+                                        <materialDesign:PackIcon Kind="Pause" Height="28" Width="28" />
 
-                                </Button>
-                            </StatusBarItem>
-                            <StatusBarItem>
-                                <Button Command="MediaCommands.Play" Margin="5" 
+                                    </Button>
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <Button Command="MediaCommands.Play" Margin="5" 
                                         BorderBrush="Transparent"
                                          Background="Transparent"  Foreground="#FFFCD700">
-                                    <materialDesign:PackIcon Kind="Play" Height="28" Width="28"  />
+                                        <materialDesign:PackIcon Kind="Play" Height="28" Width="28"  />
 
-                                </Button>
-                            </StatusBarItem>
+                                    </Button>
+                                </StatusBarItem>
 
-                            <StatusBarItem>
-                                <Button Command="MediaCommands.Stop" Margin="5"
-                                        BorderBrush="Transparent"
-                                    Background="Transparent" Foreground="#FFFCD700" >
-                                    <materialDesign:PackIcon Kind="Stop"  Height="28" Width="28" />
-                                </Button>
-
-                            </StatusBarItem>
-                            <StatusBarItem>
-                                    <TextBlock Height="Auto" Width="50" Name="lblProgressStatus" Foreground="#FFFCD700">00:00:00</TextBlock>
-                            </StatusBarItem>
-                            <StatusBarItem>
-                                <Slider Name="sliderTime" Margin="2,0,0,0" VerticalAlignment="Center"
-                             Width="650" Height="Auto" Thumb.DragStarted="sliderTime_DragStarted"  
-                                Thumb.DragCompleted="sliderTime_DragCompleted"  
-                                ValueChanged="sliderTime_ValueChanged" Foreground="#FFEECB0A" />
-                            </StatusBarItem>
                                 <StatusBarItem>
                                     <Button Command="MediaCommands.Stop" Margin="5"
                                         BorderBrush="Transparent"
+                                    Background="Transparent" Foreground="#FFFCD700" >
+                                        <materialDesign:PackIcon Kind="Stop"  Height="28" Width="28" />
+                                    </Button>
+
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <TextBlock Height="Auto" Width="50" Name="lblProgressStatus" Foreground="#FFFCD700">00:00:00</TextBlock>
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <Slider Name="sliderTime" Margin="2,0,0,0" VerticalAlignment="Center"
+                             Width="650" Height="Auto" Thumb.DragStarted="sliderTime_DragStarted"  
+                                Thumb.DragCompleted="sliderTime_DragCompleted"  
+                                ValueChanged="sliderTime_ValueChanged" Foreground="#FFEECB0A" />
+                                </StatusBarItem>
+                                <StatusBarItem>
+                                    <Button Click="btnFullScreen_Click"  Margin="5" x:Name="btnFullScreen"
+                                        BorderBrush="Transparent" 
                                     Background="Transparent" Foreground="#FFFCD700" >
                                         <materialDesign:PackIcon Kind="Fullscreen"  Height="28" Width="28" />
                                     </Button>
 
                                 </StatusBarItem>
                                 <StatusBarItem>
-                                    <Button Command="MediaCommands.Stop" Margin="1"
+                                    <Button x:Name="btnExitFullScreen" Click="btnExitFullScreen_Click" Margin="1"
                                         BorderBrush="Transparent"
                                     Background="Transparent" Foreground="#FFFCD700" >
                                         <materialDesign:PackIcon Kind="FullscreenExit"  Height="28" Width="28" />
@@ -124,7 +127,7 @@
 
 
                             </StatusBar>
-                    </Grid>
+                        </Grid>
                     </Border>
                     <Grid Height="50" Background="Transparent">
                         <StackPanel Orientation="Horizontal" Height="50">
@@ -147,14 +150,14 @@
                               Width="50" Background="#FFE8DCDC"  Visibility="Visible"
                               BorderBrush="#FFF17171" BorderThickness="1"
                               x:Name="btnHeart" Margin="10,0,10,0">
-                            <materialDesign:PackIcon Kind="Heart"
+                            <materialDesign:PackIcon Kind="ThumbUp"
                                                     Height="17"
                                                     Width="17" Foreground="#FFFF1C1C" />
                         </ToggleButton>
                         <TextBlock VerticalAlignment="Center" Foreground="#FF4A4736">Rating :</TextBlock>
-                        
-                        
-                        
+
+
+
                     </StackPanel>
                     <Expander IsExpanded="True" HorizontalAlignment="Left" Background="Transparent" Width="500" Height="Auto" Header="Description">
                         <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="24,8,24,16">
@@ -165,10 +168,30 @@
                     </Expander>
 
 
+
                 </StackPanel>
 
+
             </materialDesign:Card>
+
         </ScrollViewer>
+        <Grid Margin="0,0,0,580">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB6AF90" Offset="0"/>
+                    <GradientStop Color="#FFEBC710" Offset="1"/>
+                    <GradientStop Color="#FFBDB9A1" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
+                       VerticalAlignment="Top" Height="170" 
+                       OpacityMask="#FFACA741" Margin="0,-45,0,0"/>
+            <Button x:Name="btnBack" Height="70" Width="70"
+                Background="Transparent" BorderBrush="Transparent" Click="btnBack_Click" Margin="10,10,1114,11">
+                <materialDesign:PackIcon Kind="KeyboardBackspace" Height="50" Width="50"/>
+            </Button>
+        </Grid>
+
 
     </Grid>
 

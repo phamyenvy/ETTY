@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="480" d:DesignWidth="500">
+             d:DesignHeight="380" d:DesignWidth="500">
     <StackPanel Background="#FF231E03">
         <StackPanel Height="40"/>
 
@@ -18,7 +18,7 @@
 
 
         </StackPanel>
-        <StackPanel Height="40"/>
+        <StackPanel Height="20"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Label>
@@ -28,7 +28,7 @@
 
 
         </StackPanel>
-        <StackPanel Height="40"/>
+        <StackPanel Height="20"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
             <Label>
                 <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
@@ -37,7 +37,7 @@
 
 
         </StackPanel>
-        <StackPanel Height="40"/>
+        <StackPanel Height="20"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
             <Label>
                 <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />

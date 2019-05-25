@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -142,8 +143,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                             MessageBox.Show("Tạo tài khoản thành công");
 
 
-                            Profile pf = tk.Profiles.SingleOrDefault();
-                            var wd = new MainWindow(tk,pf);
+                            
+                            var wd = new ProfileSettingWd(tk);
                             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                             wd.Show();
                             this.Close();

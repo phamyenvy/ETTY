@@ -1,5 +1,4 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
-using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,58 +18,65 @@ using System.Windows.Threading;
 namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 {
     /// <summary>
-    /// Interaction logic for DetailVideo.xaml
+    /// Interaction logic for VideoFullScreen.xaml
     /// </summary>
-    public partial class DetailVideo : Window
+    
+    public partial class VideoFullScreen : Window
     {
-        public  VideoInfo vd = null;
         private bool mediaPlayerIsPlaying = false;
         private bool userIsDraggingSlider = false;
+        double timeplaying = 0;
+        VideoInfo vdMain;
         TaiKhoan tk = null;
         Profile pf = null;
-        public DetailVideo(VideoInfo vd, TaiKhoan tk, Profile pf)
+        int i = 0;
+        public VideoFullScreen(VideoInfo vd, double time, TaiKhoan tk, Profile pf) //đây là hàm khởi tạo cho đi từ detailVideo
         {
             InitializeComponent();
-            DataContext = vd;
-            this.vd = vd;
+            this.vdMain = vd;
             this.tk = tk;
             this.pf = pf;
-            btnExitFullScreen.IsEnabled = false;
-            
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
-            timer.Start();
 
-        }
-        public DetailVideo(VideoInfo vd, double time, TaiKhoan tk, Profile pf) //đi vào từ exit full screen
-        {
-            InitializeComponent();
             DataContext = vd;
-            this.vd = vd;
-            this.tk = tk;
-            this.pf = pf;
-            btnExitFullScreen.IsEnabled = false;
-            mediaPlayerIsPlaying = true;
-            mediaVideo.Play();
+            this.timeplaying = time;
+
             mediaVideo.Position = TimeSpan.FromSeconds(time);
+            mediaVideo.Play();
+            mediaPlayerIsPlaying = true;
+            btnFullScreen.IsEnabled = false;
+            btnExitFullScreen.IsEnabled = true;
+
             
-
-
+            
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
+            timer.Tick += timer_Tick_Full;
             timer.Start();
+
         }
-        public DetailVideo(VideoInfo vd) 
+        public VideoFullScreen(VideoInfo vd, double time, TaiKhoan tk, Profile pf, int i) // đây là hàm khởi tạo cho nhấp full screen tại main window, để nhấp nút back cho hợp lý
         {
             InitializeComponent();
+            this.i = i;
+            this.vdMain = vd;
+            this.tk = tk;
+            this.pf = pf;
+
             DataContext = vd;
-            this.vd = vd;
+            this.timeplaying = time;
+            
+            mediaVideo.Position = TimeSpan.FromSeconds(time);
+            mediaVideo.Play();
+            mediaPlayerIsPlaying = true;
+
+            btnFullScreen.IsEnabled = false;
+            btnExitFullScreen.IsEnabled = true;
+
+
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += timer_Tick;
+            timer.Tick += timer_Tick_Full;
             timer.Start();
 
         }
@@ -118,30 +124,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-           mediaVideo.Volume = sliderVolume.Value;
-           if(sliderVolume.Value == 0)
-            {
-                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMute;
-            }
-            if(sliderVolume.Value > 0 && sliderVolume.Value <20)
-            {
-                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeLow;
-
-            }
-            if (sliderVolume.Value > 20 && sliderVolume.Value < 50)
-            {
-                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMedium;
-
-            }
-            if(sliderVolume.Value > 50)
-            {
-                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeHigh;
-
-            }
-        }
-        private void timer_Tick(object sender, EventArgs e)
+        
+        private void timer_Tick_Full(object sender, EventArgs e)
         {
             if ((mediaVideo.Source != null) && (mediaVideo.NaturalDuration.HasTimeSpan) && (!userIsDraggingSlider))
             {
@@ -150,7 +134,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
                 sliderTime.Value = mediaVideo.Position.TotalSeconds;
             }
         }
-        
+
         private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = (mediaVideo != null) && (mediaVideo.Source != null);
@@ -199,41 +183,33 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             lblProgressStatus.Text = TimeSpan.FromSeconds(sliderTime.Value).ToString(@"hh\:mm\:ss");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if(sliderVolume.Value != 0)
-            {
-                sliderVolume.Value = 0;
-                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMute;
-            }
-            else
-            {
-                sliderVolume.Value = 49;
-                icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.VolumeMedium;
-
-            }
-        }
-
+        
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            
-            MainWindow wd = new MainWindow(this.tk, this.pf);
-            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            wd.Show();
             this.Close();
         }
 
         private void btnFullScreen_Click(object sender, RoutedEventArgs e)
         {
-            mediaVideo.Pause();
-            VideoFullScreen wd = new VideoFullScreen(vd, mediaVideo.Position.TotalSeconds, tk, pf);
-            wd.Show();
-            this.Close();
+
         }
 
         private void btnExitFullScreen_Click(object sender, RoutedEventArgs e)
         {
-
+            if (i == 0)
+            {
+                DetailVideo wd = new DetailVideo(vdMain, mediaVideo.Position.TotalSeconds, tk, pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+            }
+            else //i sẽ bằng 1
+            {
+                MainWindow wd = new MainWindow(tk, pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+            }
+            this.Close();
+           
         }
     }
 }

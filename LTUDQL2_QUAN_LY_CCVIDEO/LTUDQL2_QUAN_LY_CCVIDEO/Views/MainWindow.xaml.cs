@@ -30,18 +30,21 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         public TaiKhoan tk = null;
         public Profile pf = null;
         private bool mediaPlayerIsPlaying = false;
+        List<List<VideoInfo>> lst = new List<List<VideoInfo>>();
         public MainWindow(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
             this.tk = tk;
             this.pf = pf;
-            List<List<VideoInfo>> lst = new List<List<VideoInfo>>();
             lst.Add(DBProvider.getMyVideo(pf));
             lst.Add(DBProvider.getTrendingVideo());
             lst.Add(DBProvider.getNewVideo());
-            //lst.Add(DBProvider.getMainVideo());
+            lst.Add(DBProvider.getRecently(pf));
+            lst.Add(DBProvider.getMainVideo_Phu()); // để lấy video main ra chuyển sang dạng videoinfo để bật full screen
 
             DataContext = lst;
+
+            cbCats.DataContext = DBProvider.getLoaiVideo();
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -49,7 +52,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             timer.Start();
 
         }
-        int timebegin = 500, timeDuration = 300;
+        #region sự kiện zoom
+        int timebegin = 500;
         bool isEnter = false;
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         { 
@@ -62,12 +66,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
 
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Visible;
-
-
-
+            
             timebegin = 1000;
-
-
+            
             if (isEnter)
             {
                 timebegin = 500;
@@ -170,6 +171,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             sb.Children.Add(syDA);
             sb.Begin();
         }
+        #endregion
 
         private void Grid_MouseLeftButtonDown(object sender, MouseEventArgs e)
         {
@@ -177,8 +179,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             int ID = Int32.Parse(a.Tag.ToString());
             if(DBProvider.comparePermissionVideo(tk,DBProvider.getVideoByID(ID)))
             {
-                DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID));
-                dv.ShowDialog();
+                DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID), tk, pf);
+                dv.Show();
+                this.Close();
             }
             else
             {
@@ -191,7 +194,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             }
             
         }
-        //Nhóm sự kiện cho video main
+        #region Nhóm sự kiện cho video main
         private bool userIsDraggingSlider = false;
         private void btnPlayorPause_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -237,7 +240,22 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
 
         }
 
-        
+        private void sliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblProgressStatus.Text = TimeSpan.FromSeconds(sliderTime.Value).ToString(@"hh\:mm\:ss");
+        }
+        private void btnFullScreen_Click(object sender, RoutedEventArgs e)
+        {
+            mediaVideo.Pause();
+            VideoFullScreen wd = new VideoFullScreen(lst[4][0], mediaVideo.Position.TotalSeconds, tk, pf, 1);
+            wd.Show();
+            this.Close();
+        }
+
+        private void btnExitFullScreen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
         private void timer_Tick(object sender, EventArgs e)
         {
             if ((mediaVideo.Source != null) && (mediaVideo.NaturalDuration.HasTimeSpan) && (!userIsDraggingSlider))
@@ -290,24 +308,35 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             userIsDraggingSlider = false;
             mediaVideo.Position = TimeSpan.FromSeconds(sliderTime.Value);
         }
+        #endregion
 
+        #region Nhóm sự kiện chọn popup
         private void lstItemLogOut_Selected(object sender, RoutedEventArgs e)
         {
+            
+            StartWd wd = new StartWd();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
             this.Close();
-            StartWd a = new StartWd();
-            a.Show();
         }
 
         private void lstItemSelProfile_Selected(object sender, RoutedEventArgs e)
         {
+            
+            SelectProfile wd = new SelectProfile(tk);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
             this.Close();
-            SelectProfile a = new SelectProfile();
-            a.Show();
         }
 
-        private void sliderTime_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        #endregion
+
+        private void myList_Click(object sender, RoutedEventArgs e)
         {
-            lblProgressStatus.Text = TimeSpan.FromSeconds(sliderTime.Value).ToString(@"hh\:mm\:ss");
+            ListVideo wd = new ListVideo(0,tk, pf);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
         }
     }
 }

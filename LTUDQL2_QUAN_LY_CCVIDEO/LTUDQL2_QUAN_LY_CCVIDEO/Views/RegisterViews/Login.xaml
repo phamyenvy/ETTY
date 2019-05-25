@@ -8,7 +8,8 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
-        Title="ETTY" Height="800" Width="1200" ResizeMode="CanMinimize">
+        
+        Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -21,7 +22,7 @@
         <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"
                 materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
-                HorizontalAlignment="Center" Width="500" Margin="347,170,347,0" Height="520">
+                HorizontalAlignment="Center" Width="450" Margin="347,160,347,0" Height="450">
             <StackPanel Background="#FF231E03">
                 <StackPanel Height="50"/>
 
@@ -39,7 +40,11 @@
                     <Label>
                         <materialDesign:PackIcon Kind="TextboxPassword" Width="50" Height="50" Foreground="#FFACA741" />
                     </Label>
-                    <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" SelectionBrush="#FFFED700" Background="{x:Null}" />
+                    <PasswordBox Width="300" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  
+                                 x:Name="txtPassword" materialDesign:HintAssist.Hint="Password" 
+                                 Foreground="#FFCDCDCD"  BorderBrush="White" CaretBrush="#FFBBAF69" 
+                                 SelectionBrush="#FFFED700" Background="{x:Null}" 
+                                 KeyUp="txtPassword_KeyUp"/>
 
 
                 </StackPanel>

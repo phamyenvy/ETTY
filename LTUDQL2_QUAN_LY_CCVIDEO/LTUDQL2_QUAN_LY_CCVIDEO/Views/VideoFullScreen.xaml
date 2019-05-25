@@ -1,0 +1,101 @@
+﻿<Window x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.VideoFullScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        FontSize="20"
+        WindowState="Maximized"
+        Title="VideoFullScreen" Height="720" Width="1280" WindowStyle="None">
+    <Window.CommandBindings>
+        <CommandBinding Command="MediaCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
+        <CommandBinding Command="MediaCommands.Pause" CanExecute="Pause_CanExecute" Executed="Pause_Executed" />
+        <CommandBinding Command="MediaCommands.Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
+
+    </Window.CommandBindings>
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid>
+            <MediaElement Margin="0"  Name="mediaVideo" 
+                                      Source="{Binding Path=PathVideo}"
+                               Stretch="Fill"  
+                               LoadedBehavior="Manual"
+                               MouseDown="mediaVideo_MouseDown"
+                               MouseLeave="mediaVideo_MouseLeave"  />
+            <ToggleButton x:Name="btnPlayorPause" Height="80" Width="80" 
+                              Background="Transparent"
+                              Style="{StaticResource MaterialDesignActionToggleButton}" 
+                              Click="btnPlayorPause_Click"
+                              ClickMode="Press"
+                              MouseEnter="btnPlayorPause_MouseEnter">
+                <ToggleButton.Content>
+                    <materialDesign:PackIcon Height="50" Width="50" Kind="Pause"  Foreground="#FFFCD700"/>
+                </ToggleButton.Content>
+                <materialDesign:ToggleButtonAssist.OnContent>
+                    <materialDesign:PackIcon Height="50" Width="50" Kind="Play" Foreground="#FFFCD700"/>
+                </materialDesign:ToggleButtonAssist.OnContent>
+            </ToggleButton>
+            <StatusBar x:Name="stusBar" Width="Auto" Height="50"  
+                                   BorderBrush="#FFEECB0A" BorderThickness="1"
+                                   Background="Transparent" VerticalAlignment="Bottom"
+                                   MouseEnter="btnPlayorPause_MouseEnter"
+                                   MouseLeave="mediaVideo_MouseLeave">
+
+                <StatusBarItem>
+                    <Button Command="MediaCommands.Pause" Margin="5" 
+                                        BorderBrush="Transparent"
+                                        Background="Transparent" Foreground="#FFFCD700" >
+                        <materialDesign:PackIcon Kind="Pause" Height="28" Width="28" />
+
+                    </Button>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Button Command="MediaCommands.Play" Margin="5" 
+                                        BorderBrush="Transparent"
+                                         Background="Transparent"  Foreground="#FFFCD700">
+                        <materialDesign:PackIcon Kind="Play" Height="28" Width="28"  />
+
+                    </Button>
+                </StatusBarItem>
+
+                <StatusBarItem>
+                    <Button Command="MediaCommands.Stop" Margin="5"
+                                        BorderBrush="Transparent"
+                                    Background="Transparent" Foreground="#FFFCD700" >
+                        <materialDesign:PackIcon Kind="Stop"  Height="28" Width="28" />
+                    </Button>
+
+                </StatusBarItem>
+                <StatusBarItem>
+                    <TextBlock Height="Auto" Width="50" Name="lblProgressStatus" Foreground="#FFFCD700">00:00:00</TextBlock>
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Slider Name="sliderTime" Margin="2,0,0,0" VerticalAlignment="Center"
+                             Width="1450" Height="Auto" Thumb.DragStarted="sliderTime_DragStarted"  
+                                Thumb.DragCompleted="sliderTime_DragCompleted"  
+                                ValueChanged="sliderTime_ValueChanged" Foreground="#FFEECB0A" />
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Button Click="btnFullScreen_Click"  Margin="5" x:Name="btnFullScreen"
+                                        BorderBrush="Transparent" HorizontalAlignment="Right"
+                                    Background="Transparent" Foreground="#FFFCD700" >
+                        <materialDesign:PackIcon Kind="Fullscreen"  Height="28" Width="28" />
+                    </Button>
+
+                </StatusBarItem>
+                <StatusBarItem>
+                    <Button x:Name="btnExitFullScreen" Click="btnExitFullScreen_Click" Margin="1,0"
+                                        BorderBrush="Transparent" 
+                                    Background="Transparent" Foreground="#FFFCD700" >
+                        <materialDesign:PackIcon Kind="FullscreenExit"  Height="28" Width="28" />
+                    </Button>
+
+                </StatusBarItem>
+
+
+            </StatusBar>
+        </Grid>
+    </Border>
+</Window>

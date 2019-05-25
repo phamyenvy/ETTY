@@ -1,5 +1,4 @@
-﻿using LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,21 +16,13 @@ using System.Windows.Shapes;
 namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 {
     /// <summary>
-    /// Interaction logic for uc_General.xaml
+    /// Interaction logic for uc_Profile.xaml
     /// </summary>
-    public partial class uc_General : UserControl
+    public partial class uc_Profile : UserControl
     {
-        public uc_General()
+        public uc_Profile()
         {
             InitializeComponent();
-        }
-
-        private void btnChagePass_Click(object sender, RoutedEventArgs e)
-        {
-            ForgotPass wd = new ForgotPass();
-            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            wd.Show();
-            
         }
     }
 }

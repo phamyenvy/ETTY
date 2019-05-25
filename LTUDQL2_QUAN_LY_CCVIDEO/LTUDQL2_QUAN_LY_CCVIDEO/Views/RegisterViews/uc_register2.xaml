@@ -5,49 +5,50 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews"
              mc:Ignorable="d" 
-             d:DesignHeight="480" d:DesignWidth="500"
+             d:DesignHeight="380" d:DesignWidth="450"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              FontSize="20">
     
     <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"
                 materialDesign:ShadowAssist.ShadowEdges="Bottom,Right"
-                HorizontalAlignment="Center" Width="500" Height="480">
+                HorizontalAlignment="Center" Width="450" Height="380">
         <Grid Background="#FF231E03">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="lbLevel" Grid.Column="0" IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" SelectionChanged="lbLevel_SelectionChanged" >
+            <ListBox x:Name="lbLevel" Grid.Column="0" IsEnabled="{Binding IsChecked, ElementName=EnableListBox}" 
+                     SelectionChanged="lbLevel_SelectionChanged" Height="380">
 
-                <ListBoxItem x:Name="Standard" Height="150" Selected="ListBoxItem_Selected">
-                    <Grid Height="90" Width="241">
+                <ListBoxItem x:Name="Standard" Height="128" Selected="ListBoxItem_Selected">
+                    <Grid Height="90" Width="230">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition  Width="1.5*"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:PackIcon Kind="StandardDefinition" Height="100" Width="100" Foreground="#FFF50505" />
                         <TextBlock Grid.Column="1" FontWeight="Thin" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFA19C46">Standard</TextBlock>
                     </Grid>
 
                 </ListBoxItem>
-                <ListBoxItem x:Name="Premium" Height="150" Selected="ListBoxItem_Selected_1" >
+                <ListBoxItem x:Name="Premium" Height="128" Selected="ListBoxItem_Selected_1" >
                     <Grid Height="90" Width="241">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1.5*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="1" FontWeight="Thin" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFA19C46">Premium</TextBlock>
                         <materialDesign:PackIcon  Kind="HighDefinition" Height="100" Width="100" Foreground="#FFF50505" />
 
                     </Grid>
                 </ListBoxItem>
-                <ListBoxItem x:Name="VIP" Height="150" Selected="ListBoxItem_Selected_2">
+                <ListBoxItem x:Name="VIP" Height="120" Selected="ListBoxItem_Selected_2">
                     <Grid Height="90" Width="241">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition  Width="1.5*"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:PackIcon  Kind="UltraHighDefinition" Height="100" Width="100" Foreground="#FFF50505" />
 
@@ -57,9 +58,9 @@
                 </ListBoxItem>
 
             </ListBox>
-            <Grid Grid.Column="1" >
+            <Grid Grid.Column="1" Margin="0,20" >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1.5*"/>
                     <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
 

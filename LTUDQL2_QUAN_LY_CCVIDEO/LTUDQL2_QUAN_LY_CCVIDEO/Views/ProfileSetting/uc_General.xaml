@@ -13,7 +13,6 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
@@ -21,29 +20,51 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center">Name : </Label>
-        <TextBox Grid.Column="1" Height="50" Width="250"></TextBox>
+        <TextBox Grid.Column="1" Height="50" Width="300"></TextBox>
         <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Level: </Label>
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,30">
-            <TextBlock x:Name="tblLevel"></TextBlock>
-            <TextBlock x:Name="tblDate"></TextBlock>
-
-
+            <TextBlock x:Name="tblLevel" FontSize="30" Height="60"></TextBlock>
             <StackPanel Orientation="Horizontal">
-                <Button Width="120" Margin="10">Pay</Button>
-                <Button Width="120" Margin="30,10" HorizontalAlignment="Right">Change Level</Button>
+                <TextBlock Foreground="#FF9B9191" Margin="50,0">Deadline : </TextBlock>
+                <TextBlock x:Name="tblDate"></TextBlock>
+
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="0,30">
+                <Button Width="120" Margin="50, 10" Background="#FFCBAC00" BorderBrush="Transparent">Pay</Button>
+                <Button Width="120" Margin="50,10" HorizontalAlignment="Right"
+                        Background="#FFCBAC00" BorderBrush="Transparent">Change Level</Button>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="2">
-            <Label  VerticalAlignment="Center" HorizontalAlignment="Center">ID Card:</Label>
-            <Label  VerticalAlignment="Center" HorizontalAlignment="Center">First Name:</Label>
-            <Label  VerticalAlignment="Center" HorizontalAlignment="Center">Last Name:</Label>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <Label  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,20,40,0">ID Card:</Label>
+                <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" 
+                          Height="50" Width="300"
+                          Margin="115,0"></TextBox>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,30,12,0">First Name:</Label>
+                <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" 
+                          Height="50" Width="300"
+                          Margin="115,0"></TextBox>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,30,12,0">Last Name:</Label>
+                <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" 
+                          Height="50" Width="300" Margin="115,0"></TextBox>
+
+            </StackPanel>
 
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1">
-            <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="250"></TextBox>
-            <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center"  Height="50" Width="250"></TextBox>
-            <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="250"></TextBox>
-
-        </StackPanel>
+        <Button Name="btnChagePass" Grid.Column="2" Width="150" Margin="10" Click="btnChagePass_Click"
+                Background="#FFCBAC00" BorderBrush="Transparent">Change Password</Button>
+        <Button Name="btnSaveAll" Grid.Column="2" Grid.Row="2" Width="110" Height="100" Margin="30,10,20,10" HorizontalAlignment="Right" 
+                Background="#FF09CB00" BorderBrush="Transparent" VerticalAlignment="Bottom">
+            <materialDesign:PackIcon Kind="ContentSave" Height="70" Width="80" />
+        </Button>
     </Grid>
 </UserControl>

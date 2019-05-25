@@ -52,8 +52,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                 {
                     if(DBProvider.isPaid(tk))
                     {
-                        Profile pf = tk.Profiles.SingleOrDefault();
-                        var wd = new MainWindow(tk, pf);
+                        var wd = new SelectProfile(tk);
                         wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         wd.Show();
                         this.Close();
@@ -84,6 +83,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         {
             Register re = new Register();
             re.ShowDialog();
+        }
+
+        private void txtPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
         }
     }
 }
