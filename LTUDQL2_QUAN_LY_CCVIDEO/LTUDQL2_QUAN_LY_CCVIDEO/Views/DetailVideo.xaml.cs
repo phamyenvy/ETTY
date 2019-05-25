@@ -36,20 +36,18 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             this.tk = tk;
             this.pf = pf;
             btnExitFullScreen.IsEnabled = false;
-            
+            DBProvider.setYeuThichVideo(pf.MaProfile, int.Parse(vd.ID), 3);
+
+
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
 
-<<<<<<< HEAD
         }
-        public DetailVideo(VideoInfo vd, double time, TaiKhoan tk, Profile pf) //đi vào từ exit full screen
-=======
-        public TaiKhoan tk = null;
-        public Profile pf = null;
-        public DetailVideo(VideoInfo vd,TaiKhoan tk, Profile pf)
->>>>>>> ce8ccd3c0318c171c1854d719539c75f9df59389
+         //đi vào từ exit full screen
+        
+        public DetailVideo(VideoInfo vd, double time, TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
             this.tk = tk;
@@ -223,7 +221,6 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             }
         }
 
-<<<<<<< HEAD
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             
@@ -243,8 +240,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 
         private void btnExitFullScreen_Click(object sender, RoutedEventArgs e)
         {
+        }
 
-=======
         private void btnHeart_Click(object sender, RoutedEventArgs e)
         {
             ToggleButton a = sender as ToggleButton;
@@ -267,7 +264,6 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             {
                 a.IsChecked = true;
             }
->>>>>>> ce8ccd3c0318c171c1854d719539c75f9df59389
         }
     }
 }

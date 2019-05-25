@@ -144,20 +144,15 @@
                                 ValueChanged="Slider_ValueChanged" x:Name="sliderVolume" Foreground="#FFFF1C1C"/>
                         <TextBlock x:Name="volumevalue"></TextBlock>
                         <ToggleButton  Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
-                              ToolTip="Add to your favorite list"
+                              ToolTip="Add to your favorite list" Click="btnHeart_Click"
                               IsChecked="False" VerticalAlignment="Center" 
                               HorizontalAlignment="Left" Height="50"
                               Width="50" Background="#FFE8DCDC"  Visibility="Visible"
                               BorderBrush="#FFF17171" BorderThickness="1"
-<<<<<<< HEAD
-                              x:Name="btnHeart" Margin="10,0,10,0">
-                            <materialDesign:PackIcon Kind="ThumbUp"
-=======
-                              Tag="{Binding Path=ID}" x:Name="btnHeart" Margin="10,0,10,0" Click="btnHeart_Click" Loaded="btnHeart_Loaded">
-                            <materialDesign:PackIcon Kind="Heart"
->>>>>>> ce8ccd3c0318c171c1854d719539c75f9df59389
-                                                    Height="17"
-                                                    Width="17" Foreground="#FFFF1C1C" />
+                               Margin="10,0,10,0" Loaded="btnHeart_Loaded" Tag="{Binding Path=ID}">
+                            <materialDesign:PackIcon Kind="ThumbUp" 
+                                 Margin="10,0,10,0"  />
+
                         </ToggleButton>
                         <TextBlock VerticalAlignment="Center" Foreground="#FF4A4736">Rating :</TextBlock>
 

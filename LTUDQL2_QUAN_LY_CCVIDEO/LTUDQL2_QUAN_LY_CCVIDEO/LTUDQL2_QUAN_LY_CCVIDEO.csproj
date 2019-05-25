@@ -130,11 +130,11 @@
     <Compile Include="Views\ProfileSetting\ProfileSettingWd.xaml.cs">
       <DependentUpon>ProfileSettingWd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProfileSetting\uc_EditProfile.xaml.cs">
+      <DependentUpon>uc_EditProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProfileSetting\uc_General.xaml.cs">
       <DependentUpon>uc_General.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProfileSetting\uc_Profile.xaml.cs">
-      <DependentUpon>uc_Profile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews\FinishRegisterDialog.xaml.cs">
       <DependentUpon>FinishRegisterDialog.xaml</DependentUpon>
@@ -209,11 +209,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProfileSetting\uc_General.xaml">
+    <Page Include="Views\ProfileSetting\uc_EditProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProfileSetting\uc_Profile.xaml">
+    <Page Include="Views\ProfileSetting\uc_General.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews;
 using MaterialDesignThemes.Wpf;
 using MaterialDesignThemes.Wpf.Converters;

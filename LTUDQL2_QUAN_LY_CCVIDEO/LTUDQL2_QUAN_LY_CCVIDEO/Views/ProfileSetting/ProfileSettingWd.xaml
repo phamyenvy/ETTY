@@ -29,7 +29,7 @@
                                    Selected="General_Selected">
 
                     </TreeViewItem>
-                    <TreeViewItem Name="Profile" Header="Profile" >
+                    <TreeViewItem Name="Profile" Header="Profile" Selected="Profile_Selected" >
 
                     </TreeViewItem>
                 </TreeView>

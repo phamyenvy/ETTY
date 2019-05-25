@@ -46,7 +46,7 @@
                               ToolTip="MaterialDesignFlatPrimaryToggleButton"
                               IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
                               Width="25" Background="#FFF17171" Visibility="Collapsed"
-                              x:Name="btnHeart">
+                              x:Name="btnHeart" Tag="{Binding Path=ID}" Click="btnHeart_Click" Loaded="btnHeart_Loaded">
                         <materialDesign:PackIcon Kind="ThumbUp" Height="17"
                                                  Width="17" Foreground="Red" 
                                                  Background="Transparent" />

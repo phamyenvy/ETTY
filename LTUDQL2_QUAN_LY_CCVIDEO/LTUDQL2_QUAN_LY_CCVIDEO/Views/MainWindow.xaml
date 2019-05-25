@@ -46,20 +46,13 @@
                     <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3" Name="video" 
                                   Source="{Binding Path=PathVideo}"
                                   Stretch="Fill" LoadedBehavior="Manual"/>
-<<<<<<< HEAD
-                    <ToggleButton  Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
-                              ToolTip="Like" IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
-                              Width="25" Background="#FFF17171" Visibility="Collapsed"
-                              x:Name="btnHeart">
-                        <materialDesign:PackIcon Kind="ThumbUp"
-=======
+                    
                     <ToggleButton  Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
                               ToolTip="MaterialDesignFlatPrimaryToggleButton"
                               VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
                               Width="25" Background="#FFF17171" Visibility="Collapsed"
                               x:Name="btnHeart" Tag="{Binding Path=ID}" Click="btnHeart_Click" Loaded="btnHeart_Loaded">
-                        <materialDesign:PackIcon Kind="Heart"
->>>>>>> ce8ccd3c0318c171c1854d719539c75f9df59389
+                            <materialDesign:PackIcon Kind="ThumbUp"
                                                     Height="17"
                                                     Width="17" Foreground="Red" Background="Transparent" />
                     </ToggleButton>
@@ -395,7 +388,7 @@
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="250" Name="spRecently">
                         <Label  Margin="20,0" FontSize="35" FontWeight="ExtraBlack" Foreground="Black">Recently</Label>
-                        <ItemsControl ItemsSource="{Binding Path=[0]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        <ItemsControl ItemsSource="{Binding Path=[3]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="20,0">
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>

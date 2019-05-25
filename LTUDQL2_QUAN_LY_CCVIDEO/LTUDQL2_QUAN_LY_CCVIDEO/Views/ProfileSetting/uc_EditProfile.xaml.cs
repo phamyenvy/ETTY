@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 {
     /// <summary>
-    /// Interaction logic for uc_Profile.xaml
+    /// Interaction logic for uc_EditProfile.xaml
     /// </summary>
-    public partial class uc_Profile : UserControl
+    public partial class uc_EditProfile : UserControl
     {
-        public uc_Profile()
+        public uc_EditProfile()
         {
             InitializeComponent();
         }

@@ -179,14 +179,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             int ID = Int32.Parse(a.Tag.ToString());
             if(DBProvider.comparePermissionVideo(tk,DBProvider.getVideoByID(ID)))
             {
-<<<<<<< HEAD
                 DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID), tk, pf);
                 dv.Show();
                 this.Close();
-=======
-                DetailVideo dv = new DetailVideo(DBProvider.getVideo(ID),tk,pf);
-                dv.ShowDialog();
->>>>>>> ce8ccd3c0318c171c1854d719539c75f9df59389
+                
             }
             else
             {

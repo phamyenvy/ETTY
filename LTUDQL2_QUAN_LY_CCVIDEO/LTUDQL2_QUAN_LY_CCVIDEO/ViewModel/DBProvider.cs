@@ -184,7 +184,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             {
                 if ((from v in qlccv.YeuThich_XemGanDay
                      join vd in qlccv.Videos on v.MaVideo equals vd.MaVideo
-                     where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 0
+                     where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 3
+                     orderby v.ThoiGian descending
                      select vd).ToList() == null)
                 {
                     return null;
@@ -192,7 +193,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
 
                 List<Video> video = (from v in qlccv.YeuThich_XemGanDay
                                      join vd in qlccv.Videos on v.MaVideo equals vd.MaVideo
-                                     where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 0
+                                     orderby v.ThoiGian descending
+                                     where v.MaProfile == pf.MaProfile && v.LoaiLuuTru == 3
                                      select vd).ToList();
 
                 List<VideoInfo> vdinfo = new List<VideoInfo>();

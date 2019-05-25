@@ -33,5 +33,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             content.Children.Clear();
             content.Children.Add(uc);
         }
+
+        private void Profile_Selected(object sender, RoutedEventArgs e)
+        {
+            uc_EditProfile uc = new uc_EditProfile();
+            content.Children.Clear();
+            content.Children.Add(uc);
+        }
     }
 }
