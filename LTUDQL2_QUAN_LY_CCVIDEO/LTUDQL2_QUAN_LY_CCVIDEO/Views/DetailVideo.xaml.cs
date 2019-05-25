@@ -42,10 +42,18 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             timer.Tick += timer_Tick;
             timer.Start();
 
+<<<<<<< HEAD
         }
         public DetailVideo(VideoInfo vd, double time, TaiKhoan tk, Profile pf) //đi vào từ exit full screen
+=======
+        public TaiKhoan tk = null;
+        public Profile pf = null;
+        public DetailVideo(VideoInfo vd,TaiKhoan tk, Profile pf)
+>>>>>>> ce8ccd3c0318c171c1854d719539c75f9df59389
         {
             InitializeComponent();
+            this.tk = tk;
+            this.pf = pf;
             DataContext = vd;
             this.vd = vd;
             this.tk = tk;
@@ -56,6 +64,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             mediaVideo.Position = TimeSpan.FromSeconds(time);
             
 
+            DBProvider.setYeuThichVideo(pf.MaProfile, int.Parse(vd.ID), 3);
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -214,6 +223,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             }
         }
 
+<<<<<<< HEAD
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             
@@ -234,6 +244,30 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         private void btnExitFullScreen_Click(object sender, RoutedEventArgs e)
         {
 
+=======
+        private void btnHeart_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (a.IsChecked == true)
+            {
+                DBProvider.setYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+            else
+            {
+                DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 2);
+            }
+        }
+
+        private void btnHeart_Loaded(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (DBProvider.isYeuThichVideo(pf.MaProfile, ID, 2))
+            {
+                a.IsChecked = true;
+            }
+>>>>>>> ce8ccd3c0318c171c1854d719539c75f9df59389
         }
     }
 }

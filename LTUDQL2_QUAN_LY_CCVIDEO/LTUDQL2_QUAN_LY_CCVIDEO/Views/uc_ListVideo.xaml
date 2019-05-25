@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.uc_ListVideo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            xmlns:m="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Model"
+
+             mc:Ignorable="d" Background="Transparent"
+             d:DesignHeight="447" d:DesignWidth="1177">
+    <UserControl.Resources>
+        <!--<ObjectDataProvider x:Key="Video"
+        ObjectType="{x:Type m:DBProvider}"
+        MethodName="getVideoTrending"/>-->
+        <DataTemplate DataType="{x:Type m:VideoInfo}">
+            <Grid Width="300" Height="210" Margin="10,5" Name="Scroll" Tag="{Binding Path=ID}">
+                <Grid.Style>
+                    <Style TargetType="{x:Type Grid}">
+                        <EventSetter Event="MouseEnter" Handler="Grid_MouseEnter"/>
+                        <EventSetter Event="MouseLeave"  Handler="Grid_MouseLeave"/>
+                        <EventSetter Event="MouseLeftButtonDown" Handler="Grid_MouseLeftButtonDown" />
+                    </Style>
+                </Grid.Style>
+                <Grid.LayoutTransform>
+                    <ScaleTransform/>
+                </Grid.LayoutTransform>
+                <Grid  Margin="0,30">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="{Binding Path=Path}"/>
+                    </Grid.Background>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" 
+                                  Source="{Binding Path=PathVideo}"
+                                  Stretch="Fill" LoadedBehavior="Manual"/>
+                    <ToggleButton  Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                              IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
+                              Width="25" Background="#FFF17171" Visibility="Collapsed"
+                              x:Name="btnHeart" Tag="{Binding Path=ID}" Click="btnHeart_Click" Loaded="btnHeart_Loaded">
+                        <materialDesign:PackIcon Kind="Heart"
+                                                    Height="17"
+                                                    Width="17" Foreground="Red" Background="Transparent" />
+                    </ToggleButton>
+                </Grid>
+                <Label Content="{Binding Path= Title}" VerticalAlignment="Bottom" Foreground="White"
+                       FontWeight="DemiBold"></Label>
+
+
+            </Grid>
+
+
+        </DataTemplate>
+
+    </UserControl.Resources>
+    <Grid>
+        <ScrollViewer Background="Transparent" Grid.Row="2" >
+            <ItemsControl ItemsSource="{Binding [0]}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid HorizontalAlignment="Center" Columns="4" 
+                                             VerticalAlignment="Center" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
+        </ScrollViewer>
+    </Grid>
+</UserControl>
