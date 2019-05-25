@@ -50,8 +50,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         public DetailVideo(VideoInfo vd, double time, TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
-            this.tk = tk;
-            this.pf = pf;
+            
             DataContext = vd;
             this.vd = vd;
             this.tk = tk;

@@ -44,7 +44,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting {
     public partial class ProfileSettingWd : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 28 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
+        #line 31 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem General;
         
@@ -52,7 +52,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting {
         #line hidden
         
         
-        #line 32 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
+        #line 35 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem Profile;
         
@@ -60,7 +60,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting {
         #line hidden
         
         
-        #line 37 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
+        #line 40 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid content;
         
@@ -100,7 +100,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting {
             case 1:
             this.General = ((System.Windows.Controls.TreeViewItem)(target));
             
-            #line 29 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
+            #line 32 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
             this.General.Selected += new System.Windows.RoutedEventHandler(this.General_Selected);
             
             #line default
@@ -109,7 +109,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting {
             case 2:
             this.Profile = ((System.Windows.Controls.TreeViewItem)(target));
             
-            #line 32 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
+            #line 35 "..\..\..\..\Views\ProfileSetting\ProfileSettingWd.xaml"
             this.Profile.Selected += new System.Windows.RoutedEventHandler(this.Profile_Selected);
             
             #line default

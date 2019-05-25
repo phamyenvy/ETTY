@@ -27,6 +27,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
                 }
 
@@ -38,17 +39,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             using (var qlccv = new QuanLyCCVEntities())
             {
                 Video vd = qlccv.Videos.Where(v => v.MaVideo == ID).SingleOrDefault();
-
-
-
-
-                    VideoInfo info = new VideoInfo();
+                VideoInfo info = new VideoInfo();
                     info.ID = vd.MaVideo.ToString();
                     info.Title = vd.TenVideo;
                     info.Path = vd.LinkImage;
                     info.PathVideo = vd.LinkTrailer;
                     info.Description = vd.MoTa;
- 
+                    info.Views = vd.LuotXem.ToString();
+
 
                 return info;
             }
@@ -87,6 +85,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
 
                 }
@@ -112,6 +111,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
                 }
 
@@ -135,6 +135,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
                 }
 
@@ -172,6 +173,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
                 }
 
@@ -207,6 +209,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
                 }
 

@@ -47,15 +47,23 @@
                                   Source="{Binding Path=PathVideo}"
                                   Stretch="Fill" LoadedBehavior="Manual"/>
                     
-                    <ToggleButton  Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
-                              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                    <ToggleButton  Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                              ToolTip="Like this video"
                               VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
-                              Width="25" Background="#FFF17171" Visibility="Collapsed"
+                              Width="25" Background="#DF4949" Visibility="Collapsed"
                               x:Name="btnHeart" Tag="{Binding Path=ID}" Click="btnHeart_Click" Loaded="btnHeart_Loaded">
                             <materialDesign:PackIcon Kind="ThumbUp"
                                                     Height="17"
-                                                    Width="17" Foreground="Red" Background="Transparent" />
+                                                    Width="17" Foreground="#FFFCE22B" Background="Transparent" />
                     </ToggleButton>
+                    <ToggleButton x:Name="btnAddMyList" Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                  IsChecked="False" Grid.Column="0" Grid.Row="1" Visibility="Collapsed" Foreground="#FFFCE22B"
+                                  VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
+                                  Width="25" ToolTip="Add my list" Background="Transparent" >
+                        <materialDesign:PackIcon Kind="Plus" Height="17"
+                                                    Width="17" Foreground="#FFFCE22B"  />
+                    </ToggleButton>
+
                 </Grid>
 
             </Grid>
@@ -64,7 +72,7 @@
 
     </Window.Resources>
     <StackPanel Background="#FFCBAC00">
-        <materialDesign:ColorZone Mode="Inverted" Height="100" Padding="16">
+        <materialDesign:ColorZone Mode="Inverted" Height="100" Padding="16" Background="#1A2530">
             <DockPanel Margin="50,0">
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
                     <ListBox >
@@ -99,7 +107,7 @@
                     </Grid>
                 </materialDesign:ColorZone>
 
-                <Menu Background="Black" Margin="0" Foreground="White" VerticalAlignment="Center">
+                <Menu Background="Transparent" Margin="0" Foreground="White" VerticalAlignment="Center">
 
                     <MenuItem Header="Home"></MenuItem>
                     <MenuItem Header="Categories" Name="cbCats"> 
@@ -248,7 +256,7 @@
                         </StackPanel>
                     </Grid>
                     <StackPanel  Background="Transparent" Height="250" Name="spMyList">
-                        <Label  Margin="17,0" FontSize="35" FontWeight="ExtraBlack" Foreground="Black">My List</Label>
+                        <Label  Margin="17,0" FontSize="35" FontWeight="ExtraBlack" Foreground="#1A2530">My List</Label>
                         <ItemsControl  ItemsSource="{Binding Path=[0]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="20,0">
                             <ItemsControl.ItemsPanel>
@@ -317,7 +325,7 @@
 
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="250" Name="spThinhHanh">
-                        <Label Margin="20,0"  FontSize="35" FontWeight="ExtraBlack" Foreground="Black">Trending Now</Label>
+                        <Label Margin="20,0"  FontSize="35" FontWeight="ExtraBlack" Foreground="#1A2530">Trending Now</Label>
                         <ItemsControl ItemsSource="{Binding Path=[1]}"
                                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="20,0">
@@ -387,7 +395,7 @@
 
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="250" Name="spRecently">
-                        <Label  Margin="20,0" FontSize="35" FontWeight="ExtraBlack" Foreground="Black">Recently</Label>
+                        <Label  Margin="20,0" FontSize="35" FontWeight="ExtraBlack" Foreground="#1A2530">Recently</Label>
                         <ItemsControl ItemsSource="{Binding Path=[3]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="20,0">
                             <ItemsControl.ItemsPanel>
@@ -456,7 +464,7 @@
 
                     </StackPanel>
                     <StackPanel  Background="Transparent" Height="300" Name="spMoiNhat">
-                        <Label  Margin="20,0" FontSize="35" FontWeight="ExtraBlack" Foreground="Black">New Realease</Label>
+                        <Label  Margin="20,0" FontSize="35" FontWeight="ExtraBlack" Foreground="#1A2530">New Realease</Label>
                         <ItemsControl ItemsSource="{Binding Path=[2]}" ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="20,0">
                             <ItemsControl.ItemsPanel>

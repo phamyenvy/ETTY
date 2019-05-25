@@ -131,7 +131,7 @@
                     </Border>
                     <Grid Height="50" Background="Transparent">
                         <StackPanel Orientation="Horizontal" Height="50">
-                            <Label x:Name="lblTenVideo" Content="{Binding Path=Title}" FontSize="30" FontWeight="Thin"/>
+                            <Label x:Name="lblTenVideo" Content="{Binding Path=Title}" FontSize="30" Foreground="#DF4949" FontWeight="Thin"/>
                         </StackPanel>
                     </Grid>
                     <StackPanel Orientation="Horizontal" Height="Auto">
@@ -147,22 +147,29 @@
                               ToolTip="Add to your favorite list" Click="btnHeart_Click"
                               IsChecked="False" VerticalAlignment="Center" 
                               HorizontalAlignment="Left" Height="50"
-                              Width="50" Background="#FFE8DCDC"  Visibility="Visible"
+                              Width="50" Background="#DF4949"  Visibility="Visible"
                               BorderBrush="#FFF17171" BorderThickness="1"
                                Margin="10,0,10,0" Loaded="btnHeart_Loaded" Tag="{Binding Path=ID}">
                             <materialDesign:PackIcon Kind="ThumbUp" 
-                                 Margin="10,0,10,0"  />
+                                 Margin="10,0,10,0"  Foreground="#FFFCE22B" Background="Transparent" />
 
                         </ToggleButton>
+                        <ToggleButton x:Name="btnAddMyList" Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                  IsChecked="False"  Foreground="#FFFCE22B"
+                                  VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
+                                  Width="25" ToolTip="Add my list" Background="Transparent" >
+                            <materialDesign:PackIcon Kind="Plus" Height="17"
+                                                    Width="17" Foreground="#FFFCE22B"  />
+                        </ToggleButton>
                         <TextBlock VerticalAlignment="Center" Foreground="#FF4A4736">Rating :</TextBlock>
-
+                        <TextBlock VerticalAlignment="Center" Margin="10" Foreground="#1A2530" Text="{Binding Path=Views}"/>
 
 
                     </StackPanel>
                     <Expander IsExpanded="True" HorizontalAlignment="Left" Background="Transparent" Width="500" Height="Auto" Header="Description">
                         <StackPanel Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="24,8,24,16">
                             <TextBlock Text="{Binding Path=Title}"/>
-                            <TextBlock  Opacity=".68" Text="{Binding Path=Description}" TextWrapping="Wrap" >
+                            <TextBlock  Opacity=".68" Text="{Binding Path=Description}" TextWrapping="Wrap" Foreground="#1A2530" >
                             </TextBlock>
                         </StackPanel>
                     </Expander>

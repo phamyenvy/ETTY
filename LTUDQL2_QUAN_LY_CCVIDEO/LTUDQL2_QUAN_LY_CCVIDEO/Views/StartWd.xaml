@@ -35,7 +35,7 @@
                     </Image>
                 </Grid>
 
-            <Grid Height="120" Margin="0,50">
+            <Grid Height="120" Margin="0,30">
                 <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -46,7 +46,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
-                    <materialDesign:PackIcon Kind="UltraHighDefinition" Height="100" Width="100" Foreground="#FFF50505" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <materialDesign:PackIcon Kind="Diamond" Height="100" Width="100" Foreground="#FFF50505" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -63,7 +63,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
-                    <materialDesign:PackIcon Kind="HighDefinition" Height="100" Width="100" Foreground="#FFF50505" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <materialDesign:PackIcon Kind="Approval" Height="100" Width="100" Foreground="#FFF50505" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -80,14 +80,14 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
-                    <materialDesign:PackIcon Kind="StandardDefinition" Height="100" Width="100" Foreground="#FFF50505" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <materialDesign:PackIcon Kind="CodeString" Height="100" Width="100" Foreground="#FFF50505" VerticalAlignment="Center" HorizontalAlignment="Center" />
 
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock FontWeight="Thin" Margin="2" FontSize="50" HorizontalAlignment="Center">Stardand</TextBlock>
+                        <TextBlock FontWeight="Thin" Margin="2" FontSize="50" HorizontalAlignment="Center">Standard</TextBlock>
                         <TextBlock FontWeight="Thin" Margin="2" FontSize="25" HorizontalAlignment="Center" Grid.Row="1">5$/1 Mounth</TextBlock>
 
                     </Grid>
@@ -95,15 +95,15 @@
 
             </Grid>
                 <Grid>
-                <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Margin="450,-800,450,700"/>
+                <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Margin="450,-720,450,700"/>
                     <Label Foreground="White" FontWeight="DemiBold" FontSize="100" HorizontalAlignment="Center" Margin="200,-500,200,600" Width="776">Try your channel</Label>
                     <Grid Height="80" Margin="0,-400,0,459">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="Register" Grid.Column="0" Width="150" HorizontalAlignment="Right" Margin="10" BorderBrush="Black" Background="Black" Click="Register_Click" Content="Register"/>
-                        <Button Grid.Column="1" Width="150" HorizontalAlignment="Left" Margin="10" Background="#FF2FEE10" BorderBrush="#FF2FEE10" Click="Button_Click" Content="Log in"/>
+                    <Button x:Name="Register" Grid.Column="0" Width="150" HorizontalAlignment="Right" Margin="10" BorderBrush="Transparent" Background="#FF5B7DC6" Click="Register_Click" Content="Register"/>
+                    <Button Grid.Column="1" Width="150" HorizontalAlignment="Left" Margin="10" Background="#FFF50505" BorderBrush="Transparent" Click="Button_Click" Content="Log in"/>
                     </Grid>
                 <materialDesign:PopupBox  DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges"  Margin="1123,-782,20,830" Foreground="White" FontSize="72" HorizontalAlignment="Stretch" RenderTransformOrigin="-1.588,0.765">
                         <ListBox >

@@ -30,6 +30,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
         private void General_Selected(object sender, RoutedEventArgs e)
         {
             uc_General uc = new uc_General();
+           // General.Background = Color.FromRgb(
             content.Children.Clear();
             content.Children.Add(uc);
         }
