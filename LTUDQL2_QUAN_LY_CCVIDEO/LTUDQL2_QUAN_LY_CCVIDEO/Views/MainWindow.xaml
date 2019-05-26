@@ -76,7 +76,7 @@
             <DockPanel Margin="50,0">
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
                     <ListBox >
-                        <ListBoxItem>
+                        <ListBoxItem Name="lstItemSetting" Selected="lstItemSetting_Selected">
                             Setting
                         </ListBoxItem>
                         <ListBoxItem Name="lstItemSelProfile" Selected="lstItemSelProfile_Selected">

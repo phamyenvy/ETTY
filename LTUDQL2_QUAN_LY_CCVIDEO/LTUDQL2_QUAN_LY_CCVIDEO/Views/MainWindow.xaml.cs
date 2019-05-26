@@ -1,5 +1,6 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -335,6 +336,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             wd.Show();
             this.Close();
         }
+        private void lstItemSetting_Selected(object sender, RoutedEventArgs e)
+        {
+            ProfileSettingWd wd = new ProfileSettingWd();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
 
         #endregion
 
@@ -369,5 +377,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
                 a.IsChecked = true;
             }
         }
+
+        
     }
 }
