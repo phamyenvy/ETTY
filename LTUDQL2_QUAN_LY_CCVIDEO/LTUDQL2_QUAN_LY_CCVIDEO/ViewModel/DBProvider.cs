@@ -364,5 +364,34 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             }
         }
 
+        public static void setAddView(int ID)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Video vd = qlccv.Videos.Where(v => v.MaVideo == ID).SingleOrDefault();
+                vd.LuotXem = vd.LuotXem + 1;
+                qlccv.SaveChanges();
+            }
+        }
+
+        public static void setAddLike(int ID)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Video vd = qlccv.Videos.Where(v => v.MaVideo == ID).SingleOrDefault();
+                vd.Like = vd.Like + 1;
+                qlccv.SaveChanges();
+            }
+        }
+
+        public static void setRemoveLike(int ID)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Video vd = qlccv.Videos.Where(v => v.MaVideo == ID).SingleOrDefault();
+                vd.Like = vd.Like - 1;
+                qlccv.SaveChanges();
+            }
+        }
     }
 }

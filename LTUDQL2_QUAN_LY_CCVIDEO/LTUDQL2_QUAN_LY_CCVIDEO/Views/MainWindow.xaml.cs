@@ -358,13 +358,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         {
             ToggleButton a = sender as ToggleButton;
             int ID = Int32.Parse(a.Tag.ToString());
-            if(a.IsChecked==true)
+            if (a.IsChecked == true)
             {
                 DBProvider.setYeuThichVideo(pf.MaProfile, ID, 2);
+                DBProvider.setAddLike(ID);
             }
             else
             {
                 DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 2);
+                DBProvider.setRemoveLike(ID);
             }
         }
 
@@ -378,6 +380,34 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             }
         }
 
+<<<<<<< HEAD
+=======
+
+        private void btnAddMyList_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if(a.IsChecked==true)
+            {
+                DBProvider.setYeuThichVideo(pf.MaProfile, ID, 1);
+            }
+            else
+            {
+                DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 1);
+            }
+        }
+
+        private void btnAddMyList_Loaded(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (DBProvider.isYeuThichVideo(pf.MaProfile, ID, 1))
+            {
+                a.IsChecked = true;
+            }
+        }
+
+>>>>>>> 449f0c15619e9d564c13c4280716a972a71cd125
         
     }
 }

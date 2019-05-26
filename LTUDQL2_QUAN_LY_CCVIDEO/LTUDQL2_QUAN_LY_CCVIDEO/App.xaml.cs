@@ -1,4 +1,5 @@
-﻿using LTUDQL2_QUAN_LY_CCVIDEO.Views;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews;
@@ -18,10 +19,18 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     public partial class App : Application
     {
         private void Application_Startup(object sender, StartupEventArgs e)
-        { 
-            var wd = new StartWd();
-            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            wd.Show();
+        {
+            using(var qlccv =new QuanLyCCVEntities())
+            {
+                TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.MaTaiKhoan == 2).SingleOrDefault();
+                Profile pf = qlccv.Profiles.Where(t => t.TaiKhoan == 2).SingleOrDefault();
+                var wd = new MainWindow(tk,pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+            }
+            //var wd = new StartWd();
+            //wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //wd.Show();
         }
     }
 }
