@@ -154,10 +154,10 @@
                                  Margin="10,0,10,0"  Foreground="#FFFCE22B" Background="Transparent" />
 
                         </ToggleButton>
-                        <ToggleButton x:Name="btnAddMyList" Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                        <ToggleButton Tag="{Binding Path=ID}" x:Name="btnAddMyList" Style="{StaticResource MaterialDesignActionLightToggleButton}"
                                   IsChecked="False"  Foreground="#FFFCE22B"
                                   VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
-                                  Width="25" ToolTip="Add my list" Background="Transparent" >
+                                  Width="25" ToolTip="Add my list" Background="Transparent" Loaded="btnAddMyList_Loaded" Click="btnAddMyList_Click">
                             <materialDesign:PackIcon Kind="Plus" Height="17"
                                                     Width="17" Foreground="#FFFCE22B"  />
                         </ToggleButton>

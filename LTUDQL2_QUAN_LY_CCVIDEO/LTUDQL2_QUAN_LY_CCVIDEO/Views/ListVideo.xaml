@@ -51,6 +51,14 @@
                                                  Width="17" Foreground="Red" 
                                                  Background="Transparent" />
                     </ToggleButton>
+                    <ToggleButton Tag="{Binding Path=ID}" x:Name="btnAddMyList" Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                  IsChecked="False" Grid.Column="0" Grid.Row="1" Visibility="Collapsed" Foreground="#FFFCE22B"
+                                  VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
+                                  Width="25" ToolTip="Add my list" Background="Transparent" Click="btnAddMyList_Click" Loaded="btnAddMyList_Loaded" >
+                        <materialDesign:PackIcon Kind="Plus" Height="17"
+                                                    Width="17" Foreground="#FFFCE22B"  />
+                    </ToggleButton>
+                    
                 </Grid>
                 <Label Content="{Binding Path= Title}" VerticalAlignment="Bottom" Foreground="White"
                        FontWeight="DemiBold"></Label>

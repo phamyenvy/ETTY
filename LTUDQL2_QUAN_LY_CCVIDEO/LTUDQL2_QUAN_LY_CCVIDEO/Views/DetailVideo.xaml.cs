@@ -31,13 +31,20 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         public DetailVideo(VideoInfo vd, TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
+
+            btnExitFullScreen.IsEnabled = false;
+            if(!DBProvider.isYeuThichVideo(pf.MaProfile,int.Parse(vd.ID),3))
+            {
+                DBProvider.setAddView(int.Parse(vd.ID));
+                
+            }
+            DBProvider.setYeuThichVideo(pf.MaProfile, int.Parse(vd.ID), 3);
+
+
             DataContext = vd;
             this.vd = vd;
             this.tk = tk;
             this.pf = pf;
-            btnExitFullScreen.IsEnabled = false;
-            DBProvider.setYeuThichVideo(pf.MaProfile, int.Parse(vd.ID), 3);
-
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -248,10 +255,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             if (a.IsChecked == true)
             {
                 DBProvider.setYeuThichVideo(pf.MaProfile, ID, 2);
+                DBProvider.setAddLike(ID);
             }
             else
             {
                 DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 2);
+                DBProvider.setRemoveLike(ID);
             }
         }
 
@@ -260,6 +269,30 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             ToggleButton a = sender as ToggleButton;
             int ID = Int32.Parse(a.Tag.ToString());
             if (DBProvider.isYeuThichVideo(pf.MaProfile, ID, 2))
+            {
+                a.IsChecked = true;
+            }
+        }
+
+        private void btnAddMyList_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (a.IsChecked == true)
+            {
+                DBProvider.setYeuThichVideo(pf.MaProfile, ID, 1);  
+            }
+            else
+            {
+                DBProvider.removeYeuThichVideo(pf.MaProfile, ID, 1);
+            }
+        }
+
+        private void btnAddMyList_Loaded(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            if (DBProvider.isYeuThichVideo(pf.MaProfile, ID, 1))
             {
                 a.IsChecked = true;
             }
