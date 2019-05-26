@@ -380,8 +380,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             }
         }
 
-<<<<<<< HEAD
-=======
+
 
         private void btnAddMyList_Click(object sender, RoutedEventArgs e)
         {
@@ -407,7 +406,6 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             }
         }
 
->>>>>>> 449f0c15619e9d564c13c4280716a972a71cd125
         
     }
 }
