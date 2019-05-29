@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
 {
@@ -51,7 +52,109 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return info;
             }
         }
-        
+        public static int getIDAcc(string mail)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                TaiKhoan tk = qlccv.TaiKhoans.Where(v => v.TenTaiKhoan == mail).SingleOrDefault();
+                
+                return tk.MaTaiKhoan;
+            }
+        }
+        public static List<Profile> getPf(int IDAcc)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<Profile> pf = qlccv.Profiles.Where(v => v.TaiKhoan == IDAcc).ToList();
+
+                return pf;
+            }
+        }
+        public static void updateProfile(int IDProfile, string newName)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Profile p = qlccv.Profiles.Where(v => v.MaProfile == IDProfile).SingleOrDefault();
+                p.TenHienThi = newName;
+                qlccv.SaveChanges();
+            }
+        }
+        public static int checkCodeCard(string IDCard, string code)
+        {
+            try
+            {
+                using (var qlccv = new QuanLyCCVEntities())
+                {
+                    The p = qlccv.Thes.Where(t =>t.IDCard == IDCard).SingleOrDefault();
+                    if(p.Code == code)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+
+        }
+        public static void addNewCard(string IDCard, string fName, string lName, string code, int maTK)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                The the = qlccv.Thes.Where(t => t.IDCard == IDCard).SingleOrDefault();
+                if (the != null)
+                {
+                    if (the.FirstName == fName && the.LastName == lName && the.Code == code)
+                    {
+                        IDCard = the.IDCard;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Add Fail!");
+                        return;
+                    }
+                }
+                else
+                {
+
+                    The TheNew = new The() { IDCard = IDCard, FirstName = fName, LastName = lName, Code = code };
+                    qlccv.Thes.Add(TheNew);
+                    TaiKhoan p = qlccv.TaiKhoans.Where(v => v.MaTaiKhoan == maTK).SingleOrDefault();
+                    p.IDThe = IDCard;
+                    qlccv.SaveChanges();
+
+                    MessageBox.Show("Add Successful!");
+
+
+                }
+            }
+        }
+        public static string getLevelAcc(TaiKhoan tk)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                CapDoTaiKhoan level = qlccv.CapDoTaiKhoans.Where(l => l.MaCapDo == tk.CapDo).SingleOrDefault();
+
+                return level.TenCapDo;
+            }
+        }
+        public static TaiKhoan reloadTK(TaiKhoan tk)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                TaiKhoan th = qlccv.TaiKhoans.Where(t => t.MaTaiKhoan == tk.MaTaiKhoan).SingleOrDefault();
+
+                return th;
+            }
+        }
+
+
+
 
         public static List<Video> getMainVideo()
         {
@@ -61,12 +164,20 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return vd;
             }
         }
-        public static List<LoaiVideo> getLoaiVideo()
+        public static List<CapDoTaiKhoan> getCapDo()
         {
             using (var qlccv = new QuanLyCCVEntities())
             {
-                List<LoaiVideo> loai = (from v in qlccv.LoaiVideos
-                                  select v).ToList();
+                List<CapDoTaiKhoan> cd = qlccv.CapDoTaiKhoans.ToList();
+                return cd;
+            }
+        }
+        public static List<String> getLoaiVideo()
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<String> loai = (from v in qlccv.LoaiVideos
+                                  select v.TenLoaiVideo).ToList();
                 return loai;
             }
         }
@@ -268,7 +379,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
              
             }
         }
-
+       
         public static bool isPaid(TaiKhoan tk)
         {
             setAutoLevelAccount(tk);

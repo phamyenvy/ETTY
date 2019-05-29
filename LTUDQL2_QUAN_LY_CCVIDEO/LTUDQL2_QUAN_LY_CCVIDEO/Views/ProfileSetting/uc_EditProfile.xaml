@@ -7,15 +7,15 @@
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              Background="White"
-             d:DesignHeight="590" d:DesignWidth="945">
+             d:DesignHeight="490" d:DesignWidth="945">
     <Grid>
         <UniformGrid Rows="4" Height="520" VerticalAlignment="Top">
             <Border>
                 <StackPanel Orientation="Horizontal">
                     <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava1.png"
                    Margin="50,5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
-                      Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Stark</TextBox>
+                    <TextBox x:Name="name1" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
+                      Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Strange</TextBox>
                     <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
                 </StackPanel>
             </Border>
@@ -23,7 +23,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava2.png"
                    Margin="50,5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
+                    <TextBox x:Name="name2" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Steve</TextBox>
                     <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
                 </StackPanel>
@@ -32,8 +32,8 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava3.png"
                    Margin="50,5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
-                      Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">quên</TextBox>
+                    <TextBox x:Name="name3" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
+                      Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Scottlang</TextBox>
                     <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
                 </StackPanel>
             </Border>
@@ -41,8 +41,8 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava4.png"
                    Margin="50,5"/>
-                    <TextBox materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
-                      Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >lại quên</TextBox>
+                    <TextBox x:Name="name4" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
+                      Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Banner</TextBox>
                     <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
                 </StackPanel>
             </Border>
@@ -50,6 +50,6 @@
 
         </UniformGrid>
         <Button VerticalAlignment="Bottom" Width="150" HorizontalAlignment="Right" Margin="15"
-                Background="#FFECCA06" BorderBrush="Transparent">Save Change</Button>
+                Background="#FFECCA06" BorderBrush="Transparent" Click="Button_Click">Save Change</Button>
     </Grid>
 </UserControl>

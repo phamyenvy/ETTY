@@ -19,6 +19,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
     /// </summary>
     public partial class ProfileSettingWd : Window
     {
+        TaiKhoan tk = null;
         public ProfileSettingWd()
         {
             InitializeComponent();
@@ -26,10 +27,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
         public ProfileSettingWd(TaiKhoan tk) //đi từ register thành công
         {
             InitializeComponent();
+            this.tk = tk;
+            General.IsSelected = true;
         }
         private void General_Selected(object sender, RoutedEventArgs e)
         {
-            uc_General uc = new uc_General();
+            uc_General uc = new uc_General(this.tk);
             General.Background = Brushes.White;
             content.Children.Clear();
             content.Children.Add(uc);
@@ -37,7 +40,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 
         private void Profile_Selected(object sender, RoutedEventArgs e)
         {
-            uc_EditProfile uc = new uc_EditProfile();
+            uc_EditProfile uc = new uc_EditProfile(this.tk);
             content.Children.Clear();
             content.Children.Add(uc);
         }

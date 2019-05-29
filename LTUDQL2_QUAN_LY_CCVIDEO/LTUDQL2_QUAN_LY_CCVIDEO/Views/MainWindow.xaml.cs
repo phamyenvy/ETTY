@@ -44,8 +44,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             lst.Add(DBProvider.getMainVideo_Phu()); // để lấy video main ra chuyển sang dạng videoinfo để bật full screen
 
             DataContext = lst;
-
-            cbCats.DataContext = DBProvider.getLoaiVideo();
+            List<String> lstVideo = DBProvider.getLoaiVideo();
+            cbCats.ItemsSource = lstVideo;
+            
+            cbCats.DisplayMemberPath = "TenLoaiVideo";
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -338,7 +340,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         }
         private void lstItemSetting_Selected(object sender, RoutedEventArgs e)
         {
-            ProfileSettingWd wd = new ProfileSettingWd();
+            ProfileSettingWd wd = new ProfileSettingWd(this.tk);
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
             this.Close();

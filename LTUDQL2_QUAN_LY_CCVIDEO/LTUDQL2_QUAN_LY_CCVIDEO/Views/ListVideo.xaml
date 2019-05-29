@@ -60,8 +60,7 @@
                     </ToggleButton>
                     
                 </Grid>
-                <Label Content="{Binding Path= Title}" VerticalAlignment="Bottom" Foreground="White"
-                       FontWeight="DemiBold"></Label>
+                
 
 
             </Grid>
@@ -72,8 +71,9 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                <GradientStop Color="#FF3E3D3B"/>
-                <GradientStop Color="#FFCBAC00" Offset="1"/>
+                <GradientStop Color="#FF34495E"/>
+                <GradientStop Color="#FFF0CD09" Offset="1"/>
+                <GradientStop Color="#FFDF4949" Offset="0.4"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>

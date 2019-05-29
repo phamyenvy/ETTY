@@ -1,4 +1,5 @@
-﻿using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -138,6 +139,17 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 
                             TaiKhoan tk = new TaiKhoan() { TenTaiKhoan = TenTaiKhoan, LoaiTaiKhoan = 1, CapDo = CapDo, NgayHetHan = DateTime.Now.AddDays(4), Password = Password, TenHienThi = TenHienThi, IDThe = IDCard, MaXacNhan = 0 };
                             qlccv.TaiKhoans.Add(tk);
+                            qlccv.SaveChanges();
+
+                            int maTk = DBProvider.getIDAcc(TenTaiKhoan);
+                            Profile pf0 = new Profile() { TenHienThi = "Strange", TaiKhoan = maTk};
+                            Profile pf1 = new Profile() { TenHienThi = "Steve", TaiKhoan = maTk };
+                            Profile pf2 = new Profile() { TenHienThi = "Scottlang", TaiKhoan = maTk };
+                            Profile pf3 = new Profile() { TenHienThi = "Banner", TaiKhoan = maTk };
+                            qlccv.Profiles.Add(pf0);
+                            qlccv.Profiles.Add(pf1);
+                            qlccv.Profiles.Add(pf2);
+                            qlccv.Profiles.Add(pf3);
                             qlccv.SaveChanges();
 
                             MessageBox.Show("Tạo tài khoản thành công");
