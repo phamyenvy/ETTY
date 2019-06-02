@@ -27,6 +27,23 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
             InitializeComponent();
         }
         string TenHienThi = "", TenTaiKhoan = "", Password = "", IDCard = "", FirstName = "", LastName = "", Code = "";
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                btnNext_Click(sender, e);
+            }
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Login wd = new Login();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Close();
+            this.Close();
+        }
+
         int CapDo = 0;
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
@@ -137,15 +154,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                                 qlccv.SaveChanges();
                             }
 
-                            TaiKhoan tk = new TaiKhoan() { TenTaiKhoan = TenTaiKhoan, LoaiTaiKhoan = 1, CapDo = CapDo, NgayHetHan = DateTime.Now.AddDays(4), Password = Password, TenHienThi = TenHienThi, IDThe = IDCard, MaXacNhan = 0 };
+                            TaiKhoan tk = new TaiKhoan() { TenTaiKhoan = TenTaiKhoan, LoaiTaiKhoan = 1, CapDo = CapDo, NgayHetHan = DateTime.Now.AddDays(30), Password = Password, TenHienThi = TenHienThi, IDThe = IDCard, MaXacNhan = 0 };
                             qlccv.TaiKhoans.Add(tk);
                             qlccv.SaveChanges();
 
                             int maTk = DBProvider.getIDAcc(TenTaiKhoan);
-                            Profile pf0 = new Profile() { TenHienThi = "Strange", TaiKhoan = maTk};
-                            Profile pf1 = new Profile() { TenHienThi = "Steve", TaiKhoan = maTk };
-                            Profile pf2 = new Profile() { TenHienThi = "Scottlang", TaiKhoan = maTk };
-                            Profile pf3 = new Profile() { TenHienThi = "Banner", TaiKhoan = maTk };
+                            Profile pf0 = new Profile() { TenHienThi = "Strange", TaiKhoan = maTk, AvatarLink = "1"};
+                            Profile pf1 = new Profile() { TenHienThi = "Steve", TaiKhoan = maTk, AvatarLink = "2"};
+                            Profile pf2 = new Profile() { TenHienThi = "Scottlang", TaiKhoan = maTk, AvatarLink = "2" };
+                            Profile pf3 = new Profile() { TenHienThi = "Banner", TaiKhoan = maTk, AvatarLink = "2" };
                             qlccv.Profiles.Add(pf0);
                             qlccv.Profiles.Add(pf1);
                             qlccv.Profiles.Add(pf2);

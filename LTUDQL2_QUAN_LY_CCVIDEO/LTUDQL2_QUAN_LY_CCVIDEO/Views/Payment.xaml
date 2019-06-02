@@ -10,7 +10,7 @@
         FontSize="20"
         Title="ETTY" Height="500" Width="700" ResizeMode="CanMinimize" >
     <StackPanel>
-        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
+        <Image Source="D:\LTUDQL2\a.png" 
                        VerticalAlignment="Top" Height="170" 
                        OpacityMask="#FFACA741" Margin="0,-21,0,-29"/>
         <Border Height="330" Margin="10" BorderThickness="1" Background="Transparent" BorderBrush="#FFFED700">

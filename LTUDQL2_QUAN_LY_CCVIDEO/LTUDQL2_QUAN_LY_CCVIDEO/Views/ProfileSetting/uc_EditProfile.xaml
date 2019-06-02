@@ -9,41 +9,41 @@
              Background="White"
              d:DesignHeight="490" d:DesignWidth="945">
     <Grid>
-        <UniformGrid Rows="4" Height="520" VerticalAlignment="Top">
+        <UniformGrid Rows="4" Height="480" VerticalAlignment="Top">
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava1.png"
+                    <Image Source="D:\LTUDQL2\ava1.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name1" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Strange</TextBox>
-                    <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
+                    <CheckBox x:Name="Check1" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="Check1_Checked" Unchecked="Check1_Unchecked">Check for main profile</CheckBox>
                 </StackPanel>
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava2.png"
+                    <Image Source="D:\LTUDQL2\ava2.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name2" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Steve</TextBox>
-                    <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
+                    <CheckBox x:Name="check2" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="check2_Checked" Unchecked="check2_Unchecked">Check for main profile</CheckBox>
                 </StackPanel>
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava3.png"
+                    <Image Source="D:\LTUDQL2\ava3.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name3" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Scottlang</TextBox>
-                    <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
+                    <CheckBox x:Name="check3" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="check3_Checked" Unchecked="check3_Unchecked">Check for main profile</CheckBox>
                 </StackPanel>
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava4.png"
+                    <Image Source="D:\LTUDQL2\ava4.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name4" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Banner</TextBox>
-                    <CheckBox Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06">Check for main profile</CheckBox>
+                    <CheckBox x:Name="check4" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="check4_Checked" Unchecked="check4_Unchecked">Check for main profile</CheckBox>
                 </StackPanel>
             </Border>
 

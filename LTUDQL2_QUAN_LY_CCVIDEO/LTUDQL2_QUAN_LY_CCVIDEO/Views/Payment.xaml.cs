@@ -20,9 +20,11 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
     /// </summary>
     public partial class Payment : Window
     {
-        public Payment(string idcard)
+        string mail = "";
+        public Payment(string idcard, string mail)
         {
             InitializeComponent();
+            this.mail = mail;
             List<CapDoTaiKhoan> lst =  DBProvider.getCapDo();
             cbLevel.ItemsSource = lst;
             cbLevel.SelectedItem = lst[0];
@@ -32,13 +34,23 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 
         private void btnDone_Click(object sender, RoutedEventArgs e)
         {
-            if(DBProvider.checkCodeCard(txtIDCard.Text, txtPass.Password) == 1)
+            if (DBProvider.checkExitsCard(txtIDCard.Text) == 1)
             {
-                MessageBox.Show("Thanh toán thành công!");
+                if (DBProvider.checkCodeCard(txtIDCard.Text, txtPass.Password) == 1)
+                {
+                    DBProvider.paySuccess(mail, cbLevel.SelectedValue as CapDoTaiKhoan);
+                    MessageBox.Show("Thanh toán thành công!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thanh toán thất bại!");
+                }
             }
             else
             {
-                MessageBox.Show("Thanh toán thất bại!");
+                MessageBox.Show("Thanh toán thành công!");
+                this.Close();
             }
         }
     }

@@ -87,7 +87,7 @@
                         </ListBoxItem>
                     </ListBox>
                 </materialDesign:PopupBox>
-                <Image Margin="0,-11,0,-10" Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Width="76"/>
+                <Image Margin="0,-11,0,-10" Source="D:\LTUDQL2\a.png" Width="76"/>
 
                 <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
                                    Margin="7"
@@ -98,12 +98,13 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Button Style="{DynamicResource MaterialDesignToolButton}">
+                        <Button x:Name="btnSearch" Style="{DynamicResource MaterialDesignToolButton}" Click="btnSearch_Click">
                             <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
                         </Button>
-                        <TextBox Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
+                        <TextBox x:Name="txtSearch" Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
                                      materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0"
-                                     MinWidth="200" VerticalAlignment="Center" />
+                                     MinWidth="200" VerticalAlignment="Center"
+                                 KeyUp="txtSearch_KeyUp"/>
                     </Grid>
                 </materialDesign:ColorZone>
 

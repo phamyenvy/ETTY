@@ -24,6 +24,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         public Login()
         {
             InitializeComponent();
+            txtNameRegister.Focus();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -59,7 +60,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                     }
                     else
                     {
-                        MessageBox.Show("Mở trang thanh toán");
+                        Payment wd = new Payment(tk.IDThe, tk.TenTaiKhoan);
+                        wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        wd.Show();
                     }
                     
                 }
@@ -82,7 +85,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Register re = new Register();
-            re.ShowDialog();
+            re.Show();
+            this.Close();
         }
 
         private void txtPassword_KeyUp(object sender, KeyEventArgs e)

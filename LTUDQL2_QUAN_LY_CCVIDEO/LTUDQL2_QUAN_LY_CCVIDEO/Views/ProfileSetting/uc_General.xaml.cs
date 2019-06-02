@@ -49,7 +49,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 
         private void btnPay_Click(object sender, RoutedEventArgs e)
         {
-            Payment wd = new Payment(tbIDCard.Text);
+            Payment wd = new Payment(tbIDCard.Text, tk.TenTaiKhoan);
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
         }

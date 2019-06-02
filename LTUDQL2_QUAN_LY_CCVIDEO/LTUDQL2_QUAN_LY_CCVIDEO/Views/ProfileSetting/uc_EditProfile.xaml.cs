@@ -36,6 +36,22 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             name2.Text = lst[1].TenHienThi;
             name3.Text = lst[2].TenHienThi;
             name4.Text = lst[3].TenHienThi;
+            if(lst[0].AvatarLink == "1")
+            {
+                Check1.IsChecked = true;
+            }
+            if (lst[1].AvatarLink == "1")
+            {
+                check2.IsChecked = true;
+            }
+            if (lst[2].AvatarLink == "1")
+            {
+                check3.IsChecked = true;
+            }
+            if (lst[3].AvatarLink == "1")
+            {
+                check4.IsChecked = true;
+            }
 
         }
 
@@ -53,6 +69,54 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
                 MessageBox.Show("Update Fail!");
             }
             
+        }
+
+        private void Check1_Checked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.checkProfileMain(lst[0].MaProfile);
+
+        }
+
+        private void check2_Checked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.checkProfileMain(lst[1].MaProfile);
+
+        }
+
+        private void check3_Checked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.checkProfileMain(lst[2].MaProfile);
+
+        }
+
+        private void check4_Checked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.checkProfileMain(lst[3].MaProfile);
+
+        }
+
+        private void check4_Unchecked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.uncheckProfileMain(lst[3].MaProfile);
+
+        }
+
+        private void check3_Unchecked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.uncheckProfileMain(lst[2].MaProfile);
+
+        }
+
+        private void check2_Unchecked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.uncheckProfileMain(lst[1].MaProfile);
+
+        }
+
+        private void Check1_Unchecked(object sender, RoutedEventArgs e)
+        {
+            DBProvider.uncheckProfileMain(lst[0].MaProfile);
+
         }
     }
 }

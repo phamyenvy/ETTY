@@ -35,6 +35,37 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return vdinfo;
             }
         }
+        public static List<VideoInfo> getSearchVideo(string[] searchTerm)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<Video> vd =  qlccv.Videos.SqlQuery("select * from Video WHERE CONTAINS(TenVideo, {0}) OR CONTAINS(MoTa, {1})", searchTerm[0], searchTerm[0]).ToList();
+
+                for (int i = 1; i < searchTerm.Length; i++)
+                {
+                    List<Video> temp = qlccv.Videos.SqlQuery("select * from Video WHERE CONTAINS(TenVideo, {0}) OR CONTAINS(MoTa, {1})", searchTerm[i], searchTerm[i]).ToList();
+                    vd.AddRange(temp);
+                    
+                }
+
+
+                List<VideoInfo> vdinfo = new List<VideoInfo>();
+
+                foreach (Video v in vd)
+                {
+                    VideoInfo info = new VideoInfo();
+                    info.ID = v.MaVideo.ToString();
+                    info.Title = v.TenVideo;
+                    info.Path = v.LinkImage;
+                    info.PathVideo = v.LinkTrailer;
+                    info.Description = v.MoTa;
+                    info.Views = v.LuotXem.ToString();
+                    vdinfo.Add(info);
+                }
+
+                return vdinfo;
+            }
+        }
         public static VideoInfo getVideo(int ID)
         {
             using (var qlccv = new QuanLyCCVEntities())
@@ -61,6 +92,60 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return tk.MaTaiKhoan;
             }
         }
+        public static int checkExitsCard(string IDCard)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                The the = qlccv.Thes.Where(v => v.IDCard == IDCard).SingleOrDefault();
+                if(the != null)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+                
+            }
+        }
+
+        public static void checkProfileMain(int ProfileID)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Profile pf = qlccv.Profiles.Where(v => v.MaProfile == ProfileID).SingleOrDefault();
+                pf.AvatarLink = "1";
+                qlccv.SaveChanges();
+
+                
+            }
+        }
+        public static void uncheckProfileMain(int ProfileID)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                Profile pf = qlccv.Profiles.Where(v => v.MaProfile == ProfileID).SingleOrDefault();
+                pf.AvatarLink = "2";
+                qlccv.SaveChanges();
+
+
+            }
+        }
+        public static void paySuccess(string mail, CapDoTaiKhoan capDo)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+
+                TaiKhoan tk = qlccv.TaiKhoans.Where(v => v.TenTaiKhoan == mail).SingleOrDefault();
+                tk.NgayHetHan = tk.NgayHetHan.Value.AddDays(30);
+                tk.LoaiTaiKhoan = 1;
+                tk.CapDo = capDo.MaCapDo;
+                qlccv.SaveChanges();
+
+
+            }
+        }
+
         public static List<Profile> getPf(int IDAcc)
         {
             using (var qlccv = new QuanLyCCVEntities())

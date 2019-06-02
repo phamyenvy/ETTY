@@ -340,10 +340,18 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         }
         private void lstItemSetting_Selected(object sender, RoutedEventArgs e)
         {
-            ProfileSettingWd wd = new ProfileSettingWd(this.tk);
-            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            wd.Show();
-            this.Close();
+            if(pf.AvatarLink == "1")
+            {
+                ProfileSettingWd wd = new ProfileSettingWd(this.tk, this.pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Your profile not allowed go to setting!");
+            }
+            
         }
 
         #endregion
@@ -409,5 +417,23 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         }
 
         
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnSearch_Click(sender, e);
+            }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string[] strSearch = txtSearch.Text.Split(' ');
+
+            ListVideo wd = new ListVideo(strSearch, this.tk, this.pf);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
     }
 }

@@ -7,14 +7,13 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
         xmlns:m="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Model"
-
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         FontSize="20"
         Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
     <Window.Resources>
         <DataTemplate DataType="{x:Type m:VideoInfo}">
-            <Grid Width="300" Height="210" Margin="10,5" Name="Scroll" Tag="{Binding Path=ID}">
+            <Grid Width="250" Height="190" HorizontalAlignment="Center" Margin="10,5" Name="Scroll" Tag="{Binding Path=ID}">
                 <Grid.Style>
                     <Style TargetType="{x:Type Grid}">
                         <EventSetter Event="MouseEnter" Handler="Grid_MouseEnter"/>
@@ -60,6 +59,8 @@
                     </ToggleButton>
                     
                 </Grid>
+                <TextBlock Margin=" 5,-10" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Text="{Binding Path=Title}" Foreground="White" FontWeight="UltraLight" FontSize="25" ></TextBlock>
+
                 
 
 
@@ -78,8 +79,7 @@
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <materialDesign:ColorZone Mode="Inverted" Height="90" Padding="16" Background="#1A2530">
             <DockPanel>
@@ -95,7 +95,10 @@
                 </materialDesign:PopupBox>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
-                        <Image MouseDown="Image_MouseDown" Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Height="70" Width="100" Margin="0"/>
+                        <Button x:Name="btnBackToHome" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" BorderBrush="Transparent" Click="btnHome_Click">
+                            <materialDesign:PackIcon Kind="ArrowLeft" Height="30" Width="50"/>
+                        </Button>
+                        <Image MouseDown="Image_MouseDown" Source="D:\LTUDQL2\a.png" Height="70" Width="100" Margin="0"/>
 
 
                     </StackPanel>
@@ -109,43 +112,31 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Button Style="{DynamicResource MaterialDesignToolButton}">
+                        <Button x:Name="btnSearch" Click="btnSearch_Click" Style="{DynamicResource MaterialDesignToolButton}">
                             <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
                         </Button>
-                        <TextBox Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
+                        <TextBox x:Name="txtSearch" Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
                                      materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0"
-                                     MinWidth="200" VerticalAlignment="Center" />
+                                     MinWidth="200" VerticalAlignment="Center" KeyUp="txtSearch_KeyUp"/>
                     </Grid>
                 </materialDesign:ColorZone>
 
-                <Menu Background="Transparent" Margin="0" Foreground="White" VerticalAlignment="Center">
+                <Menu Background="#FF1A2530" Margin="0" Foreground="White" VerticalAlignment="Center">
 
                     <MenuItem Header="Home" Name="btnHome" Click="btnHome_Click"></MenuItem>
-                    <MenuItem Header="Categories">
-                        <TextBlock FontWeight="Medium">Romantic</TextBlock>
-                        <TextBlock FontWeight="Medium">Action</TextBlock>
-                        <TextBlock FontWeight="Medium">Viễn tưởng</TextBlock>
-                        <TextBlock FontWeight="Medium">Phiêu lưu</TextBlock>
-                        <TextBlock FontWeight="Medium">Music</TextBlock>
-                        <TextBlock FontWeight="Medium">Hài hước</TextBlock>
-                        <TextBlock FontWeight="Medium">History</TextBlock>
-                        <TextBlock FontWeight="Medium">Catoons</TextBlock>
-                        <TextBlock FontWeight="Medium">Kinh dị</TextBlock>
-                        <TextBlock FontWeight="Medium">Thần thoại</TextBlock>
-                        <TextBlock FontWeight="Medium">Hình sự</TextBlock>
-                        <TextBlock FontWeight="Medium">Huyền bí</TextBlock>
+                    <MenuItem Header="Categories" Name="cbCats">
                     </MenuItem>
                     <MenuItem Header="My List"></MenuItem>
                 </Menu>
             </DockPanel>
         </materialDesign:ColorZone>
-        <Label x:Name="contentLst" FontSize="20"  Grid.Row="1"/>
         <ScrollViewer Background="Transparent" Grid.Row="2" >
-            <ItemsControl ItemsSource="{Binding [0]}" Margin="50,0">
+            <ItemsControl ItemsSource="{Binding [0]}" Margin="10,0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid HorizontalAlignment="Center" Columns="4" 
-                                             VerticalAlignment="Center" />
+                        <UniformGrid  Columns="4">
+                            
+                        </UniformGrid>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
