@@ -6,33 +6,40 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator"
              mc:Ignorable="d" 
-             d:DesignHeight="561" d:DesignWidth="945">
+             d:DesignHeight="561" d:DesignWidth="945" Initialized="UserControl_Initialized">
     <Grid Background="White">
         <DataGrid Margin="10,10,10,60" IsReadOnly="True" x:Name="dtgAcc"
+                  ItemsSource="{Binding}"
                   CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
                           materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" 
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" 
+                                    Binding="{Binding MaTaiKhoan}"/>
                 <DataGridTextColumn Header="Name"
-                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Width="150"/>
-                <DataGridTextColumn Header="Mail" Width="250"/>
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Width="150"
+                                    Binding="{Binding TenHienThi}"/>
+                <DataGridTextColumn Header="Mail" Width="250" Binding="{Binding TenTaiKhoan}"/>
                 <DataGridComboBoxColumn Header="Level" Width="100"/>
-                <DataGridTemplateColumn Header="EXP" Width="100">
+                <DataGridTemplateColumn Header="EXP" Width="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <DatePicker Margin="10" Background="#FFEE1717"/>
+                            <StackPanel>
+                                <DatePicker Text="{Binding NgayHetHan}" />
+                            </StackPanel>
+
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+
                 </DataGridTemplateColumn>
                 <DataGridComboBoxColumn Header="Status" Width="100" />
-                <DataGridTextColumn Header="Card ID" Width="120"/>
+                <DataGridTextColumn Header="Card ID" Width="120" Binding="{Binding IDThe}"/>
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Margin="10" Background="#FFEE1717" >
-                                <materialDesign:PackIcon Kind="Delete" Height="20" Width="20" Foreground="Black"/>
+                            <Button Name="btnDeleteAcc" Margin="10" Background="#FFEE1717" Click="btnDeleteAcc_Click" >
+                                <materialDesign:PackIcon Kind="Delete" Height="20" Width="20" Foreground="Black" />
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

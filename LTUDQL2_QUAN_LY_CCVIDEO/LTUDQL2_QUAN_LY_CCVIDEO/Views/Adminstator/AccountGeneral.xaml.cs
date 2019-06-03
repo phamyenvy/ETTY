@@ -20,6 +20,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
     /// </summary>
     public partial class AccountGeneral : UserControl
     {
+        QuanLyCCVEntities ccv;
+        List<TaiKhoan> taiKhoans;
         public AccountGeneral()
         {
             InitializeComponent();
@@ -33,6 +35,34 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         private void btnSaveAcc_Click(object sender, RoutedEventArgs e)
         {
             dtgAcc.IsReadOnly = false;
+        }
+
+        private void UserControl_Initialized(object sender, EventArgs e)
+        {
+            ccv = new QuanLyCCVEntities();
+            taiKhoans = ccv.TaiKhoans.ToList();
+            //dtgAcc.ItemsSource = taiKhoans;
+            DataContext = taiKhoans;
+        }
+
+        private void btnDeleteAcc_Click(object sender, RoutedEventArgs e)
+        {
+            ccv = new QuanLyCCVEntities();
+            int ID = (dtgAcc.SelectedItem as TaiKhoan).MaTaiKhoan;
+            // MessageBox.Show("ID: " + ID);
+            try
+            {
+                TaiKhoan t = ccv.TaiKhoans.First(p => p.MaTaiKhoan == ID);
+                ccv.TaiKhoans.Remove(t);
+                ccv.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Can't Remove Account!");
+            }
+
+            taiKhoans = ccv.TaiKhoans.ToList();
+            dtgAcc.ItemsSource = taiKhoans;
         }
     }
 }
