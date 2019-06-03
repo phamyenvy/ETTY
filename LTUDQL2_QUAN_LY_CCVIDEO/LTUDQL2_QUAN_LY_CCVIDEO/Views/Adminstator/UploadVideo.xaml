@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator"
               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="561" d:DesignWidth="945">
+             d:DesignHeight="561" d:DesignWidth="945" Initialized="UserControl_Initialized" Name="upLoaduc">
     <UserControl.Resources>
         <Style TargetType="{x:Type Label}">
             <Setter Property="FontSize" Value="25"/>
@@ -22,10 +23,10 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            
+
             <TextBlock Grid.Column="0" VerticalAlignment="Center"
                        HorizontalAlignment="Center" FontSize="30" Margin="50,0">Name :</TextBlock>
-            <TextBox Grid.Column="1" VerticalAlignment="Center" Width="700"
+            <TextBox Name="txtName" Grid.Column="1" VerticalAlignment="Center" Width="700"
                       
                      Height="50" Margin="20"></TextBox>
         </StackPanel>
@@ -77,54 +78,37 @@
             </Grid.RowDefinitions>
 
             <Label>Categories :</Label>
-            <ComboBox Grid.Column="1" Margin="25" Height="40" FontSize="20"
+            <ComboBox Name="cbCat" Grid.Column="1" Margin="25" Height="40" FontSize="20"
                     materialDesign:HintAssist.Hint="Search"
                     IsEditable="True"
-                    materialDesign:HintAssist.HintOpacity=".26" BorderBrush="Black" >
-                <ComboBoxItem>
-                    Apple
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Banana
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Pear
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Orange
-                </ComboBoxItem>
-            </ComboBox>
-            
+                    materialDesign:HintAssist.HintOpacity=".26" BorderBrush="Black"
+                    DisplayMemberPath="TenLoaiVideo"
+                    SelectedValue="0"/>
+
+
+
+
             <Label Grid.Column="2" Grid.Row="1">Level:</Label>
-            <ComboBox Grid.Column="3" Grid.Row="1" Margin="25" Height="40" FontSize="20"
+            <ComboBox Name="cbLevel" Grid.Column="3" Grid.Row="1" Margin="25" Height="40" FontSize="20"
                     materialDesign:HintAssist.Hint="Search"
                     IsEditable="True"
-                    materialDesign:HintAssist.HintOpacity=".26" BorderBrush="Black" >
-                <ComboBoxItem>
-                    Apple
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Banana
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Pear
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Orange
-                </ComboBoxItem>
-            </ComboBox>
+                    materialDesign:HintAssist.HintOpacity=".26" BorderBrush="Black"
+                    DisplayMemberPath="TenCapDo"
+                    SelectedValue="1"/>
+
+
             <Label Grid.Column="2" Grid.Row="0">MFG:</Label>
-            <DatePicker Grid.Column="3" Grid.Row="0" Margin="20" Height="40"></DatePicker>
+            <DatePicker Name="dpMFG" Grid.Column="3" Grid.Row="0" Margin="20" Height="40"></DatePicker>
             <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Margin="0,20,0,0">Description :</Label>
-            <RichTextBox Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="30" ></RichTextBox>
-            <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="60">Upload : </Label>
+            <TextBox Name="txtDes" Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Margin="10" AcceptsReturn="True" TextWrapping="Wrap" ></TextBox>
+            <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Left" Margin="60">Upload :</Label>
             <Button Name="btnUpload"  Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
                      Click="btnUpload_Click"
   ToolTip="Upload Now!" Grid.Column="3" Height="80" Width="80" Grid.Row="2"
                     BorderBrush="#FFFED700" HorizontalAlignment="Right" Margin="0,0,30,0" Background="#FFFED700" >
                 <materialDesign:PackIcon Kind="Upload"  Height="50" Width="50"/>
             </Button>
-            
+
         </Grid>
     </Grid>
 </UserControl>
