@@ -10,9 +10,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="561" d:DesignWidth="945" Initialized="UserControl_Initialized">
     <UserControl.Resources>
-        <ObjectDataProvider x:Key="cats" ObjectType="{x:Type v:DBProvider}"  MethodName="getCats"/>
+        
         <ObjectDataProvider x:Key="levels" ObjectType="{x:Type v:DBProvider}" MethodName="getCapDo"/>
-
+        <ObjectDataProvider x:Key="cats" ObjectType="{x:Type v:DBProvider}" MethodName="GetCats"/>
     </UserControl.Resources>
     <Grid Background="White">
         <DataGrid Margin="5,5,5,60"  IsReadOnly="True" x:Name="dtgVideo" ItemsSource="{Binding}"
