@@ -140,6 +140,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 tk.NgayHetHan = tk.NgayHetHan.Value.AddDays(30);
                 tk.LoaiTaiKhoan = 1;
                 tk.CapDo = capDo.MaCapDo;
+                ThanhToan tt = new ThanhToan() { TenThanhToan = tk.TenHienThi, IDThe = tk.IDThe, CapDoMua = capDo.MaCapDo, TaiKhoan = tk.MaTaiKhoan };
+                qlccv.ThanhToans.Add(tt);
                 qlccv.SaveChanges();
 
 

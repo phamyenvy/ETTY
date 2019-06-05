@@ -142,6 +142,9 @@
     <Compile Include="Views\ProfileSetting\uc_General.xaml.cs">
       <DependentUpon>uc_General.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProfileSetting\uc_PayHistory.xaml.cs">
+      <DependentUpon>uc_PayHistory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterViews\FinishRegisterDialog.xaml.cs">
       <DependentUpon>FinishRegisterDialog.xaml</DependentUpon>
     </Compile>
@@ -228,6 +231,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProfileSetting\uc_General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileSetting\uc_PayHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

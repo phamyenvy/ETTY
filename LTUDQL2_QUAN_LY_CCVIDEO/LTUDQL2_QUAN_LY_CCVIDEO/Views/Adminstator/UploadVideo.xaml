@@ -23,10 +23,23 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-
+            <Grid Margin="15" Height="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnSearch" Style="{DynamicResource MaterialDesignToolButton}" Click="btnSearch_Click">
+                    <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
+                </Button>
+                <TextBox x:Name="txtSearch" Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search in IMDB" 
+                                     materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                     MinWidth="200" VerticalAlignment="Center" FontSize="25"  Width="300"
+                                 KeyUp="txtSearch_KeyUp"/>
+            </Grid>
             <TextBlock Grid.Column="0" VerticalAlignment="Center"
                        HorizontalAlignment="Center" FontSize="30" Margin="50,0">Name :</TextBlock>
-            <TextBox Name="txtName" Grid.Column="1" VerticalAlignment="Center" Width="700"
+            <TextBox Name="txtName" Grid.Column="1" VerticalAlignment="Center" Width="300"
                       
                      Height="50" Margin="20"></TextBox>
         </StackPanel>

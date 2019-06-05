@@ -85,6 +85,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 
             var heart = gr.FindName("btnHeart") as ToggleButton;
             heart.Visibility = Visibility.Visible;
+            var add = gr.FindName("btnAddMyList") as ToggleButton;
+            add.Visibility = Visibility.Visible;
 
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Visible;
@@ -136,7 +138,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 
             var heart = gr.FindName("btnHeart") as ToggleButton;
             heart.Visibility = Visibility.Collapsed;
-
+            var add = gr.FindName("btnAddMyList") as ToggleButton;
+            add.Visibility = Visibility.Collapsed;
+            
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Collapsed;
             if (me != null)

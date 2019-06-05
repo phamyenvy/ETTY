@@ -40,7 +40,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         {
             Login wd = new Login();
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            wd.Close();
+            wd.Show();
             this.Close();
         }
 

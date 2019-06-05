@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
-22237085767
+23-667554796
 
-431169063023
+44-182774704
 20119493527
-Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
+Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
 
-False
+True
 
