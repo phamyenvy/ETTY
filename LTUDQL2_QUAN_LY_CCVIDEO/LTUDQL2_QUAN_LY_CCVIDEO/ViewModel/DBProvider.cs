@@ -2,12 +2,71 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
 {
+    class MaHoaChuoi
+    {
+        //Tham khảo https://ngotuongdan.wordpress.com/2015/12/16/c-ma-hoa-va-giai-ma-thong-tin-voi-mat-khau/
+
+        public static string MaHoa(string chuoiCanMaHoa, string key)
+        {
+            //string key = "1660587_KeePass_LTUDQL1";
+            bool suDungHasing = true;
+            byte[] mangKey;
+            byte[] mangChuoiCanMaHoa = UTF8Encoding.UTF8.GetBytes(chuoiCanMaHoa);
+
+            if (suDungHasing)
+            {
+                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+                mangKey = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+            }
+            else
+                mangKey = UTF8Encoding.UTF8.GetBytes(key);
+
+            TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
+            tdes.Key = mangKey;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform = tdes.CreateEncryptor();
+            byte[] mangKetQua = cTransform.TransformFinalBlock(mangChuoiCanMaHoa, 0, mangChuoiCanMaHoa.Length);
+
+            return Convert.ToBase64String(mangKetQua, 0, mangKetQua.Length);
+        }
+
+
+        public static string GiaiMa(string toDecrypt, string key)
+        {
+            //string key = "1660587_KeePass_LTUDQL1";
+            bool suDungHasing = true;
+            byte[] mangKey;
+            byte[] mangChuoiCanMaHoa = Convert.FromBase64String(toDecrypt);
+
+            if (suDungHasing)
+            {
+                MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
+                mangKey = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+            }
+            else
+                mangKey = UTF8Encoding.UTF8.GetBytes(key);
+
+            TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
+            tdes.Key = mangKey;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+
+            ICryptoTransform cTransform = tdes.CreateDecryptor();
+            byte[] mangKetQua = cTransform.TransformFinalBlock(mangChuoiCanMaHoa, 0, mangChuoiCanMaHoa.Length);
+
+            return UTF8Encoding.UTF8.GetString(mangKetQua);
+        }
+    }
+
     public class DBProvider
     {
         public static List<VideoInfo> getTrendingVideo()
