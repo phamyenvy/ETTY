@@ -142,11 +142,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return info;
             }
         }
-        public static List<Object> getDSThanhToan(TaiKhoan tk)
+        
+        public static List<ThanhToan> getDSThanhToan(TaiKhoan tk)
         {
             using (var qlccv = new QuanLyCCVEntities())
             {
-                List<Object> lst = qlccv.ThanhToans.Where(q => q.TaiKhoan == tk.MaTaiKhoan).ToList().
+                List<ThanhToan> lst = qlccv.ThanhToans.Where(q => q.TaiKhoan == tk.MaTaiKhoan).ToList();
                 return lst;
             }
                     
@@ -225,6 +226,16 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return pf;
             }
         }
+
+        public static List<TaiKhoan> getAccounts()
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<TaiKhoan> tk = qlccv.TaiKhoans.ToList();
+                return tk;
+            }
+        }
+
         public static void updateProfile(int IDProfile, string newName)
         {
             using (var qlccv = new QuanLyCCVEntities())

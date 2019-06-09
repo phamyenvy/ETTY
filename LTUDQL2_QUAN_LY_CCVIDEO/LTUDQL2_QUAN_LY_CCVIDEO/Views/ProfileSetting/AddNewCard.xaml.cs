@@ -31,7 +31,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
         {
             try
             {
-                DBProvider.addNewCard(txtIDCard.Text, txtFName.Text, txtLName.Text, txtPass.Password, maTK);
+                string Pass = MaHoaChuoi.MaHoa(txtPass.Password, "etty");
+                DBProvider.addNewCard(txtIDCard.Text, txtFName.Text, txtLName.Text, Pass, maTK);
                 this.Close();
                 
             }
