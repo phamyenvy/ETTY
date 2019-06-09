@@ -18,9 +18,9 @@
             </LinearGradientBrush>
 
         </Grid.Background>
-        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
-                       VerticalAlignment="Top" Height="170" 
-                       OpacityMask="#FFACA741" Margin="0,-36,0,0"/>
+        <!--<Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
+               VerticalAlignment="Top" Height="170" 
+               OpacityMask="#FFACA741" Margin="0,-36,0,0"/>-->
         <Grid Margin="0,100,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -29,6 +29,7 @@
             <Grid Grid.Column="0" Margin="5,5,0,5" Background="Transparent">
                 <TreeView MinWidth="220">
                     <TreeViewItem Header="Video Manager" IsExpanded="True">
+                        <TreeViewItem Name="SearchItem" Header="Search in IMDB" Selected="SearchItem_Selected"/>
                         <TreeViewItem Name="UploadItem" Header="Upload" Selected="UploadItem_Selected"/>
                         <TreeViewItem Name="GeneralItem" Header="Edit / Delete" Selected="GeneralItem_Selected"/>
                     </TreeViewItem>
