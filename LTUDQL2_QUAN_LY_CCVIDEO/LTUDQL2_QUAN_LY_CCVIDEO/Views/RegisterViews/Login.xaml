@@ -17,7 +17,7 @@
                 <GradientStop Color="#FFCBAC00" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" VerticalAlignment="Top" Height="170" OpacityMask="#FFACA741"/>
+        <Image Source="D:\LTUDQL2\a.png" VerticalAlignment="Top" Height="170" OpacityMask="#FFACA741"/>
 
         <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"

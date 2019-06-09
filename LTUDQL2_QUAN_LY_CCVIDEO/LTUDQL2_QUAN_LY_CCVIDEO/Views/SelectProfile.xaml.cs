@@ -21,11 +21,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
     /// </summary>
     public partial class SelectProfile : Window
     {
+        TaiKhoan tkMain = new TaiKhoan();
         public SelectProfile()
         {
             InitializeComponent();
         }
-        public SelectProfile(TaiKhoan tk)
+        public SelectProfile(TaiKhoan tk )
         {
             InitializeComponent();
             List<Profile> a = DBProvider.getProfile(tk);
@@ -38,7 +39,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             tkMain = tk;
             lst = a;
         }
-        TaiKhoan tkMain = new TaiKhoan();
+        
         List<Profile> lst = new List<Profile>();
 
         private void btnProfile1_Click(object sender, RoutedEventArgs e)
@@ -101,12 +102,6 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             }
         }
 
-        private void btnSetting_Click(object sender, RoutedEventArgs e)
-        {
-            ProfileSettingWd wd = new ProfileSettingWd();
-            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            wd.Show();
-            
-        }
+        
     }
 }

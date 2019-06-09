@@ -20,17 +20,17 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            using(var qlccv =new QuanLyCCVEntities())
-            {
-                TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.MaTaiKhoan == 2).SingleOrDefault();
-                Profile pf = qlccv.Profiles.Where(t => t.TaiKhoan == 2).SingleOrDefault();
-                var wd = new MainWindow(tk,pf);
-                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                wd.Show();
-            }
-            //var wd = new StartWd();
-            //wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            //wd.Show();
+            //using(var qlccv =new QuanLyCCVEntities())
+            //{
+            //    TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.MaTaiKhoan == 2).SingleOrDefault();
+            //    Profile pf = qlccv.Profiles.Where(t => t.TaiKhoan == 2).SingleOrDefault();
+            //    var wd = new MainWindow(tk,pf);
+            //    wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            //    wd.Show();
+            //}
+            var wd = new StartWd();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
         }
     }
 }

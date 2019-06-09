@@ -76,7 +76,7 @@
             <DockPanel Margin="50,0">
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
                     <ListBox >
-                        <ListBoxItem>
+                        <ListBoxItem Name="lstItemSetting" Selected="lstItemSetting_Selected">
                             Setting
                         </ListBoxItem>
                         <ListBoxItem Name="lstItemSelProfile" Selected="lstItemSelProfile_Selected">
@@ -87,7 +87,7 @@
                         </ListBoxItem>
                     </ListBox>
                 </materialDesign:PopupBox>
-                <Image Margin="0,-11,0,-10" Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Width="76"/>
+                <Image Margin="0,-11,0,-10" Source="D:\LTUDQL2\a.png" Width="76"/>
 
                 <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
                                    Margin="7"
@@ -98,31 +98,21 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Button Style="{DynamicResource MaterialDesignToolButton}">
+                        <Button x:Name="btnSearch" Style="{DynamicResource MaterialDesignToolButton}" Click="btnSearch_Click">
                             <materialDesign:PackIcon Kind="Magnify" Opacity=".56" />
                         </Button>
-                        <TextBox Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
+                        <TextBox x:Name="txtSearch" Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
                                      materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0"
-                                     MinWidth="200" VerticalAlignment="Center" />
+                                     MinWidth="200" VerticalAlignment="Center"
+                                 KeyUp="txtSearch_KeyUp"/>
                     </Grid>
                 </materialDesign:ColorZone>
 
-                <Menu Background="Transparent" Margin="0" Foreground="White" VerticalAlignment="Center">
+                <Menu Background="#FF1A2530" Margin="0" Foreground="White" VerticalAlignment="Center">
 
                     <MenuItem Header="Home"></MenuItem>
-                    <MenuItem Header="Categories" Name="cbCats"> 
-                        <TextBlock FontWeight="Medium">Romantic</TextBlock>
-                        <TextBlock FontWeight="Medium">Action</TextBlock>
-                        <TextBlock FontWeight="Medium">Viễn tưởng</TextBlock>
-                        <TextBlock FontWeight="Medium">Phiêu lưu</TextBlock>
-                        <TextBlock FontWeight="Medium">Music</TextBlock>
-                        <TextBlock FontWeight="Medium">Hài hước</TextBlock>
-                        <TextBlock FontWeight="Medium">History</TextBlock>
-                        <TextBlock FontWeight="Medium">Catoons</TextBlock>
-                        <TextBlock FontWeight="Medium">Kinh dị</TextBlock>
-                        <TextBlock FontWeight="Medium">Thần thoại</TextBlock>
-                        <TextBlock FontWeight="Medium">Hình sự</TextBlock>
-                        <TextBlock FontWeight="Medium">Huyền bí</TextBlock>
+                    <MenuItem Header="Categories" Name="cbCats">
+                        
                     </MenuItem>
                     <MenuItem Header="My List" Name="myList" Click="myList_Click"></MenuItem>
 
@@ -134,7 +124,14 @@
         </materialDesign:ColorZone>
 
         <Grid Name="Content" >
-            <ScrollViewer Height="570" Background="#FFFCE22B">
+            <ScrollViewer Height="560">
+                <ScrollViewer.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FF34495E"/>
+                            <GradientStop Color="#FFF0CD09" Offset="1"/>
+                            <GradientStop Color="#FFDF4949" Offset="0.4"/>
+                        </LinearGradientBrush>
+                </ScrollViewer.Background>
                 <ScrollViewer.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -271,7 +268,7 @@
                                         <Grid.LayoutTransform>
                                             <ScaleTransform/>
                                         </Grid.LayoutTransform>
-                                        <ScrollViewer Name="scrollViewer" HorizontalAlignment="Right" Width="Auto">
+                                        <ScrollViewer Name="scrollViewer" HorizontalAlignment="Left" Width="Auto">
                                             <ScrollViewer.Template>
                                                 <ControlTemplate TargetType="{x:Type ScrollViewer}">
                                                     <Grid>
@@ -410,7 +407,7 @@
                                         <Grid.LayoutTransform>
                                             <ScaleTransform/>
                                         </Grid.LayoutTransform>
-                                        <ScrollViewer Name="scrollViewer" HorizontalAlignment="Right" Width="Auto">
+                                        <ScrollViewer Name="scrollViewer" HorizontalAlignment="Left" Width="Auto">
                                             <ScrollViewer.Template>
                                                 <ControlTemplate TargetType="{x:Type ScrollViewer}">
                                                     <Grid>

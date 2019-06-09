@@ -49,7 +49,7 @@
                             <Grid.Background>
                                 <ImageBrush ImageSource="{Binding Path=Path}"/>
                             </Grid.Background>
-                            <MediaElement Margin="5"  Name="mediaVideo" 
+                            <MediaElement Margin="0"  Name="mediaVideo" 
                                       Source="{Binding Path=PathVideo}"
                                Stretch="Fill" Height="530" 
                                LoadedBehavior="Manual"
@@ -184,15 +184,15 @@
         </ScrollViewer>
         <Grid Margin="0,0,0,580">
             <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFB6AF90" Offset="0"/>
-                    <GradientStop Color="#FFEBC710" Offset="1"/>
-                    <GradientStop Color="#FFBDB9A1" Offset="1"/>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FF34495E"/>
+                    <GradientStop Color="#FFF0CD09" Offset="1"/>
+                    <GradientStop Color="#FFDF4949" Offset="0.4"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" 
+            <Image Source="D:\LTUDQL2\a.png" 
                        VerticalAlignment="Top" Height="170" 
-                       OpacityMask="#FFACA741" Margin="0,-45,0,0"/>
+                       OpacityMask="#FFACA741" Margin="0,-21,0,-29"/>
             <Button x:Name="btnBack" Height="70" Width="70"
                 Background="Transparent" BorderBrush="Transparent" Click="btnBack_Click" Margin="10,10,1114,11">
                 <materialDesign:PackIcon Kind="KeyboardBackspace" Height="50" Width="50"/>

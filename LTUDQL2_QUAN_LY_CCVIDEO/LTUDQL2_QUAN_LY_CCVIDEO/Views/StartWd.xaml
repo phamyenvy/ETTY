@@ -27,7 +27,7 @@
                             <GradientStop Color="#FF511515" Offset="1"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                <Image  Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\img_1908.jpg" Height="500" Width="1200">
+                <Image  Source="D:\LTUDQL2\img_1908.jpg" Height="500" Width="1200">
                         <Image.Effect>
                             <BlurEffect Radius="15" RenderingBias="Quality"/>
                         </Image.Effect>
@@ -95,7 +95,7 @@
 
             </Grid>
                 <Grid>
-                <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" Margin="450,-720,450,700"/>
+                <Image Source="D:\LTUDQL2\a.png" Margin="450,-720,450,700"/>
                     <Label Foreground="White" FontWeight="DemiBold" FontSize="100" HorizontalAlignment="Center" Margin="200,-500,200,600" Width="776">Try your channel</Label>
                     <Grid Height="80" Margin="0,-400,0,459">
                         <Grid.ColumnDefinitions>

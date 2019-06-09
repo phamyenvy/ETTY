@@ -1,4 +1,5 @@
-﻿using LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,16 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
         {
             InitializeComponent();
         }
+        TaiKhoan tk = null;
+        public uc_General(TaiKhoan tk)
+        {
+            InitializeComponent();
+            this.tk = tk;
+            txtNameAcc.Text = tk.TenHienThi;
+            tblLevel.Text = DBProvider.getLevelAcc(tk);
+            tblDate.Text = tk.NgayHetHan.Value.Date.ToString();
+            tbIDCard.Text = tk.IDThe;
+        }
 
         private void btnChagePass_Click(object sender, RoutedEventArgs e)
         {
@@ -32,6 +43,32 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
             
+        }
+
+        
+
+        private void btnPay_Click(object sender, RoutedEventArgs e)
+        {
+            Payment wd = new Payment(tbIDCard.Text, tk.TenTaiKhoan);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+        }
+
+        private void btnAddCard_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewCard wd = new AddNewCard(tk.MaTaiKhoan);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            
+        }
+        
+        private void btnSaveAll_Click(object sender, RoutedEventArgs e)
+        {
+            this.tk = DBProvider.reloadTK(tk);
+            txtNameAcc.Text = tk.TenHienThi;
+            tblLevel.Text = DBProvider.getLevelAcc(tk);
+            tblDate.Text = tk.NgayHetHan.Value.Date.ToString();
+            tbIDCard.Text = tk.IDThe;
         }
     }
 }

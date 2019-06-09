@@ -7,7 +7,7 @@
              mc:Ignorable="d" Background="White"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
             FontSize="20"
-             d:DesignHeight="590" d:DesignWidth="945">
+             d:DesignHeight="490" d:DesignWidth="945">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -19,51 +19,46 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label VerticalAlignment="Center" HorizontalAlignment="Center">Name : </Label>
-        <TextBox Grid.Column="1" Height="50" Width="300"></TextBox>
-        <Label Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Level: </Label>
-        <StackPanel Grid.Column="1" Grid.Row="1" Margin="0,30">
-            <TextBlock x:Name="tblLevel" FontSize="30" Height="60"></TextBlock>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25">Name :</Label>
+        <TextBox x:Name="txtNameAcc" Grid.Column="1" Height="50" Width="300" ></TextBox>
+        <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="20" BorderBrush="Gray" BorderThickness="1">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" VerticalAlignment="Center"  Margin="60,0" FontSize="25">Level:</Label>
+
+                <StackPanel  Margin="0,30" Grid.Column="1">
+
+                    <TextBlock x:Name="tblLevel" FontSize="30" Height="60" Margin="5,0"></TextBlock>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Foreground="#FF9B9191" Margin="5,0"><Run Text="Deadline :"/></TextBlock>
+                        <TextBlock x:Name="tblDate"/>
+                        <Button Width="120" Margin="100, 0" Background="#FFF6D305" BorderBrush="Transparent" x:Name="btnPay" Content="Pay" Click="btnPay_Click"/>
+                        
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3">
+
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="#FF9B9191" Margin="50,0">Deadline : </TextBlock>
-                <TextBlock x:Name="tblDate"></TextBlock>
-
-            </StackPanel>
-
-
-            <StackPanel Orientation="Horizontal" Margin="0,30">
-                <Button Width="120" Margin="50, 10" Background="#FFCBAC00" BorderBrush="Transparent">Pay</Button>
-                <Button Width="120" Margin="50,10" HorizontalAlignment="Right"
-                        Background="#FFCBAC00" BorderBrush="Transparent">Change Level</Button>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
-            <StackPanel Orientation="Horizontal">
-                <Label  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,20,40,0">ID Card:</Label>
-                <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" 
+                <Label  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,10,40,0" FontSize="25">ID Card:</Label>
+                <TextBox x:Name="tbIDCard"  VerticalAlignment="Center" HorizontalAlignment="Center" 
                           Height="50" Width="300"
-                          Margin="115,0"></TextBox>
+                          Margin="105,0"/>
+                <Button x:Name="btnAddCard" Content="Add New Card" 
+                        Background="#FFFED700" BorderBrush="#FFFED700"
+                        Click="btnAddCard_Click"/>
+                
 
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,30,12,0">First Name:</Label>
-                <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" 
-                          Height="50" Width="300"
-                          Margin="115,0"></TextBox>
-
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,30,12,0">Last Name:</Label>
-                <TextBox  VerticalAlignment="Center" HorizontalAlignment="Center" 
-                          Height="50" Width="300" Margin="115,0"></TextBox>
-
-            </StackPanel>
-
         </StackPanel>
         <Button Name="btnChagePass" Grid.Column="2" Width="150" Margin="10" Click="btnChagePass_Click"
-                Background="#FFCBAC00" BorderBrush="Transparent">Change Password</Button>
+                Background="#FFF6D305" BorderBrush="Transparent">Change Password</Button>
         <Button Name="btnSaveAll" Grid.Column="2" Grid.Row="2" Width="110" Height="100" Margin="30,10,20,10" HorizontalAlignment="Right" 
-                Background="#FF09CB00" BorderBrush="Transparent" VerticalAlignment="Bottom">
+                Background="#FFF6D305" BorderBrush="Transparent" VerticalAlignment="Bottom" Click="btnSaveAll_Click">
             <materialDesign:PackIcon Kind="ContentSave" Height="70" Width="80" />
         </Button>
     </Grid>

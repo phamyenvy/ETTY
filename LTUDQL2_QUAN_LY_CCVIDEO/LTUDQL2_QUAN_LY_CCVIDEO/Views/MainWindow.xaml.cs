@@ -1,5 +1,6 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             lst.Add(DBProvider.getMainVideo_Phu()); // để lấy video main ra chuyển sang dạng videoinfo để bật full screen
 
             DataContext = lst;
-
-            cbCats.DataContext = DBProvider.getLoaiVideo();
+            List<String> lstVideo = DBProvider.getLoaiVideo();
+            cbCats.ItemsSource = lstVideo;
+            
+            cbCats.DisplayMemberPath = "TenLoaiVideo";
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -335,6 +338,21 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             wd.Show();
             this.Close();
         }
+        private void lstItemSetting_Selected(object sender, RoutedEventArgs e)
+        {
+            if(pf.AvatarLink == "1")
+            {
+                ProfileSettingWd wd = new ProfileSettingWd(this.tk, this.pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Your profile not allowed go to setting!");
+            }
+            
+        }
 
         #endregion
 
@@ -373,6 +391,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         }
 
 
+
         private void btnAddMyList_Click(object sender, RoutedEventArgs e)
         {
             ToggleButton a = sender as ToggleButton;
@@ -398,5 +417,23 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         }
 
         
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnSearch_Click(sender, e);
+            }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            string[] strSearch = txtSearch.Text.Split(' ');
+
+            ListVideo wd = new ListVideo(strSearch, this.tk, this.pf);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
     }
 }

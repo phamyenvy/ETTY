@@ -12,12 +12,12 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF34495E"/>
                 <GradientStop Color="#FFF0CD09" Offset="1"/>
-                <GradientStop Color="#FFECCA06" Offset="0.474"/>
+                <GradientStop Color="#FFDF4949" Offset="0.4"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\a.png" VerticalAlignment="Top" Height="282" OpacityMask="#FFACA741"/>
+        <Image Source="D:\LTUDQL2\a.png" VerticalAlignment="Top" Height="282" OpacityMask="#FFACA741"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,100,0,0">
             <Grid>
@@ -28,7 +28,7 @@
                 <Button x:Name="btnProfile1" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile1_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava1.png"/>
+                        <ImageBrush ImageSource="D:\LTUDQL2\ava1.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl1" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
@@ -43,7 +43,7 @@
                 <Button x:Name="btnProfile2" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile2_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava2.png"/>
+                        <ImageBrush ImageSource="D:\LTUDQL2\ava2.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl2" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
@@ -57,7 +57,7 @@
                 <Button x:Name="btnProfile3" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile3_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava3.png"/>
+                        <ImageBrush ImageSource="D:\LTUDQL2\ava3.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl3" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
@@ -71,17 +71,12 @@
                 <Button x:Name="btnProfile4" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile4_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="C:\Users\Vi Vu\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\img\ava4.png"/>
+                        <ImageBrush ImageSource="D:\LTUDQL2\ava4.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl4" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
             </Grid>
 
         </StackPanel>
-        <Button x:Name="btnSetting" Width="80" Height="70" BorderBrush="Transparent" 
-                VerticalAlignment="Bottom" HorizontalAlignment="Right" 
-                Background="Transparent" Click="btnSetting_Click">
-            <materialDesign:PackIcon Width="50" Height="50" Kind="Settings" Foreground="Silver" Background="Transparent" />
-        </Button>
     </Grid>
 </Window>

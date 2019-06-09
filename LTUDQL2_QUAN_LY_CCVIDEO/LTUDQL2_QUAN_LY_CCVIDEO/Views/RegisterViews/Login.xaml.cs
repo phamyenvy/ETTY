@@ -1,4 +1,5 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         public Login()
         {
             InitializeComponent();
+            txtNameRegister.Focus();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,16 +52,28 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                 }
                 else
                 {
-                    if(DBProvider.isPaid(tk))
+                    if (tk.LoaiTaiKhoan == 0)
                     {
-                        var wd = new SelectProfile(tk);
+                        Admin wd = new Admin();
                         wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         wd.Show();
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Mở trang thanh toán");
+                        if (DBProvider.isPaid(tk))
+                        {
+                            var wd = new SelectProfile(tk);
+                            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                            wd.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            Payment wd = new Payment(tk.IDThe, tk.TenTaiKhoan);
+                            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                            wd.Show();
+                        }
                     }
                     
                 }
@@ -82,7 +96,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Register re = new Register();
-            re.ShowDialog();
+            re.Show();
+            this.Close();
         }
 
         private void txtPassword_KeyUp(object sender, KeyEventArgs e)

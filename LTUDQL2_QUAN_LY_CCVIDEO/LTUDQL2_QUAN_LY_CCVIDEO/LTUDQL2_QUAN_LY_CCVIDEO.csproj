@@ -127,6 +127,12 @@
     <Compile Include="Views\ListVideo.xaml.cs">
       <DependentUpon>ListVideo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Payment.xaml.cs">
+      <DependentUpon>Payment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileSetting\AddNewCard.xaml.cs">
+      <DependentUpon>AddNewCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProfileSetting\ProfileSettingWd.xaml.cs">
       <DependentUpon>ProfileSettingWd.xaml</DependentUpon>
     </Compile>
@@ -135,6 +141,9 @@
     </Compile>
     <Compile Include="Views\ProfileSetting\uc_General.xaml.cs">
       <DependentUpon>uc_General.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileSetting\uc_PayHistory.xaml.cs">
+      <DependentUpon>uc_PayHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews\FinishRegisterDialog.xaml.cs">
       <DependentUpon>FinishRegisterDialog.xaml</DependentUpon>
@@ -205,6 +214,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Payment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileSetting\AddNewCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProfileSetting\ProfileSettingWd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,6 +231,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProfileSetting\uc_General.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileSetting\uc_PayHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

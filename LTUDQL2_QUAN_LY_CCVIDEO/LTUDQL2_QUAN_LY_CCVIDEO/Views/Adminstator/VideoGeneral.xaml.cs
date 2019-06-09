@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 {
     /// <summary>
@@ -20,6 +21,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
     /// </summary>
     public partial class VideoGeneral : UserControl
     {
+        QuanLyCCVEntities ccv;
+        List<Video> videos;
         public VideoGeneral()
         {
             InitializeComponent();
@@ -33,6 +36,35 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         private void btnSaveVideo_Click(object sender, RoutedEventArgs e)
         {
             dtgVideo.IsReadOnly = true;
+        }
+
+        private void UserControl_Initialized(object sender, EventArgs e)
+        {
+            ccv = new QuanLyCCVEntities();
+            //  videos = new List<Video>();
+            videos = ccv.Videos.ToList();
+            // dtgVideo.ItemsSource = videos;
+            this.DataContext = videos;
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            ccv = new QuanLyCCVEntities();
+            int ID = (dtgVideo.SelectedItem as Video).MaVideo;
+            // MessageBox.Show("ID: " + ID);
+            try
+            {
+                Video t = ccv.Videos.First(p => p.MaVideo == ID);
+                ccv.Videos.Remove(t);
+                ccv.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Can't Remove!");
+            }
+
+            videos = ccv.Videos.ToList();
+            dtgVideo.ItemsSource = videos;
         }
     }
 }
