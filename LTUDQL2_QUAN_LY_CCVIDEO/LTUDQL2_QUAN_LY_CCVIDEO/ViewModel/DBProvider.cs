@@ -142,11 +142,11 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return info;
             }
         }
-        public static List<Object> getDSThanhToan(TaiKhoan tk)
+        public static List<ThanhToan> getDSThanhToan(TaiKhoan tk)
         {
             using (var qlccv = new QuanLyCCVEntities())
             {
-                List<Object> lst = qlccv.ThanhToans.Where(q => q.TaiKhoan == tk.MaTaiKhoan).ToList().
+                List<ThanhToan> lst = qlccv.ThanhToans.Where(q => q.TaiKhoan == tk.MaTaiKhoan).ToList();
                 return lst;
             }
                     
