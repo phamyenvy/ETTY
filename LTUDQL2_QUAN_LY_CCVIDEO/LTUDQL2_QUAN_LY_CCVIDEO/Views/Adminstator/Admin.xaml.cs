@@ -27,7 +27,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
             content.Children.Add(a);
         }
 
-        
+        public Admin(IMDBVideo video)
+        {
+            InitializeComponent();
+            UploadVideo a = new UploadVideo(video);
+            content.Children.Clear();
+            content.Children.Add(a);
+        }
 
         private void UploadItem_Selected(object sender, RoutedEventArgs e)
         {
@@ -47,6 +53,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         private void AccountItem_Selected(object sender, RoutedEventArgs e)
         {
             AccountGeneral a = new AccountGeneral();
+            content.Children.Clear();
+            content.Children.Add(a);
+        }
+
+        private void SearchItem_Selected(object sender, RoutedEventArgs e)
+        {
+            IMDBSearch a = new IMDBSearch();
             content.Children.Clear();
             content.Children.Add(a);
         }

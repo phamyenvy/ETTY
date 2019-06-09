@@ -35,7 +35,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
             InitializeComponent();
 
         }
-
+        public UploadVideo(IMDBVideo video)
+        {
+            InitializeComponent();
+            txtName.Text = video.Title;
+            txtDes.Text = video.Plot;
+            dpMFG.Text = video.Released.ToString();
+            lblLinkPoster.Content = video.Poster;
+        }
         private void UserControl_Initialized(object sender, EventArgs e)
         {
             ccv = new QuanLyCCVEntities();
@@ -49,6 +56,25 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
             worker.DoWork += worker_DoWork;
             worker.ProgressChanged += worker_ProgressChanged;
             worker.RunWorkerAsync();
+        }
+        private void UserControl_Initialized(object sender, EventArgs e, IMDBVideo video)
+        {
+            ccv = new QuanLyCCVEntities();
+            loaiVideos = ccv.LoaiVideos.ToList();
+            cbCat.ItemsSource = loaiVideos;
+            capDoTaiKhoans = ccv.CapDoTaiKhoans.ToList();
+            cbLevel.ItemsSource = capDoTaiKhoans;
+
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += worker_DoWork;
+            worker.ProgressChanged += worker_ProgressChanged;
+            worker.RunWorkerAsync();
+
+            txtName.Text = video.Title;
+            txtDes.Text = video.Plot;
+            dpMFG.Text = video.Released.ToString();
+            lblLinkPoster.Content = video.Poster;
         }
 
         private void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
