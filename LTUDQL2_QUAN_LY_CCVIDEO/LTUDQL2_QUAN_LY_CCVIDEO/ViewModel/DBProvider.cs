@@ -589,8 +589,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 qlccv.SaveChanges();
             }
         }
-		
-		public List<LoaiVideo> GetCats()
+
+        public List<LoaiVideo> GetCats()
         {
             var l = new List<LoaiVideo>();
             using (var qlbh = new QuanLyCCVEntities())
