@@ -16,49 +16,21 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"  Width="50"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" 
-                                    Binding="{Binding MaVideo}"/>
+                                    Binding="{Binding MaThanhToan}"/>
                 <DataGridTextColumn Header="Name"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Width="250"
-                                    Binding="{Binding TenVideo}"/>
-                <DataGridComboBoxColumn Header="Mail" Width="300"
-                                        SelectedValueBinding="{Binding MaLoai_Video}"
-                                        SelectedValuePath="MaLoaiVideo"
-                                        DisplayMemberPath="TenLoaiVideo"/>
+                                    Binding="{Binding TenThanhToan}"/>
+                <DataGridTextColumn Header="Mail" Width="300"
+                                        Binding="{Binding TaiKhoan}"/>
 
 
-                <DataGridComboBoxColumn Header="Level" Width="100" 
-                                        SelectedValueBinding="{Binding CapDoVideo}"
-                                        SelectedValuePath="MaCapDo"
-                                        DisplayMemberPath="TenCapDo"/>
-                <DataGridTextColumn Header="ID Card" Width="150" Binding="{Binding NgaySanXuat}"/>
+                <DataGridTextColumn Header="Level" Width="100" 
+                                        Binding="{Binding CapDoMua}"/>
+                <DataGridTextColumn Header="ID Card" Width="150" Binding="{Binding IDThe}"/>
                 
 
             </DataGrid.Columns>
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                    <Border BorderThickness="1" BorderBrush="Yellow" CornerRadius="7" 
-                            Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="900">
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Link Video: " Margin="5"/>
-                                <TextBox Text="{Binding LinkVideo}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Link Image: " Margin="5"/>
-                                <TextBox Text="{Binding LinkImage}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="Link Trailer: " Margin="5"/>
-                                <TextBox Text="{Binding LinkTrailer}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="Description: " Margin="5"/>
-                                <TextBox Text="{Binding MoTa}" Margin="5" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"></TextBox>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
+            
         </DataGrid>
 
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             InitializeComponent();
 
             this.tk = tk;
+            List<ThanhToan> lst = DBProvider.getDSThanhToan(this.tk);
+            DataContext = lst;
         }
+
+        
     }
 }

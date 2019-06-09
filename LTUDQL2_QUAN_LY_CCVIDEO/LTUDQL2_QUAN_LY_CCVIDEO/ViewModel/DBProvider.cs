@@ -83,6 +83,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return info;
             }
         }
+        public static List<Object> getDSThanhToan(TaiKhoan tk)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<Object> lst = qlccv.ThanhToans.Where(q => q.TaiKhoan == tk.MaTaiKhoan).ToList().
+                return lst;
+            }
+                    
+        }
         public static int getIDAcc(string mail)
         {
             using (var qlccv = new QuanLyCCVEntities())
