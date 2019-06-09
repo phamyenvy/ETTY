@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -107,7 +108,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                     }
                     else
                     {
-                        tk.Password = txtNewPassword.Password;
+                        tk.Password = MaHoaChuoi.MaHoa(txtNewPassword.Password,"etty");
                         qlccv.SaveChanges();
                         MessageBox.Show("Thay đổi password thành công", "Xác nhận");
                         this.Close();
