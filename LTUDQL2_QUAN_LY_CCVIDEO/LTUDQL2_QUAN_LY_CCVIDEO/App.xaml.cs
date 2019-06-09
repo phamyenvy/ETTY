@@ -29,7 +29,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             //    wd.Show();
             //}
           //  var wd = new StartWd();
-            var wd = new Admin();
+            var wd = new StartWd();
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
         }
