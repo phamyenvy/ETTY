@@ -50,7 +50,14 @@
                                   Selected="Profile_Selected" Width="220" Foreground="#FFF6D305" >
 
                     </TreeViewItem>
-                </TreeView>
+                        <TreeViewItem Name="PayHistory" Header="Pay History" 
+                                  FontSize="30"
+                                      
+                                  VerticalAlignment="Center" HorizontalAlignment="Center"
+                                  Selected="PayHistory_Selected"  Width="220" Foreground="#FFF6D305" >
+
+                        </TreeViewItem>
+                    </TreeView>
             </Grid>
             <Grid x:Name="content" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Background="White">
 

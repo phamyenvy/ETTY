@@ -40,7 +40,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
         {
             Login wd = new Login();
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            wd.Close();
+            wd.Show();
             this.Close();
         }
 
@@ -76,7 +76,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                     {
                         TenHienThi = uc1.txtNameRegister.Text;
                         TenTaiKhoan = uc1.txtMail.Text;
-                        Password = uc1.txtPassword.Password;
+                        Password = MaHoaChuoi.MaHoa(uc1.txtPassword.Password, "etty");
                     }
                 }
                 uc1.Visibility = Visibility.Collapsed;
@@ -133,7 +133,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                             The the = qlccv.Thes.Where(t => t.IDCard == uc3.txtIDCard.Text).SingleOrDefault();
                             if(the!=null)
                             {
-                                if(the.FirstName==uc3.txtFistName.Text&&the.LastName==uc3.txtLastName.Text&&the.Code==uc3.txtCodeThe.Password)
+                                string Pass = MaHoaChuoi.MaHoa(uc3.txtCodeThe.Password, "etty");
+                                if(the.FirstName==uc3.txtFistName.Text&&the.LastName==uc3.txtLastName.Text&&the.Code==Pass)
                                 {
                                     IDCard = the.IDCard;
                                 }
@@ -148,7 +149,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                                 IDCard = uc3.txtIDCard.Text;
                                 FirstName = uc3.txtFistName.Text;
                                 LastName = uc3.txtLastName.Text;
-                                Code = uc3.txtCodeThe.Password;
+                                Code = MaHoaChuoi.MaHoa(uc3.txtCodeThe.Password, "etty");
                                 The TheNew = new The() { IDCard = IDCard, FirstName = FirstName, LastName = LastName, Code = Code };
                                 qlccv.Thes.Add(TheNew);
                                 qlccv.SaveChanges();

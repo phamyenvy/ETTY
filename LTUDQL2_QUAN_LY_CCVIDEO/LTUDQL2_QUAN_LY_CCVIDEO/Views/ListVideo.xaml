@@ -41,8 +41,8 @@
                     <MediaElement Grid.ColumnSpan="3" Grid.RowSpan="3"  Name="video" 
                                   Source="{Binding Path=PathVideo}"
                                   Stretch="Fill" LoadedBehavior="Manual"/>
-                    <ToggleButton  Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
-                              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+                    <ToggleButton  Grid.Column="0" Grid.Row="2" Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                              ToolTip="Love this video"
                               IsChecked="False" VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
                               Width="25" Background="#FFF17171" Visibility="Collapsed"
                               x:Name="btnHeart" Tag="{Binding Path=ID}" Click="btnHeart_Click" Loaded="btnHeart_Loaded">

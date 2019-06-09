@@ -1,4 +1,5 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
             }
             using (var qlccv = new QuanLyCCVEntities())
             {
-                TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.TenTaiKhoan == txtNameRegister.Text && txtPassword.Password==t.Password).SingleOrDefault();
+                string Pass = MaHoaChuoi.MaHoa(txtPassword.Password, "etty");
+                TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.TenTaiKhoan == txtNameRegister.Text && Pass==t.Password).SingleOrDefault();
                 if (tk == null)
                 {
                     MessageBox.Show("Sai email hoặc password");
@@ -51,18 +53,28 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                 }
                 else
                 {
-                    if(DBProvider.isPaid(tk))
+                    if (tk.LoaiTaiKhoan == 0)
                     {
-                        var wd = new SelectProfile(tk);
+                        Admin wd = new Admin();
                         wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         wd.Show();
                         this.Close();
                     }
                     else
                     {
-                        Payment wd = new Payment(tk.IDThe, tk.TenTaiKhoan);
-                        wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                        wd.Show();
+                        if (DBProvider.isPaid(tk))
+                        {
+                            var wd = new SelectProfile(tk);
+                            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                            wd.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            Payment wd = new Payment(tk.IDThe, tk.TenTaiKhoan);
+                            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                            wd.Show();
+                        }
                     }
                     
                 }

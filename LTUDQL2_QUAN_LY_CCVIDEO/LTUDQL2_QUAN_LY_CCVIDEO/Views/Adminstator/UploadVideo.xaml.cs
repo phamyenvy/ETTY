@@ -190,6 +190,17 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 
         }
 
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnSearch_Click(sender, e);
+            }
+        }
 
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

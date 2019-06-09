@@ -82,5 +82,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             wd.Show();
             this.Close();
         }
+
+        private void PayHistory_Selected(object sender, RoutedEventArgs e)
+        {
+            uc_PayHistory uc = new uc_PayHistory(this.tk);
+            content.Children.Clear();
+            content.Children.Add(uc);
+        }
     }
 }

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting.uc_PayHistory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Background="White"
+             d:DesignHeight="490" d:DesignWidth="945">
+    <Grid>
+        <DataGrid Margin="5,5,5,5"  IsReadOnly="True" x:Name="dtgVideo" ItemsSource="{Binding}"
+                  CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
+                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"  Width="50"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" 
+                                    Binding="{Binding MaThanhToan}"/>
+                <DataGridTextColumn Header="Name"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Width="250"
+                                    Binding="{Binding TenThanhToan}"/>
+                <DataGridTextColumn Header="Mail" Width="300"
+                                        Binding="{Binding TaiKhoan}"/>
+
+
+                <DataGridTextColumn Header="Level" Width="100" 
+                                        Binding="{Binding CapDoMua}"/>
+                <DataGridTextColumn Header="ID Card" Width="150" Binding="{Binding IDThe}"/>
+                
+
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+    </Grid>
+</UserControl>
