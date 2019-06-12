@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,12 +30,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 
         private void btnEditAcc_Click(object sender, RoutedEventArgs e)
         {
-            dtgAcc.IsReadOnly = true;
+            dtgAcc.IsReadOnly = false;
         }
 
         private void btnSaveAcc_Click(object sender, RoutedEventArgs e)
         {
-            dtgAcc.IsReadOnly = false;
+            dtgAcc.IsReadOnly = true;
+            List<TaiKhoan> tk = DataContext as List<TaiKhoan>;
+            //DBProvider.SaveChangeAccount(tk);// Viết hàm này trong DBProvider tương tự hàm SaveChangeVideo
+            MessageBox.Show("Saved");
         }
 
         private void UserControl_Initialized(object sender, EventArgs e)

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,15 +38,20 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         private void btnSaveVideo_Click(object sender, RoutedEventArgs e)
         {
             dtgVideo.IsReadOnly = true;
+            List<Video> vd = DataContext as List<Video>;
+            DBProvider.SaveChangeVideo(vd);
+            MessageBox.Show("Saved");
         }
 
         private void UserControl_Initialized(object sender, EventArgs e)
         {
             ccv = new QuanLyCCVEntities();
             //  videos = new List<Video>();
-            videos = ccv.Videos.ToList();
-            // dtgVideo.ItemsSource = videos;
-            this.DataContext = videos;
+            //videos = ccv.Videos.ToList();
+            //// dtgVideo.ItemsSource = videos;
+            //this.DataContext = videos;
+
+            this.DataContext = ccv.Videos.ToList();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)

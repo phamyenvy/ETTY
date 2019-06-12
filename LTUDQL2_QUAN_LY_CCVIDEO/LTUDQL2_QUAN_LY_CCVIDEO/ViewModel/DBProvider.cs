@@ -680,5 +680,29 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             }
             return l;
         }
+
+        public static void SaveChangeVideo(List<Video> vd)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                foreach(Video v in vd)
+                {
+                    Video video = qlccv.Videos.Where(a => a.MaVideo == v.MaVideo).SingleOrDefault();
+                    video.TenVideo = v.TenVideo;
+                    video.CapDoVideo = v.CapDoVideo;
+                    video.Dislike = v.Dislike;
+                    video.Like = v.Like;
+                    video.LinkImage = v.LinkImage;
+                    video.LinkTrailer = v.LinkTrailer;
+                    video.LinkVideo = v.LinkVideo;
+                    video.MaLoai_Video = v.MaLoai_Video;
+                    video.LuotXem = v.LuotXem;
+                    video.MoTa = v.MoTa;
+                    video.NgaySanXuat = v.NgaySanXuat;
+                    video.NgayUpload = v.NgayUpload;
+                }
+                qlccv.SaveChanges();
+            }
+        }
     }
 }
