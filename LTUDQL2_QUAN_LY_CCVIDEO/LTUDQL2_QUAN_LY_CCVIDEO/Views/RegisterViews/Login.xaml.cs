@@ -45,7 +45,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
             using (var qlccv = new QuanLyCCVEntities())
             {
                 string Pass = MaHoaChuoi.MaHoa(txtPassword.Password, "etty");
-                TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.TenTaiKhoan == txtNameRegister.Text && Pass==t.Password).SingleOrDefault();
+                TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.TenTaiKhoan == txtNameRegister.Text && Pass ==t.Password).SingleOrDefault();
                 if (tk == null)
                 {
                     MessageBox.Show("Sai email hoặc password");

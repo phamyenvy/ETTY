@@ -4,10 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting"
+             xmlns:v="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Model"
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              Background="White"
              d:DesignHeight="490" d:DesignWidth="945">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="levels" ObjectType="{x:Type v:DBProvider}" MethodName="getCapDo"/>
+        <ObjectDataProvider x:Key="mail" ObjectType="{x:Type v:DBProvider}" MethodName="getAccounts"/>
+    </UserControl.Resources>
     <Grid>
         <DataGrid Margin="5,5,5,5"  IsReadOnly="True" x:Name="dtgVideo" ItemsSource="{Binding}"
                   CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
@@ -20,12 +25,18 @@
                 <DataGridTextColumn Header="Name"
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Width="250"
                                     Binding="{Binding TenThanhToan}"/>
-                <DataGridTextColumn Header="Mail" Width="300"
-                                        Binding="{Binding TaiKhoan}"/>
+                <DataGridComboBoxColumn Header="Mail" Width="300"
+                                        ItemsSource="{Binding Source={StaticResource mail}}"
+                                        SelectedValueBinding="{Binding TaiKhoan}"
+                                        SelectedValuePath="MaTaiKhoan"
+                                        DisplayMemberPath="TenTaiKhoan"/>
 
 
-                <DataGridTextColumn Header="Level" Width="100" 
-                                        Binding="{Binding CapDoMua}"/>
+                <DataGridComboBoxColumn Header="Level" Width="100"
+                                        ItemsSource="{Binding Source={StaticResource levels}}"
+                                        SelectedValueBinding="{Binding CapDoMua}"
+                                        SelectedValuePath="MaCapDo"
+                                        DisplayMemberPath="TenCapDo"/>
                 <DataGridTextColumn Header="ID Card" Width="150" Binding="{Binding IDThe}"/>
                 
 

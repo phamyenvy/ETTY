@@ -36,7 +36,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
         {
             if (DBProvider.checkExitsCard(txtIDCard.Text) == 1)
             {
-                if (DBProvider.checkCodeCard(txtIDCard.Text, txtPass.Password) == 1)
+                string Pass = MaHoaChuoi.MaHoa(txtPass.Password, "etty");
+                if (DBProvider.checkCodeCard(txtIDCard.Text, Pass) == 1)
                 {
                     DBProvider.paySuccess(mail, cbLevel.SelectedValue as CapDoTaiKhoan);
                     MessageBox.Show("Thanh toán thành công!");

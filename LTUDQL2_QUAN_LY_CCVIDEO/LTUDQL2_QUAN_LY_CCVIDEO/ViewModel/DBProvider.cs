@@ -142,6 +142,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return info;
             }
         }
+
         public static List<ThanhToan> getDSThanhToan(TaiKhoan tk)
         {
             using (var qlccv = new QuanLyCCVEntities())
@@ -225,6 +226,16 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return pf;
             }
         }
+
+        public static List<TaiKhoan> getAccounts()
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                List<TaiKhoan> tk = qlccv.TaiKhoans.ToList();
+                return tk;
+            }
+        }
+
         public static void updateProfile(int IDProfile, string newName)
         {
             using (var qlccv = new QuanLyCCVEntities())
