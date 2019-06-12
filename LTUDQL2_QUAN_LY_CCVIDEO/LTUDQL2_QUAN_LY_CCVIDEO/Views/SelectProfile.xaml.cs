@@ -1,4 +1,5 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using System;
 using System.Collections.Generic;
@@ -102,6 +103,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             }
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Admin wd = new Admin(tkMain);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+
+            this.Close();
+        }
     }
 }

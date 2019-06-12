@@ -4,29 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
-=======
-D:\Nam3-HK2\LTUDQL2\DoAn01\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
->>>>>>> df9895da8400232e1e3fd9b52a6500ada53db58f
 LTUDQL2_QUAN_LY_CCVIDEO
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
-2447015595
+25-1434293551
 
-46-173300247
+471033691705
 212019266471
-=======
-D:\Nam3-HK2\LTUDQL2\DoAn01\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
-2447015595
+Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\IMDBSearch.xaml;Views\Adminstator\Process.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
 
-461249604991
-211294982908
->>>>>>> df9895da8400232e1e3fd9b52a6500ada53db58f
-Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\IMDBSearch.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
-
-True
+False
 

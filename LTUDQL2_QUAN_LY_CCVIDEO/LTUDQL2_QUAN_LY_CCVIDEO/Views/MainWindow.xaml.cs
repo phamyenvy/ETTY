@@ -1,5 +1,6 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator;
 using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using MaterialDesignThemes.Wpf;
 using System;
@@ -53,6 +54,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += timer_Tick;
             timer.Start();
+
+            int checkAdmin = 1;
+            if(checkAdmin == 1)
+            {
+                Adminstator.Visibility = Visibility.Visible;
+            }
 
         }
         #region sự kiện zoom
@@ -433,6 +440,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             ListVideo wd = new ListVideo(strSearch, this.tk, this.pf);
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
+            this.Close();
+        }
+
+        private void Adminstator_Click(object sender, RoutedEventArgs e)
+        {
+            Admin wd = new Admin(tk, pf);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+
             this.Close();
         }
     }

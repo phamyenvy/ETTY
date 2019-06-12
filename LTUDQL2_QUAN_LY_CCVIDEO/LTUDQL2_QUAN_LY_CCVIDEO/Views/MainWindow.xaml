@@ -87,7 +87,7 @@
                         </ListBoxItem>
                     </ListBox>
                 </materialDesign:PopupBox>
-                <Image Margin="0,-11,0,-10" Source="D:\LTUDQL2\a.png" Width="76"/>
+                <Image  Margin="0,-11,0,-10" Source="D:\LTUDQL2\a.png" Width="76"/>
 
                 <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
                                    Margin="7"
@@ -115,6 +115,7 @@
                         
                     </MenuItem>
                     <MenuItem Header="My List" Name="myList" Click="myList_Click"></MenuItem>
+                    <MenuItem Header="Adminstator" Name="Adminstator" Click="Adminstator_Click" Visibility="Collapsed"></MenuItem>
 
                 </Menu>
 
