@@ -53,15 +53,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                 }
                 else
                 {
-                    if (tk.LoaiTaiKhoan == 0)
-                    {
-                        Admin wd = new Admin();
-                        wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                        wd.Show();
-                        this.Close();
-                    }
-                    else
-                    {
+                    
+                    
                         if (DBProvider.isPaid(tk))
                         {
                             var wd = new SelectProfile(tk);
@@ -75,7 +68,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                             wd.Show();
                         }
-                    }
+                    
                     
                 }
             }

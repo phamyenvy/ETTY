@@ -122,6 +122,9 @@
     <Compile Include="Views\Adminstator\IMDBSearch.xaml.cs">
       <DependentUpon>IMDBSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Adminstator\Process.xaml.cs">
+      <DependentUpon>Process.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Adminstator\UploadVideo.xaml.cs">
       <DependentUpon>UploadVideo.xaml</DependentUpon>
     </Compile>
@@ -194,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Adminstator\IMDBSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Adminstator\Process.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

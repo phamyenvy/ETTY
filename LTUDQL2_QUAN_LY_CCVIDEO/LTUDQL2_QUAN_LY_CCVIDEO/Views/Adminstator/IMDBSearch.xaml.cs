@@ -22,9 +22,19 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
     /// </summary>
     public partial class IMDBSearch : UserControl
     {
-        public IMDBSearch()
+        TaiKhoan tk = null;
+        Profile pf = null;
+        
+        public IMDBSearch(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
+            this.tk = tk;
+            this.pf = pf;
+        }
+        public IMDBSearch(TaiKhoan tk)
+        {
+            InitializeComponent();
+            this.tk = tk;
         }
 
         public string page = "https://movie-database-imdb-alternative.p.rapidapi.com/?r=json&s={0}";
@@ -92,8 +102,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
                 if (data != null)
                 {
                     IMDBVideo video = JsonConvert.DeserializeObject<IMDBVideo>(data);
-                    
-                    Admin wd = new Admin(video);
+                    Admin wd = null;
+                    if (this.pf != null) {
+                         wd = new Admin(video, tk, pf);
+                    }
+                    else
+                    {
+                        wd = new Admin(video, tk);
+                    }
                     wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                     wd.Show();
                     var gr = this.Parent as Grid;

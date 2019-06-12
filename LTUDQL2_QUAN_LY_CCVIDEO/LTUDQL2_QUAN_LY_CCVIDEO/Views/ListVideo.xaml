@@ -85,11 +85,14 @@
             <DockPanel>
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
                     <ListBox >
-                        <ListBoxItem>
-                            Thông tin tài khoản
+                        <ListBoxItem Name="lstItemSetting" Selected="lstItemSetting_Selected">
+                            Setting
                         </ListBoxItem>
-                        <ListBoxItem>
-                            Đăng xuất
+                        <ListBoxItem Name="lstItemSelProfile" Selected="lstItemSelProfile_Selected">
+                            Select other profile
+                        </ListBoxItem>
+                        <ListBoxItem Name="lstItemLogOut" Selected="lstItemLogOut_Selected">
+                            Log out
                         </ListBoxItem>
                     </ListBox>
                 </materialDesign:PopupBox>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator.Process"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Background="#FFFFFFFF"
+        Title="FinishRegisterDialog" Height="300" Width="300" WindowStyle="None" BorderBrush="#FF231203" BorderThickness="2" ResizeMode="NoResize"
+        >
+    <StackPanel Margin="40" >
+        <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"
+                      x:Name="pbLoad" Foreground="#FFFED701" Maximum="95" Minimum="0" IsIndeterminate="True">
+
+        </ProgressBar>
+        
+        <materialDesign:PackIcon HorizontalAlignment="Center" Margin="0" Kind="CheckboxMarkedCircleOutline" Height="50" Width="35" Foreground="#FFFED701" x:Name="tick"/>
+
+        <Label Width="150" Height="50" FontSize="25"  FontWeight="Thin" HorizontalContentAlignment="Center" Foreground="#FFFED701" x:Name="success">
+            Successful!
+        </Label>
+        <Button  x:Name="btnOut"
+          Style="{StaticResource MaterialDesignFlatButton}"
+          HorizontalAlignment="Center" Foreground="#FF746D47" Background="#FFFED701" Height="28" Width="67"  Content="Close" Margin="70,0,70,0" Click="btnOut_Click"/>
+    </StackPanel>
+</Window>

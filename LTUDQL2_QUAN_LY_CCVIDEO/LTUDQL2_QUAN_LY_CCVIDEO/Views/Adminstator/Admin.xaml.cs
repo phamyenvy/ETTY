@@ -19,22 +19,43 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
     /// </summary>
     public partial class Admin : Window
     {
-        public Admin()
+        TaiKhoan tk = null;
+        Profile pf = null;
+        public Admin(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
+            this.tk = tk;
+            this.pf = pf;
+            VideoGeneral a = new VideoGeneral();
+            content.Children.Clear();
+            content.Children.Add(a);
+        }
+        public Admin(TaiKhoan tk)
+        {
+            InitializeComponent();
+            this.tk = tk;
             VideoGeneral a = new VideoGeneral();
             content.Children.Clear();
             content.Children.Add(a);
         }
 
-        public Admin(IMDBVideo video)
+        public Admin(IMDBVideo video, TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
+            this.tk = tk;
+            this.pf = pf;
             UploadVideo a = new UploadVideo(video);
             content.Children.Clear();
             content.Children.Add(a);
         }
-
+        public Admin(IMDBVideo video, TaiKhoan tk)
+        {
+            InitializeComponent();
+            this.tk = tk;
+            UploadVideo a = new UploadVideo(video);
+            content.Children.Clear();
+            content.Children.Add(a);
+        }
         private void UploadItem_Selected(object sender, RoutedEventArgs e)
         {
             UploadVideo  a = new UploadVideo();
@@ -59,9 +80,43 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 
         private void SearchItem_Selected(object sender, RoutedEventArgs e)
         {
-            IMDBSearch a = new IMDBSearch();
+            IMDBSearch a = new IMDBSearch(tk, pf);
             content.Children.Clear();
             content.Children.Add(a);
+        }
+
+        private void btnBackToHome_Click(object sender, RoutedEventArgs e)
+        {
+            if (pf != null)
+            {
+                MainWindow wd = new MainWindow(tk, pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+            }
+            else
+            {
+                SelectProfile wd = new SelectProfile(tk);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+            }
+            this.Close();
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (pf != null)
+            {
+                MainWindow wd = new MainWindow(tk, pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+            }
+            else
+            {
+                SelectProfile wd = new SelectProfile(tk);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+            }
+            this.Close();
         }
     }
 }

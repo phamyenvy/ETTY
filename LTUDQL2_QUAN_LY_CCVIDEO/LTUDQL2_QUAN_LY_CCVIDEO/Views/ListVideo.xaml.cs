@@ -1,4 +1,5 @@
 ﻿using LTUDQL2_QUAN_LY_CCVIDEO.Model;
+using LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -163,7 +164,41 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             sb.Begin();
 
         }
+        #region Nhóm sự kiện chọn popup
+        private void lstItemLogOut_Selected(object sender, RoutedEventArgs e)
+        {
 
+            StartWd wd = new StartWd();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
+
+        private void lstItemSelProfile_Selected(object sender, RoutedEventArgs e)
+        {
+
+            SelectProfile wd = new SelectProfile(tk);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
+        private void lstItemSetting_Selected(object sender, RoutedEventArgs e)
+        {
+            if (pf.AvatarLink == "1")
+            {
+                ProfileSettingWd wd = new ProfileSettingWd(this.tk, this.pf);
+                wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Your profile not allowed go to setting!");
+            }
+
+        }
+
+        #endregion
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
             MainWindow wd = new MainWindow( tk, pf);
