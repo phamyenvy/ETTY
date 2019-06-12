@@ -4,26 +4,17 @@
 winexe
 C#
 .cs
-E:\TRUONG\Năm 3(2018-2019)\HK2\LTUDQL 2\DoAn\Main1\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
+D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
 LTUDQL2_QUAN_LY_CCVIDEO
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-E:\TRUONG\Năm 3(2018-2019)\HK2\LTUDQL 2\DoAn\Main1\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
-23951656158
-
-45-2055697748
-2115268976
-Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\IMDBSearch.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
-=======
 D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
-23-667554796
+2447015595
 
-44-182774704
-20119493527
-Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
->>>>>>> 9e9e28ec6bf664f5b181e88e30afae818375b85f
+46-173300247
+212019266471
+Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\IMDBSearch.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
 
 True
 
