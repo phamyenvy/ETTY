@@ -18,8 +18,10 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image Source="D:\LTUDQL2\a.png" VerticalAlignment="Top" Height="282" OpacityMask="#FFACA741"/>
-        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Click="Button_Click"
-                Margin="15" Background="#FFFFE234" BorderBrush="#FFFFE234">Adminstator</Button>
+        <Button Name="btnAdmin" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Button_Click"
+                Margin="120,15" Background="#FFFFE234" BorderBrush="#FFFFE234" Foreground="#DD040202">Adminstator</Button>
+        <Button Name="btnLogOut" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btnLogOut_Click"
+                Margin="15" Background="#FFBDBDBD" BorderBrush="#FFBEBEBE">Logout</Button>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,100,0,0">
             <Grid>
                 <Grid.RowDefinitions>

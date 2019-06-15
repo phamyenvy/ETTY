@@ -39,6 +39,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 
             tkMain = tk;
             lst = a;
+            if(tk.LoaiTaiKhoan == 0)
+            {
+                btnAdmin.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnAdmin.Visibility = Visibility.Collapsed;
+            }
         }
         
         List<Profile> lst = new List<Profile>();
@@ -109,6 +117,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
 
+            this.Close();
+        }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            StartWd wd = new StartWd();
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
             this.Close();
         }
     }
