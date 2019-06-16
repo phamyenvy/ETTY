@@ -58,6 +58,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             General.Background = Brushes.White;
             content.Children.Clear();
             content.Children.Add(uc);
+            General.Foreground = Brushes.Yellow;
+            General.FontWeight = FontWeights.Bold;
+            PayHistory.Foreground = Brushes.Gray;
+            PayHistory.FontWeight = FontWeights.Regular;
+            Profile.Foreground = Brushes.Gray;
+            Profile.FontWeight = FontWeights.Regular;
         }
 
         private void Profile_Selected(object sender, RoutedEventArgs e)
@@ -65,6 +71,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             uc_EditProfile uc = new uc_EditProfile(this.tk);
             content.Children.Clear();
             content.Children.Add(uc);
+            Profile.Foreground = Brushes.Yellow;
+            Profile.FontWeight = FontWeights.Bold;
+            General.Foreground = Brushes.Gray;
+            General.FontWeight = FontWeights.Regular;
+            PayHistory.Foreground = Brushes.Gray;
+            PayHistory.FontWeight = FontWeights.Regular;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -81,6 +93,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
             this.Close();
+
         }
 
         private void PayHistory_Selected(object sender, RoutedEventArgs e)
@@ -88,6 +101,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             uc_PayHistory uc = new uc_PayHistory(this.tk);
             content.Children.Clear();
             content.Children.Add(uc);
+            PayHistory.Foreground = Brushes.Yellow;
+            PayHistory.FontWeight = FontWeights.Bold;
+            General.Foreground = Brushes.Gray;
+            General.FontWeight = FontWeights.Regular;
+            Profile.Foreground = Brushes.Gray;
+            Profile.FontWeight = FontWeights.Regular;
         }
     }
 }

@@ -37,24 +37,26 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (!isEmail(txtNameRegister.Text))
+            try
             {
-                MessageBox.Show("Email không hợp lệ");
-                return;
-            }
-            using (var qlccv = new QuanLyCCVEntities())
-            {
-                string Pass = MaHoaChuoi.MaHoa(txtPassword.Password, "etty");
-                TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.TenTaiKhoan == txtNameRegister.Text && Pass ==t.Password).SingleOrDefault();
-                if (tk == null)
+                if (!isEmail(txtNameRegister.Text))
                 {
-                    MessageBox.Show("Sai email hoặc password");
+                    MessageBox.Show("Email không hợp lệ");
                     return;
                 }
-                else
+                using (var qlccv = new QuanLyCCVEntities())
                 {
-                    
-                    
+                    string Pass = MaHoaChuoi.MaHoa(txtPassword.Password, "etty");
+                    TaiKhoan tk = qlccv.TaiKhoans.Where(t => t.TenTaiKhoan == txtNameRegister.Text && Pass == t.Password).SingleOrDefault();
+                    if (tk == null)
+                    {
+                        MessageBox.Show("Sai email hoặc password");
+                        return;
+                    }
+                    else
+                    {
+
+
                         if (DBProvider.isPaid(tk))
                         {
                             var wd = new SelectProfile(tk);
@@ -68,9 +70,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                             wd.Show();
                         }
-                    
-                    
+
+
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Không thể kết nối với dữ liệu!");
             }
         }
 

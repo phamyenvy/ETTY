@@ -37,9 +37,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" Margin="5">
+            <Grid Grid.Column="0" Margin="5" Background="White">
                 <TreeView>
-                        <TreeViewItem  FontSize="30"  Width="220" Foreground="#FFF6D305"
+                        <TreeViewItem  FontSize="30"  Width="220" Foreground="Black"
                                   x:Name="General" Header="General"
                                   VerticalAlignment="Center" HorizontalAlignment="Center" Selected="General_Selected" Background="White">
 
@@ -47,19 +47,19 @@
                     <TreeViewItem Name="Profile" Header="Profile" 
                                   FontSize="30"
                                   VerticalAlignment="Center" HorizontalAlignment="Center"
-                                  Selected="Profile_Selected" Width="220" Foreground="#FFF6D305" >
+                                  Selected="Profile_Selected" Width="220" Foreground="Black" Background="Transparent" >
 
                     </TreeViewItem>
                         <TreeViewItem Name="PayHistory" Header="Pay History" 
                                   FontSize="30"
                                       
                                   VerticalAlignment="Center" HorizontalAlignment="Center"
-                                  Selected="PayHistory_Selected"  Width="220" Foreground="#FFF6D305" >
+                                  Selected="PayHistory_Selected"  Width="220" Foreground="Black" >
 
                         </TreeViewItem>
                     </TreeView>
             </Grid>
-            <Grid x:Name="content" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" Background="White">
+            <Grid x:Name="content" Grid.Column="1"  VerticalAlignment="Stretch" Margin="5,0,25,0" Background="White">
 
             </Grid>
         </Grid>
