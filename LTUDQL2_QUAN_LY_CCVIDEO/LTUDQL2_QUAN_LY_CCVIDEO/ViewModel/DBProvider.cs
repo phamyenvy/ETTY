@@ -554,7 +554,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             {
                 TaiKhoan t = qlccv.TaiKhoans.Where(o => o.MaTaiKhoan == tk.MaTaiKhoan).SingleOrDefault();
 
-                if(t.LoaiTaiKhoan==1 || t.LoaiTaiKhoan == 0)
+                if(t.LoaiTaiKhoan==1 || t.LoaiTaiKhoan == 0) //1 user đã thanh toán, 0 là admin
                 {
                     return true;
                 }

@@ -23,7 +23,7 @@
             <Button Height="80" x:Name="btnBackToHome" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" BorderBrush="Transparent" Click="btnBackToHome_Click">
                 <materialDesign:PackIcon Kind="ArrowLeft"  Height="50" Width="50" Foreground="#FFFFE234"/>
             </Button>
-            <Image MouseDown="Image_MouseDown"  Source="D:\LTUDQL2\a.png" Height="120" Width="150" Margin="0"/>
+            <!--<Image MouseDown="Image_MouseDown"  Source="D:\LTUDQL2\a.png" Height="120" Width="150" Margin="0"/>-->
         </Grid>
         <Grid Margin="0,100,0,0">
             <Grid.ColumnDefinitions>
@@ -32,6 +32,10 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Margin="5,5,0,5" Background="Transparent">
                 <TreeView MinWidth="220">
+                    <TreeViewItem Header="Dashboard" IsExpanded="True">
+                        <TreeViewItem Name="TopLiked" Header="Top Liked" Selected="TopLiked_Selected"/>
+                        <TreeViewItem Name="TopViewed" Header="Top Viewed" Selected="TopViewed_Selected"/>
+                    </TreeViewItem>
                     <TreeViewItem Header="Video Manager" IsExpanded="True">
                         <TreeViewItem Name="SearchItem" Header="Search in IMDB" Selected="SearchItem_Selected"/>
                         <TreeViewItem Name="UploadItem" Header="Upload" Selected="UploadItem_Selected"/>
