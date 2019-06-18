@@ -95,7 +95,7 @@
                         <Button x:Name="btnBackToHome" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" BorderBrush="Transparent" Click="btnHome_Click">
                             <materialDesign:PackIcon Kind="ArrowLeft" Height="30" Width="50"/>
                         </Button>
-                        <Image MouseDown="Image_MouseDown" Source="D:\LTUDQL2\a.png" Height="70" Width="100" Margin="0"/>
+                        <Image MouseDown="Image_MouseDown" Source="/Images/a.png" Height="70" Width="100" Margin="0,0,0,-10"/>
 
 
                     </StackPanel>

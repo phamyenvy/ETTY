@@ -12,7 +12,7 @@
         <UniformGrid Rows="4" Height="480" VerticalAlignment="Top">
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="D:\LTUDQL2\ava1.png"
+                    <Image Source="/Images/ava1.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name1" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Strange</TextBox>
@@ -21,7 +21,7 @@
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="D:\LTUDQL2\ava2.png"
+                    <Image Source="/Images/ava2.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name2" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Steve</TextBox>
@@ -30,7 +30,7 @@
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="D:\LTUDQL2\ava3.png"
+                    <Image Source="/Images/ava3.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name3" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Scottlang</TextBox>
@@ -39,7 +39,7 @@
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="D:\LTUDQL2\ava4.png"
+                    <Image Source="/Images/ava4.png"
                    Margin="50,5"/>
                     <TextBox x:Name="name4" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Banner</TextBox>

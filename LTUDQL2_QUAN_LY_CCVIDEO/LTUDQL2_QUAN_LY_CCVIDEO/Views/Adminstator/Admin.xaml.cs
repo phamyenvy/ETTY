@@ -118,5 +118,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
             }
             this.Close();
         }
+
+        private void TopLiked_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TopViewed_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
