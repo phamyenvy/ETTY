@@ -46,7 +46,17 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
 
             DataContext = lst;
             List<String> lstVideo = DBProvider.getLoaiVideo();
-            cbCats.ItemsSource = lstVideo;
+            List<MenuItem> lstCats = new List<MenuItem>();
+
+            foreach(String t in lstVideo)
+            {
+                MenuItem a = new MenuItem();
+                a.Header = t;
+                a.Tag = t;
+                a.Click += new RoutedEventHandler(this.btnButton_Click);
+                lstCats.Add(a);
+            }
+            cbCats.ItemsSource = lstCats;
             
             cbCats.DisplayMemberPath = "TenLoaiVideo";
 
@@ -191,6 +201,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             sb.Begin();
         }
         #endregion
+
+        void btnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem a = sender as MenuItem;
+            MessageBox.Show(a.Tag.ToString());
+        }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseEventArgs e)
         {
