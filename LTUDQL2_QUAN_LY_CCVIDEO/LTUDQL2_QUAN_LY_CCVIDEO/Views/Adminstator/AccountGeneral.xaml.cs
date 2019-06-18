@@ -36,9 +36,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         private void btnSaveAcc_Click(object sender, RoutedEventArgs e)
         {
             dtgAcc.IsReadOnly = true;
-            //List<TaiKhoan> tk = DataContext as List<TaiKhoan>;
-            ////DBProvider.SaveChangeAccount(tk);// Viết hàm này trong DBProvider tương tự hàm SaveChangeVideo
-            //MessageBox.Show("Saved");
+            List<TaiKhoan> tk = DataContext as List<TaiKhoan>;
+            DBProvider.SaveChangeAccount(tk);
+            MessageBox.Show("Saved");
         }
 
         private void UserControl_Initialized(object sender, EventArgs e)

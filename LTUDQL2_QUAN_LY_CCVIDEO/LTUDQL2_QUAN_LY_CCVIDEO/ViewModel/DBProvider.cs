@@ -86,6 +86,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Title = v.TenVideo;
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
+                    info.PathVideoPhim = v.LinkVideo;
                     info.Description = v.MoTa;
                     info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
@@ -118,6 +119,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.PathVideoPhim = v.LinkVideo;
+
                     info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
                 }
@@ -136,7 +139,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = vd.LinkImage;
                     info.PathVideo = vd.LinkTrailer;
                     info.Description = vd.MoTa;
-                    info.Views = vd.LuotXem.ToString();
+                    info.PathVideoPhim = vd.LinkVideo;
+
+                info.Views = vd.LuotXem.ToString();
 
 
                 return info;
@@ -362,6 +367,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Title = v.TenVideo;
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
+                    info.PathVideoPhim = v.LinkVideo;
                     info.Description = v.MoTa;
                     info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
@@ -389,6 +395,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
+                    info.PathVideoPhim = v.LinkVideo;
+
                     info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
                 }
@@ -412,6 +420,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.Title = v.TenVideo;
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
+                    info.PathVideoPhim = v.LinkVideo;
                     info.Description = v.MoTa;
                     info.Views = v.LuotXem.ToString();
                     vdinfo.Add(info);
@@ -449,6 +458,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     info.ID = v.MaVideo.ToString();
                     info.Title = v.TenVideo;
                     info.Path = v.LinkImage;
+                    info.PathVideoPhim = v.LinkVideo;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
                     info.Views = v.LuotXem.ToString();
@@ -484,6 +494,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     VideoInfo info = new VideoInfo();
                     info.ID = v.MaVideo.ToString();
                     info.Title = v.TenVideo;
+                    info.PathVideoPhim = v.LinkVideo;
                     info.Path = v.LinkImage;
                     info.PathVideo = v.LinkTrailer;
                     info.Description = v.MoTa;
@@ -701,6 +712,25 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                     video.MoTa = v.MoTa;
                     video.NgaySanXuat = v.NgaySanXuat;
                     video.NgayUpload = v.NgayUpload;
+                }
+                qlccv.SaveChanges();
+            }
+        }
+
+        public static void SaveChangeAccount(List<TaiKhoan> vd)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                foreach (TaiKhoan v in vd)
+                {
+                    TaiKhoan tk = qlccv.TaiKhoans.Where(a => a.MaTaiKhoan == v.MaTaiKhoan).SingleOrDefault();
+                    tk.CapDo = v.CapDo;
+                    tk.IDThe = v.IDThe;
+                    tk.LoaiTaiKhoan = v.LoaiTaiKhoan;
+                    tk.MaXacNhan = v.MaXacNhan;
+                    tk.NgayHetHan = v.NgayHetHan;
+                    tk.TenHienThi = v.TenHienThi;
+                    tk.TenTaiKhoan = v.TenTaiKhoan;
                 }
                 qlccv.SaveChanges();
             }

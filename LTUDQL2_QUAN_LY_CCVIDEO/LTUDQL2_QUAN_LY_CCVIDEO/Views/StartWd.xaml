@@ -28,7 +28,7 @@
                             <GradientStop Color="#FF511515" Offset="1"/>
                         </LinearGradientBrush>
                     </Grid.Background>
-                <Image  Source="D:\LTUDQL2\img_1908.jpg" Height="500" Width="1200">
+                <Image  Source="/Images/img_1908.jpg" Height="500" Width="1200">
                         <Image.Effect>
                             <BlurEffect Radius="15" RenderingBias="Quality"/>
                         </Image.Effect>
@@ -96,11 +96,11 @@
 
             </Grid>
                 <Grid>
-                <Image Source="D:\LTUDQL2\a.png" Margin="450,-746,450,726"/>
+                <Image Source="/Images/a.png" Margin="450,-746,450,726"/>
                 <Label  Foreground="White" FontWeight="DemiBold" FontSize="80" HorizontalAlignment="Center" Margin="253,-506,165,606" Width="776" >Unlimited movies</Label>
                 <Label  Foreground="White" FontWeight="DemiBold" FontSize="80" HorizontalAlignment="Center" Margin="209,-426,209,526" Width="776" >TV shows, and more.</Label>
 
-                <Grid Height="80" Margin="0,-400,0,459">
+                <Grid Height="80" Margin="0,-281,0,475">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
