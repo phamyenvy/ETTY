@@ -121,12 +121,16 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 
         private void TopLiked_Selected(object sender, RoutedEventArgs e)
         {
-
+            TopLiked a = new TopLiked();
+            content.Children.Clear();
+            content.Children.Add(a);
         }
 
         private void TopViewed_Selected(object sender, RoutedEventArgs e)
         {
-
+            TopViewed a = new TopViewed();
+            content.Children.Clear();
+            content.Children.Add(a);
         }
     }
 }

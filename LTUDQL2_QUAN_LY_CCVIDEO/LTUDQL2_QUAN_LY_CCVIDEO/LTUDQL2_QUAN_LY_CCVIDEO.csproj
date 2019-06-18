@@ -131,6 +131,12 @@
     <Compile Include="Views\Adminstator\Process.xaml.cs">
       <DependentUpon>Process.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Adminstator\TopLiked.xaml.cs">
+      <DependentUpon>TopLiked.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Adminstator\TopViewed.xaml.cs">
+      <DependentUpon>TopViewed.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Adminstator\UploadVideo.xaml.cs">
       <DependentUpon>UploadVideo.xaml</DependentUpon>
     </Compile>
@@ -207,6 +213,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Adminstator\Process.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Adminstator\TopLiked.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Adminstator\TopViewed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
