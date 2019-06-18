@@ -44,6 +44,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             lst.Add(DBProvider.getRecently(pf));
             lst.Add(DBProvider.getMainVideo_Phu()); // để lấy video main ra chuyển sang dạng videoinfo để bật full screen
 
+            
             DataContext = lst;
             List<String> lstVideo = DBProvider.getLoaiVideo();
             cbCats.ItemsSource = lstVideo;
@@ -266,7 +267,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         }
         private void btnFullScreen_Click(object sender, RoutedEventArgs e)
         {
-            mediaVideo.Pause();
+            mediaVideo.Stop();
+            
             VideoFullScreen wd = new VideoFullScreen(lst[4][0], mediaVideo.Position.TotalSeconds, tk, pf, 1);
             wd.Show();
             this.Close();
