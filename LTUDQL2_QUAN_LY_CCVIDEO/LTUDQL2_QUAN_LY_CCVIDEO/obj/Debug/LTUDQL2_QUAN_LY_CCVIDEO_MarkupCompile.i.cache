@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
+C:\Users\KIM XUYEN\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
 LTUDQL2_QUAN_LY_CCVIDEO
 none
 false
 DEBUG;TRACE
-D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
+C:\Users\KIM XUYEN\Documents\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
 25-1434293551
 
-471033691705
-212019266471
+47-2006111590
+21-1807448999
 Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\IMDBSearch.xaml;Views\Adminstator\Process.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
 
 False
