@@ -31,6 +31,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 
         private void UserControl_Initialized(object sender, EventArgs e)
         {
+            Func<ChartPoint, string> labelPoint = chartPoint =>
+                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);  //show % trên từng pie
+
             ccv = new QuanLyCCVEntities();
             videos = ccv.Videos.OrderByDescending(p => p.Like).Take(5).ToList();
             int likes = ccv.Videos.Sum(s => s.Like);
@@ -49,9 +52,22 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
                 a.Title = videos[i].TenVideo;
                 a.Values = new ChartValues<int> { videos[i].Like };
                 a.DataLabels = true;
+                a.LabelPoint = labelPoint;
+               // a.ToolTip = a.Title;
                 lst.Add(a);
             }
             pc.Series = lst;
+        }
+
+        private void pc_DataClick(object sender, ChartPoint chartPoint)
+        {
+            var chart = (LiveCharts.Wpf.PieChart)chartPoint.ChartView;
+            //clear selected slice.
+            foreach (PieSeries series in chart.Series)
+                series.PushOut = 0;
+
+            var selectedSeries = (PieSeries)chartPoint.SeriesView;
+            selectedSeries.PushOut = 12;
         }
     }
 }

@@ -42,6 +42,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
             txtDes.Text = video.Plot;
             dpMFG.Text = video.Released.ToString();
             lblLinkPoster.Content = video.Poster;
+            isLoadedFromIMDB = true;
         }
         private void UserControl_Initialized(object sender, EventArgs e)
         {
@@ -140,7 +141,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
             cbLevel.SelectedIndex = 0;
 
         }
-
+        public bool isLoadedFromIMDB = false; //dùng để đánh dấu thông tin những phim lấy từ IMDB
         private void btnUpload_Click(object sender, RoutedEventArgs e)
         {
             ccv = new QuanLyCCVEntities();
@@ -173,7 +174,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
                     string sourceTrailerPath = v.LinkTrailer;
                     string sourceVideoPath = v.LinkVideo;
                     string destinationPath = @"D:\LTUDQL2\Trailer\";
-                  //  System.IO.File.Copy(sourceImgPath, destinationPath + sourceImgName, true);
+                    if(isLoadedFromIMDB == false)
+                    {
+                        System.IO.File.Copy(sourceImgPath, destinationPath + sourceImgName, true);
+                    }
                     System.IO.File.Copy(sourceTrailerPath, destinationPath + sourceTrailerName, true);
                     System.IO.File.Copy(sourceVideoPath, destinationPath + sourceVideoName, true);
                     ccv.SaveChanges();
