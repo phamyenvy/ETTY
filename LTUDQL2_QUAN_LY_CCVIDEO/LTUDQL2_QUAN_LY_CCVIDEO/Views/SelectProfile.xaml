@@ -17,7 +17,7 @@
                 <GradientStop Color="#FFDF4949" Offset="0.4"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="D:\LTUDQL2\a.png" VerticalAlignment="Top" Height="282" OpacityMask="#FFACA741"/>
+        <Image Source="/Images/a.png" VerticalAlignment="Top" Height="282" OpacityMask="#FFACA741"/>
         <Button Name="btnAdmin" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Button_Click"
                 Margin="120,15" Background="#FFFFE234" BorderBrush="#FFFFE234" Foreground="#DD040202">Adminstator</Button>
         <Button Name="btnLogOut" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btnLogOut_Click"
@@ -31,7 +31,7 @@
                 <Button x:Name="btnProfile1" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile1_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="D:\LTUDQL2\ava1.png"/>
+                        <ImageBrush ImageSource="/Images/ava1.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl1" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
@@ -46,7 +46,7 @@
                 <Button x:Name="btnProfile2" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile2_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="D:\LTUDQL2\ava2.png"/>
+                        <ImageBrush ImageSource="/Images/ava2.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl2" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
@@ -60,7 +60,7 @@
                 <Button x:Name="btnProfile3" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile3_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="D:\LTUDQL2\ava3.png"/>
+                        <ImageBrush ImageSource="/Images/ava3.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl3" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
@@ -74,7 +74,7 @@
                 <Button x:Name="btnProfile4" Width="200" Height="200" 
                         VerticalAlignment="Bottom" Click="btnProfile4_Click">
                     <Button.Background>
-                        <ImageBrush ImageSource="D:\LTUDQL2\ava4.png"/>
+                        <ImageBrush ImageSource="/Images/ava4.png"/>
                     </Button.Background>
                 </Button>
                 <Label x:Name="lbl4" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>

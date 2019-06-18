@@ -39,7 +39,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
 
             tkMain = tk;
             lst = a;
-            if(tk.LoaiTaiKhoan == 0)
+            if(tk.LoaiTaiKhoan == 0) //kiểm tra có phải admin hya ko
             {
                 btnAdmin.Visibility = Visibility.Visible;
             }

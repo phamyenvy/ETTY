@@ -4,9 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:v="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Model"
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator"
              mc:Ignorable="d" 
              d:DesignHeight="561" d:DesignWidth="945" Initialized="UserControl_Initialized">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="levels" ObjectType="{x:Type v:DBProvider}" MethodName="getCapDo"/>
+    </UserControl.Resources>
+    
     <Grid Background="White">
         <DataGrid Margin="10,10,10,60" IsReadOnly="True" x:Name="dtgAcc"
                   ItemsSource="{Binding}"
@@ -21,7 +27,11 @@
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Width="150"
                                     Binding="{Binding TenHienThi}"/>
                 <DataGridTextColumn Header="Mail" Width="250" Binding="{Binding TenTaiKhoan}"/>
-                <DataGridComboBoxColumn Header="Level" Width="100"/>
+                <DataGridComboBoxColumn Header="Level" Width="100"
+                                         ItemsSource="{Binding Source={StaticResource levels}}"
+                                        SelectedValueBinding="{Binding CapDo}"
+                                        SelectedValuePath="MaCapDo"
+                                        DisplayMemberPath="TenCapDo"/>
                 <DataGridTemplateColumn Header="EXP" Width="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

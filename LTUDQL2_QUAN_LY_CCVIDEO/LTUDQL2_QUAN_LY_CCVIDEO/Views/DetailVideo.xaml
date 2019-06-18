@@ -50,7 +50,7 @@
                                 <ImageBrush ImageSource="{Binding Path=Path}"/>
                             </Grid.Background>
                             <MediaElement Margin="0"  Name="mediaVideo" 
-                                      Source="{Binding Path=PathVideo}"
+                                      Source="{Binding Path=PathVideoPhim}"
                                Stretch="Fill" Height="530" 
                                LoadedBehavior="Manual"
                                MouseDown="mediaVideo_MouseDown"
@@ -147,19 +147,19 @@
                               ToolTip="Add to your favorite list" Click="btnHeart_Click"
                               IsChecked="False" VerticalAlignment="Center" 
                               HorizontalAlignment="Left" Height="50"
-                              Width="50" Background="#DF4949"  Visibility="Visible"
+                              Width="50" Background="#FF5C5C5C"  Visibility="Visible"
                               BorderBrush="#FFF17171" BorderThickness="1"
                                Margin="10,0,10,0" Loaded="btnHeart_Loaded" Tag="{Binding Path=ID}">
                             <materialDesign:PackIcon Kind="ThumbUp" 
-                                 Margin="10,0,10,0"  Foreground="#FFFCE22B" Background="Transparent" />
+                                 Margin="10,0,10,0"  Foreground="#FFE3683A" Background="Transparent" />
 
                         </ToggleButton>
                         <ToggleButton Tag="{Binding Path=ID}" x:Name="btnAddMyList" Style="{StaticResource MaterialDesignActionLightToggleButton}"
-                                  IsChecked="False"  Foreground="#FFFCE22B"
+                                  IsChecked="False"  Foreground="#FFE3683A"
                                   VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
                                   Width="25" ToolTip="Add my list" Background="Transparent" Loaded="btnAddMyList_Loaded" Click="btnAddMyList_Click">
                             <materialDesign:PackIcon Kind="Plus" Height="17"
-                                                    Width="17" Foreground="#FFFCE22B"  />
+                                                    Width="17" Foreground="#FFE3683A"  />
                         </ToggleButton>
                         <TextBlock VerticalAlignment="Center" Foreground="#FF4A4736">Rating :</TextBlock>
                         <TextBlock VerticalAlignment="Center" Margin="10" Foreground="#1A2530" Text="{Binding Path=Views}"/>
@@ -190,7 +190,7 @@
                     <GradientStop Color="#FFDF4949" Offset="0.4"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Image Source="D:\LTUDQL2\a.png" 
+            <Image Source="/Images/a.png" 
                        VerticalAlignment="Top" Height="170" 
                        OpacityMask="#FFACA741" Margin="0,-21,0,-29"/>
             <Button x:Name="btnBack" Height="70" Width="70"

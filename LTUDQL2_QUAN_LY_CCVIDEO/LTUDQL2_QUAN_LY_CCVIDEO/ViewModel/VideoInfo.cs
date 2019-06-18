@@ -13,6 +13,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
         public static readonly DependencyProperty TitleProperty;
         public static readonly DependencyProperty PathProperty;
         public static readonly DependencyProperty PathVideoProperty;
+        public static readonly DependencyProperty PathVideoPhimProperty;
+
         public static readonly DependencyProperty DescriptionProperty;
         public static readonly DependencyProperty ViewsProperty;
         static VideoInfo()
@@ -21,6 +23,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             IDProperty = DependencyProperty.Register("ID", typeof(string), typeof(VideoInfo), new PropertyMetadata("New ID"));
             PathProperty = DependencyProperty.Register("Path", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"C:\Users\Vi Vu\Desktop\Video.mp4"));
             PathVideoProperty = DependencyProperty.Register("PathVideo", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"C:\Users\Vi Vu\Desktop\Video.mp4"));
+            PathVideoPhimProperty = DependencyProperty.Register("PathVideoPhim", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"C:\Users\Vi Vu\Desktop\Video.mp4"));
+
             DescriptionProperty = DependencyProperty.Register("Description", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"New decription"));
             ViewsProperty = DependencyProperty.Register("Views", typeof(string), typeof(VideoInfo), new PropertyMetadata(@"New views"));
         }
@@ -80,6 +84,17 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
             set
             {
                 SetValue(PathVideoProperty, value);
+            }
+        }
+        public string PathVideoPhim
+        {
+            get
+            {
+                return (string)GetValue(PathVideoPhimProperty);
+            }
+            set
+            {
+                SetValue(PathVideoPhimProperty, value);
             }
         }
 

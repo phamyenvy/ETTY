@@ -17,7 +17,7 @@
                 <GradientStop Color="#FFDF4949" Offset="0.4"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="D:\LTUDQL2\a.png" VerticalAlignment="Top" Height="170" OpacityMask="#FFACA741"/>
+        <Image Source="/Images/a.png" VerticalAlignment="Top" Height="170" OpacityMask="#FFACA741"/>
         <Button x:Name="btnLogin" Click="btnLogin_Click" BorderBrush="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="50" Background="#FFA28C11">Login</Button>
         <materialDesign:Card
                 materialDesign:ShadowAssist.ShadowDepth="Depth4"

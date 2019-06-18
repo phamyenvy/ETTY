@@ -19,7 +19,7 @@
     <Border BorderBrush="Black" BorderThickness="1">
         <Grid>
             <MediaElement Margin="0"  Name="mediaVideo" 
-                                      Source="{Binding Path=PathVideo}"
+                                      Source="{Binding Path=PathVideoPhim}"
                                Stretch="Fill"  
                                LoadedBehavior="Manual"
                                MouseDown="mediaVideo_MouseDown"
