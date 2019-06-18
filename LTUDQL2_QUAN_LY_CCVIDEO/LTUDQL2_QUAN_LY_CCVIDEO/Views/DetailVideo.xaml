@@ -50,7 +50,7 @@
                                 <ImageBrush ImageSource="{Binding Path=Path}"/>
                             </Grid.Background>
                             <MediaElement Margin="0"  Name="mediaVideo" 
-                                      Source="{Binding Path=PathVideo}"
+                                      Source="{Binding Path=PathVideoPhim}"
                                Stretch="Fill" Height="530" 
                                LoadedBehavior="Manual"
                                MouseDown="mediaVideo_MouseDown"
@@ -190,7 +190,7 @@
                     <GradientStop Color="#FFDF4949" Offset="0.4"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Image Source="D:\LTUDQL2\a.png" 
+            <Image Source="/Images/a.png" 
                        VerticalAlignment="Top" Height="170" 
                        OpacityMask="#FFACA741" Margin="0,-21,0,-29"/>
             <Button x:Name="btnBack" Height="70" Width="70"
