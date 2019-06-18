@@ -18,7 +18,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         {
             this.YeuThich_XemGanDay = new HashSet<YeuThich_XemGanDay>();
         }
-    
+
         public int MaVideo { get; set; }
         public string TenVideo { get; set; }
         public string LinkVideo { get; set; }
@@ -32,7 +32,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         public Nullable<System.DateTime> NgayUpload { get; set; }
         public string MoTa { get; set; }
         public Nullable<int> LuotXem { get; set; }
-    
+
         public virtual CapDoTaiKhoan CapDoTaiKhoan { get; set; }
         public virtual LoaiVideo LoaiVideo { get; set; }
         public virtual ICollection<YeuThich_XemGanDay> YeuThich_XemGanDay { get; set; }

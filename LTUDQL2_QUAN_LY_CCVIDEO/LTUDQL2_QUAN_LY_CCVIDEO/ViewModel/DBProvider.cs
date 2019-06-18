@@ -716,5 +716,24 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 qlccv.SaveChanges();
             }
         }
+
+        public static void SaveChangeAccount(List<TaiKhoan> vd)
+        {
+            using (var qlccv = new QuanLyCCVEntities())
+            {
+                foreach (TaiKhoan v in vd)
+                {
+                    TaiKhoan tk = qlccv.TaiKhoans.Where(a => a.MaTaiKhoan == v.MaTaiKhoan).SingleOrDefault();
+                    tk.CapDo = v.CapDo;
+                    tk.IDThe = v.IDThe;
+                    tk.LoaiTaiKhoan = v.LoaiTaiKhoan;
+                    tk.MaXacNhan = v.MaXacNhan;
+                    tk.NgayHetHan = v.NgayHetHan;
+                    tk.TenHienThi = v.TenHienThi;
+                    tk.TenTaiKhoan = v.TenTaiKhoan;
+                }
+                qlccv.SaveChanges();
+            }
+        }
     }
 }

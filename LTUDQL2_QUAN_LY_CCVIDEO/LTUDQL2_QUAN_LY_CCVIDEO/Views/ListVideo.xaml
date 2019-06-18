@@ -121,7 +121,7 @@
                 <Menu Background="#FF1A2530" Margin="0" Foreground="White" VerticalAlignment="Center">
 
                     <MenuItem Header="Home" Name="btnHome" Click="btnHome_Click"></MenuItem>
-                    <MenuItem Header="Categories" Name="cbCats">
+                    <MenuItem Header="Categories" Name="cbCats" ItemsSource="{Binding lstVideo}">
                     </MenuItem>
                     <MenuItem Header="My List"></MenuItem>
                 </Menu>
