@@ -55,10 +55,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             timer.Tick += timer_Tick;
             timer.Start();
 
-            int checkAdmin = 1;
-            if(checkAdmin == 1)
+            if (tk.LoaiTaiKhoan == 0)
             {
                 Adminstator.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Adminstator.Visibility = Visibility.Collapsed;
             }
 
         }
