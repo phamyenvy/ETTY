@@ -336,6 +336,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
                 return vd;
             }
         }
+        
         public static List<CapDoTaiKhoan> getCapDo()
         {
             using (var qlccv = new QuanLyCCVEntities())

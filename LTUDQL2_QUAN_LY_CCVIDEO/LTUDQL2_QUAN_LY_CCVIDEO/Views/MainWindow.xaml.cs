@@ -284,10 +284,18 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         private void btnFullScreen_Click(object sender, RoutedEventArgs e)
         {
             mediaVideo.Stop();
-            
-            VideoFullScreen wd = new VideoFullScreen(lst[4][0], mediaVideo.Position.TotalSeconds, tk, pf, 1);
-            wd.Show();
-            this.Close();
+            if (DBProvider.comparePermissionVideo(tk, DBProvider.getMainVideo()[0]))
+            {
+                VideoFullScreen wd = new VideoFullScreen(lst[4][0], mediaVideo.Position.TotalSeconds, tk, pf, 1);
+                wd.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Vui lòng nâng cấp lên gói {0} để xem đc video", DBProvider.getNameLevel(DBProvider.getMainVideo()[0])));
+
+            }
+
         }
 
         private void btnExitFullScreen_Click(object sender, RoutedEventArgs e)

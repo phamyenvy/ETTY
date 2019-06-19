@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <materialDesign:ColorZone  Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
                                    Margin="7"
-                                   materialDesign:ShadowAssist.ShadowDepth="Depth1" Background="#DCDCDC">
+                                   materialDesign:ShadowAssist.ShadowDepth="Depth1" Background="#FFF1F1F1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -30,13 +30,13 @@
                 </Button>
                 <TextBox x:Name="txtSearch" Grid.Column="1" Margin="8 0 0 0" materialDesign:HintAssist.Hint="Search ..." 
                                      materialDesign:TextFieldAssist.DecorationVisibility="Hidden" BorderThickness="0"
-                                     MinWidth="200" VerticalAlignment="Center"
+                                     MinWidth="200" VerticalAlignment="Center" FontSize="15"
                                  KeyUp="txtSearch_KeyUp"/>
             </Grid>
         </materialDesign:ColorZone>
         <ListBox Margin="5 2 5 5" Grid.Row="1"
                  Name="searchList"
-                 Background="#f2ecb0"
+                 Background="White"
                  ScrollViewer.VerticalScrollBarVisibility="Auto">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -61,7 +61,8 @@
                             
                             <Image Grid.ColumnSpan="3" Width="190" Height="240"
                            Source="{Binding Poster, Converter={StaticResource posterUrlToImg}}"/>
-                            <Button Name="btnGet" Tag="{Binding ImdbID}" Grid.Column="0" VerticalAlignment="Bottom" Content="Get" Click="btnGet_ClickAsync"/>
+                            <Button Name="btnGet" Tag="{Binding ImdbID}" Grid.Column="1" Width="60"
+                                    VerticalAlignment="Bottom" BorderBrush="Transparent" Foreground="Black" Content="Get" Click="btnGet_ClickAsync" Background="#FFFFEE62"/>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>
