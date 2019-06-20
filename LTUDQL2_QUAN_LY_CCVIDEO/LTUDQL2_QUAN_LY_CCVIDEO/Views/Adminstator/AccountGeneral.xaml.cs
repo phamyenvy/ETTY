@@ -26,26 +26,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         public AccountGeneral()
         {
             InitializeComponent();
-        }
-
-        private void btnEditAcc_Click(object sender, RoutedEventArgs e)
-        {
-            dtgAcc.IsReadOnly = false;
-        }
-
-        private void btnSaveAcc_Click(object sender, RoutedEventArgs e)
-        {
-            dtgAcc.IsReadOnly = true;
-            List<TaiKhoan> tk = DataContext as List<TaiKhoan>;
-            DBProvider.SaveChangeAccount(tk);
-            MessageBox.Show("Saved");
-        }
-
-        private void UserControl_Initialized(object sender, EventArgs e)
-        {
             ccv = new QuanLyCCVEntities();
             taiKhoans = ccv.TaiKhoans.ToList();
-            //dtgAcc.ItemsSource = taiKhoans;
             DataContext = taiKhoans;
         }
 
@@ -67,6 +49,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 
             taiKhoans = ccv.TaiKhoans.ToList();
             dtgAcc.ItemsSource = taiKhoans;
+        }
+
+       
+
+        private void dtgAcc_CurrentCellChanged(object sender, EventArgs e)
+        {
+            List<TaiKhoan> tk = DataContext as List<TaiKhoan>;
+            DBProvider.SaveChangeAccount(tk);
         }
     }
 }
