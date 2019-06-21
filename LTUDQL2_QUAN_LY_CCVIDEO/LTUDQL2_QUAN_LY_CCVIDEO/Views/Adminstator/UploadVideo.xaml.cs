@@ -173,13 +173,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
                     string sourceImgPath = v.LinkImage;
                     string sourceTrailerPath = v.LinkTrailer;
                     string sourceVideoPath = v.LinkVideo;
-                    string destinationPath = @"D:\LTUDQL2\Trailer\";
+                    string destinationPath = @"D:\LTUDQL2\";
                     if(isLoadedFromIMDB == false)
                     {
                         System.IO.File.Copy(sourceImgPath, destinationPath + sourceImgName, true);
                     }
                     System.IO.File.Copy(sourceTrailerPath, destinationPath + sourceTrailerName, true);
-                    System.IO.File.Copy(sourceVideoPath, destinationPath + sourceVideoName, true);
+                    Process p = new Process(sourceVideoPath, destinationPath + sourceVideoName);
+                    p.ShowDialog();
                     ccv.SaveChanges();
                     Refresh();
                     
