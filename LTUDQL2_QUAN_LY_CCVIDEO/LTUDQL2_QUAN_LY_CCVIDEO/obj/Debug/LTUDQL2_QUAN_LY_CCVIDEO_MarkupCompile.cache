@@ -4,17 +4,26 @@
 winexe
 C#
 .cs
-D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
+D:\Nam3-HK2\LTUDQL2\DoAn01\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\obj\Debug\
 LTUDQL2_QUAN_LY_CCVIDEO
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
 292040632020
 
 481520723545
 23-655040112
 Views\AddPlayList.xaml;Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\IMDBSearch.xaml;Views\Adminstator\Process.xaml;Views\Adminstator\TopLiked.xaml;Views\Adminstator\TopViewed.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\ChangePass.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
+=======
+D:\Nam3-HK2\LTUDQL2\DoAn01\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\App.xaml
+27249758616
+
+45-1331399586
+23-1832676296
+Views\Adminstator\AccountGeneral.xaml;Views\Adminstator\Admin.xaml;Views\Adminstator\IMDBSearch.xaml;Views\Adminstator\Process.xaml;Views\Adminstator\TopLiked.xaml;Views\Adminstator\TopViewed.xaml;Views\Adminstator\UploadVideo.xaml;Views\Adminstator\VideoGeneral.xaml;Views\DetailVideo.xaml;Views\ListVideo.xaml;Views\MainWindow.xaml;Views\Payment.xaml;Views\ProfileSetting\AddNewCard.xaml;Views\ProfileSetting\ProfileSettingWd.xaml;Views\ProfileSetting\uc_EditProfile.xaml;Views\ProfileSetting\uc_General.xaml;Views\ProfileSetting\uc_PayHistory.xaml;Views\RegisterViews\FinishRegisterDialog.xaml;Views\RegisterViews\ForgotPass.xaml;Views\RegisterViews\Login.xaml;Views\RegisterViews\Register.xaml;Views\RegisterViews\uc_register1.xaml;Views\RegisterViews\uc_register2.xaml;Views\RegisterViews\uc_register3.xaml;Views\SelectProfile.xaml;Views\StartWd.xaml;Views\VideoFullScreen.xaml;
+>>>>>>> f406ee994b97a0a0d866ee2e62ff342bae0a1190
 
 False
 
