@@ -43,13 +43,16 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             lst.Add(DBProvider.getNewVideo());
             lst.Add(DBProvider.getRecently(pf));
             lst.Add(DBProvider.getMainVideo_Phu()); // để lấy video main ra chuyển sang dạng videoinfo để bật full screen
+            btnProfile.Background = new ImageBrush(new BitmapImage(new Uri(pf.AvatarLink)));
 
-            
             DataContext = lst;
             List<String> lstVideo = DBProvider.getLoaiVideo();
-            List<MenuItem> lstCats = new List<MenuItem>();
+            List<String> lstPlaylistProfile = DBProvider.getDSPlayList(this.pf);
 
-            foreach(String t in lstVideo)
+            List<MenuItem> lstCats = new List<MenuItem>();
+            List<MenuItem> lstplayList = new List<MenuItem>();
+
+            foreach (String t in lstVideo)
             {
                 MenuItem a = new MenuItem();
                 a.Header = t;
@@ -60,6 +63,20 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             cbCats.ItemsSource = lstCats;
             
             cbCats.DisplayMemberPath = "TenLoaiVideo";
+
+
+
+            foreach (String t in lstPlaylistProfile)
+            {
+                MenuItem a = new MenuItem();
+                a.Header = t;
+                a.Tag = t;
+                a.Click += new RoutedEventHandler(this.btnGetPlayList_Click);
+                lstplayList.Add(a);
+            }
+
+            playList.ItemsSource = lstplayList;
+
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
@@ -74,7 +91,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             {
                 Adminstator.Visibility = Visibility.Collapsed;
             }
-
+            
         }
         #region sự kiện zoom
         int timebegin = 500;
@@ -90,7 +107,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
 
             var add = gr.FindName("btnAddMyList") as ToggleButton;
             add.Visibility = Visibility.Visible;
-
+            var addpl = gr.FindName("btnAddPlayList") as ToggleButton;
+            addpl.Visibility = Visibility.Visible;
+            
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Visible;
             
@@ -173,11 +192,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         {
             var gr = sender as Grid;
 
-            var heart = gr.FindName("btnHeart") as ToggleButton                ;
+            var heart = gr.FindName("btnHeart") as ToggleButton;
             heart.Visibility = Visibility.Collapsed;
 
             var add = gr.FindName("btnAddMyList") as ToggleButton;
             add.Visibility = Visibility.Collapsed;
+
+            var addpl = gr.FindName("btnAddPlayList") as ToggleButton;
+            addpl.Visibility = Visibility.Collapsed;
 
             var me = gr.FindName("video") as MediaElement;
             me.Visibility = Visibility.Collapsed;
@@ -206,7 +228,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         void btnButton_Click(object sender, RoutedEventArgs e)
         {
             MenuItem a = sender as MenuItem;
-            MessageBox.Show(a.Tag.ToString());
+            ListVideo wd1 = new ListVideo(DBProvider.getIDLoaiVByName(a.Tag.ToString()), tk, pf);
+            wd1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd1.Show();
+            this.Close();
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseEventArgs e)
@@ -222,9 +247,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             }
             else
             {
-                //-Show cái gì đó khi cấp độ video không hổ trợ
-
-                //-Code tạm
+                
                 Video vd = DBProvider.getVideoByID(ID);
                 
                 MessageBox.Show(string.Format("Vui lòng nâng cấp lên gói {0} để xem đc video",DBProvider.getNameLevel(vd)));
@@ -376,7 +399,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         }
         private void lstItemSetting_Selected(object sender, RoutedEventArgs e)
         {
-            if(pf.AvatarLink == "1")
+            if (this.pf.Status == 1)
             {
                 ProfileSettingWd wd = new ProfileSettingWd(this.tk, this.pf);
                 wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -385,7 +408,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             }
             else
             {
-                MessageBox.Show("Your profile not allowed go to setting!");
+                MessageBox.Show("Your profile not allow go to setting!");
             }
             
         }
@@ -426,7 +449,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             }
         }
 
-
+        private void btnGetPlayList_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem a = sender as MenuItem;
+            ListVideo wd = new ListVideo(a.Tag.ToString(), this.tk, this.pf);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
 
         private void btnAddMyList_Click(object sender, RoutedEventArgs e)
         {
@@ -479,6 +509,15 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
             wd.Show();
 
             this.Close();
+        }
+
+        private void btnAddPlayList_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButton a = sender as ToggleButton;
+            int ID = Int32.Parse(a.Tag.ToString());
+            AddPlayList wd = new AddPlayList(this.pf, ID);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.ShowDialog();
         }
     }
 }

@@ -29,10 +29,8 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
                 <Button x:Name="btnProfile1" Width="200" Height="200" 
-                        VerticalAlignment="Bottom" Click="btnProfile1_Click">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Images/ava1.png"/>
-                    </Button.Background>
+                        VerticalAlignment="Bottom" Click="btnProfile1_Click" BorderBrush="Transparent">
+                    
                 </Button>
                 <Label x:Name="lbl1" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
             </Grid>
@@ -44,10 +42,8 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
                 <Button x:Name="btnProfile2" Width="200" Height="200" 
-                        VerticalAlignment="Bottom" Click="btnProfile2_Click">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Images/ava2.png"/>
-                    </Button.Background>
+                        VerticalAlignment="Bottom" Click="btnProfile2_Click" BorderBrush="Transparent">
+                    
                 </Button>
                 <Label x:Name="lbl2" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
             </Grid>
@@ -58,10 +54,8 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
                 <Button x:Name="btnProfile3" Width="200" Height="200" 
-                        VerticalAlignment="Bottom" Click="btnProfile3_Click">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Images/ava3.png"/>
-                    </Button.Background>
+                        VerticalAlignment="Bottom" Click="btnProfile3_Click" BorderBrush="Transparent">
+                    
                 </Button>
                 <Label x:Name="lbl3" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
             </Grid>
@@ -72,10 +66,8 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
                 <Button x:Name="btnProfile4" Width="200" Height="200" 
-                        VerticalAlignment="Bottom" Click="btnProfile4_Click">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Images/ava4.png"/>
-                    </Button.Background>
+                        VerticalAlignment="Bottom" Click="btnProfile4_Click" BorderBrush="Transparent">
+                    
                 </Button>
                 <Label x:Name="lbl4" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" >Ten 1</Label>
             </Grid>

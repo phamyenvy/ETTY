@@ -20,11 +20,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
     /// </summary>
     public partial class AddNewCard : Window
     {
-        int maTK;
-        public AddNewCard(int maTK)
+        TaiKhoan tk = null;
+        Profile pf = null;
+        public AddNewCard(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
-            this.maTK = maTK;
+            this.tk = tk;
+            this.pf = pf;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -32,9 +34,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             try
             {
                 string Pass = MaHoaChuoi.MaHoa(txtPass.Password, "etty");
-                DBProvider.addNewCard(txtIDCard.Text, txtFName.Text, txtLName.Text, Pass, maTK);
+                TaiKhoan tks = DBProvider.addNewCard(txtIDCard.Text, txtFName.Text, txtLName.Text, Pass, this.tk.MaTaiKhoan);
+                ProfileSettingWd wd1 = new ProfileSettingWd(tks, pf);
+                wd1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                wd1.Show();
                 this.Close();
                 
+                
+
             }
             catch (Exception)
             {

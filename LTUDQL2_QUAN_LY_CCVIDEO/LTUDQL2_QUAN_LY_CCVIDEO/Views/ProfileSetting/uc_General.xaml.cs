@@ -27,10 +27,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
             InitializeComponent();
         }
         TaiKhoan tk = null;
-        public uc_General(TaiKhoan tk)
+        Profile pf = null;
+        public uc_General(TaiKhoan tk, Profile pf)
         {
             InitializeComponent();
             this.tk = tk;
+            this.pf = pf;
+
             txtNameAcc.Text = tk.TenHienThi;
             tblLevel.Text = DBProvider.getLevelAcc(tk);
             tblDate.Text = tk.NgayHetHan.Value.Date.ToString();
@@ -39,7 +42,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 
         private void btnChagePass_Click(object sender, RoutedEventArgs e)
         {
-            ForgotPass wd = new ForgotPass();
+            ChangePass wd = new ChangePass(this.tk);
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
             
@@ -49,17 +52,31 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
 
         private void btnPay_Click(object sender, RoutedEventArgs e)
         {
-            Payment wd = new Payment(tbIDCard.Text, tk.TenTaiKhoan);
+            Payment wd = new Payment(this.tk, this.pf);
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
+
+            var gr = this.Parent as Grid;
+            var gr1 = gr.Parent as Grid;
+            var gr2 = gr1.Parent as Border;
+            var gr3 = gr2.Parent as Grid;
+
+            (gr3.Parent as Window).Close();
         }
 
         private void btnAddCard_Click(object sender, RoutedEventArgs e)
         {
-            AddNewCard wd = new AddNewCard(tk.MaTaiKhoan);
+            AddNewCard wd = new AddNewCard(this.tk, this.pf);
             wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             wd.Show();
-            
+            var gr = this.Parent as Grid;
+            var gr1 = gr.Parent as Grid;
+            var gr2 = gr1.Parent as Border;
+            var gr3 = gr2.Parent as Grid;
+
+            (gr3.Parent as Window).Close();
+
+
         }
         
         private void btnSaveAll_Click(object sender, RoutedEventArgs e)

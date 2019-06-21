@@ -13,7 +13,7 @@
         Title="ETTY" Height="700" Width="1200" ResizeMode="CanMinimize">
     <Window.Resources>
         <DataTemplate DataType="{x:Type m:VideoInfo}">
-            <Grid Width="250" Height="190" HorizontalAlignment="Center" Margin="10,5" Name="Scroll" Tag="{Binding Path=ID}">
+            <Grid Width="250" Height="200" HorizontalAlignment="Center" Margin="10,5" Name="Scroll" Tag="{Binding Path=ID}">
                 <Grid.Style>
                     <Style TargetType="{x:Type Grid}">
                         <EventSetter Event="MouseEnter" Handler="Grid_MouseEnter"/>
@@ -59,7 +59,7 @@
                     </ToggleButton>
                     
                 </Grid>
-                <TextBlock Margin=" 5,-10" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Text="{Binding Path=Title}" Foreground="White" FontWeight="UltraLight" FontSize="25" ></TextBlock>
+                <TextBlock Margin=" 5,-10" HorizontalAlignment="Left" VerticalAlignment="Bottom"  Text="{Binding Path=Title}" Foreground="White" FontWeight="UltraLight" FontSize="20" ></TextBlock>
 
                 
 
@@ -95,7 +95,7 @@
                         <Button x:Name="btnBackToHome" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" BorderBrush="Transparent" Click="btnHome_Click">
                             <materialDesign:PackIcon Kind="ArrowLeft" Height="30" Width="50"/>
                         </Button>
-                        <Image MouseDown="Image_MouseDown" Source="/Images/a.png" Height="70" Width="100" Margin="0,0,0,-10"/>
+                        <Image MouseDown="Image_MouseDown" Source="/Images/a.png" Height="80" Width="100" Margin="-20,-10,0,0"/>
 
 
                     </StackPanel>
@@ -123,11 +123,13 @@
                     <MenuItem Header="Home" Name="btnHome" Click="btnHome_Click"></MenuItem>
                     <MenuItem Header="Categories" Name="cbCats" ItemsSource="{Binding lstVideo}">
                     </MenuItem>
-                    <MenuItem Header="My List"></MenuItem>
+                    <MenuItem Header="My List" Click="myList_Click"></MenuItem>
+                    <MenuItem Header="Playlist" Name="menuplayList"></MenuItem>
+
                 </Menu>
             </DockPanel>
         </materialDesign:ColorZone>
-        <ScrollViewer Background="Transparent" Grid.Row="2" >
+        <ScrollViewer Background="Transparent" Grid.Row="2" Height="Auto">
             <ItemsControl ItemsSource="{Binding [0]}" Margin="10,0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

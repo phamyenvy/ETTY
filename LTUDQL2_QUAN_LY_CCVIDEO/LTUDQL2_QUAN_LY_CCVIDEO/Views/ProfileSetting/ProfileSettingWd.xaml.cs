@@ -39,22 +39,16 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.ProfileSetting
         {
             InitializeComponent();
 
-            if (pf.AvatarLink == "1")
-            {
+            
                 this.tk = tk;
                 this.pf = pf;
                 General.IsSelected = true;
                 btnBack.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MessageBox.Show("Your profile not allowed to setting account!");
-                this.Close();
-            }
+            
         }
         private void General_Selected(object sender, RoutedEventArgs e)
         {
-            uc_General uc = new uc_General(this.tk);
+            uc_General uc = new uc_General(this.tk, this.pf);
             General.Background = Brushes.White;
             content.Children.Clear();
             content.Children.Add(uc);

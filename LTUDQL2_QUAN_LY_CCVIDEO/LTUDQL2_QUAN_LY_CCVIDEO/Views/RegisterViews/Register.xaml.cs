@@ -160,10 +160,10 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.RegisterViews
                             qlccv.SaveChanges();
 
                             int maTk = DBProvider.getIDAcc(TenTaiKhoan);
-                            Profile pf0 = new Profile() { TenHienThi = "Strange", TaiKhoan = maTk, AvatarLink = "1"};
-                            Profile pf1 = new Profile() { TenHienThi = "Steve", TaiKhoan = maTk, AvatarLink = "2"};
-                            Profile pf2 = new Profile() { TenHienThi = "Scottlang", TaiKhoan = maTk, AvatarLink = "2" };
-                            Profile pf3 = new Profile() { TenHienThi = "Banner", TaiKhoan = maTk, AvatarLink = "2" };
+                            Profile pf0 = new Profile() { TenHienThi = "Strange", TaiKhoan = maTk, AvatarLink = @"D:\LTUDQL2\ava1.png" };
+                            Profile pf1 = new Profile() { TenHienThi = "Steve", TaiKhoan = maTk, AvatarLink = @"D:\LTUDQL2\ava2.png" };
+                            Profile pf2 = new Profile() { TenHienThi = "Scottlang", TaiKhoan = maTk, AvatarLink = @"D:\LTUDQL2\ava3.png" };
+                            Profile pf3 = new Profile() { TenHienThi = "Banner", TaiKhoan = maTk, AvatarLink = @"D:\LTUDQL2\ava4.png" };
                             qlccv.Profiles.Add(pf0);
                             qlccv.Profiles.Add(pf1);
                             qlccv.Profiles.Add(pf2);

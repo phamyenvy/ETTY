@@ -27,6 +27,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     
         public virtual DbSet<CapDoTaiKhoan> CapDoTaiKhoans { get; set; }
         public virtual DbSet<LoaiVideo> LoaiVideos { get; set; }
+        public virtual DbSet<PlayList> PlayLists { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<ThanhToan> ThanhToans { get; set; }

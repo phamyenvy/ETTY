@@ -88,6 +88,9 @@
     <Compile Include="LoaiVideo.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
+    <Compile Include="PlayList.cs">
+      <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\DBProvider.cs" />
     <Compile Include="Profile.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
@@ -118,6 +121,9 @@
     </Compile>
     <Compile Include="Video.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPlayList.xaml.cs">
+      <DependentUpon>AddPlayList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Adminstator\AccountGeneral.xaml.cs">
       <DependentUpon>AccountGeneral.xaml</DependentUpon>
@@ -167,6 +173,9 @@
     <Compile Include="Views\ProfileSetting\uc_PayHistory.xaml.cs">
       <DependentUpon>uc_PayHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegisterViews\ChangePass.xaml.cs">
+      <DependentUpon>ChangePass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterViews\FinishRegisterDialog.xaml.cs">
       <DependentUpon>FinishRegisterDialog.xaml</DependentUpon>
     </Compile>
@@ -200,6 +209,10 @@
     <Compile Include="YeuThich_XemGanDay.cs">
       <DependentUpon>QuanLyCCV.tt</DependentUpon>
     </Compile>
+    <Page Include="Views\AddPlayList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Adminstator\AccountGeneral.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,6 +286,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProfileSetting\uc_PayHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterViews\ChangePass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

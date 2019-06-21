@@ -16,6 +16,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
     {
         public Profile()
         {
+            this.PlayLists = new HashSet<PlayList>();
             this.YeuThich_XemGanDay = new HashSet<YeuThich_XemGanDay>();
         }
     
@@ -23,7 +24,9 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         public string TenHienThi { get; set; }
         public string AvatarLink { get; set; }
         public Nullable<int> TaiKhoan { get; set; }
+        public Nullable<int> Status { get; set; }
     
+        public virtual ICollection<PlayList> PlayLists { get; set; }
         public virtual TaiKhoan TaiKhoan1 { get; set; }
         public virtual ICollection<YeuThich_XemGanDay> YeuThich_XemGanDay { get; set; }
     }

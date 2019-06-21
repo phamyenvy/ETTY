@@ -4,92 +4,103 @@
     <EntitySetMapping Name="CapDoTaiKhoans">
       <EntityTypeMapping TypeName="QuanLyCCVModel.CapDoTaiKhoan">
         <MappingFragment StoreEntitySet="CapDoTaiKhoan">
-          <ScalarProperty Name="MaCapDo" ColumnName="MaCapDo" />
-          <ScalarProperty Name="TenCapDo" ColumnName="TenCapDo" />
           <ScalarProperty Name="GiaTienDuyTri" ColumnName="GiaTienDuyTri" />
+          <ScalarProperty Name="TenCapDo" ColumnName="TenCapDo" />
+          <ScalarProperty Name="MaCapDo" ColumnName="MaCapDo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LoaiVideos">
       <EntityTypeMapping TypeName="QuanLyCCVModel.LoaiVideo">
         <MappingFragment StoreEntitySet="LoaiVideo">
-          <ScalarProperty Name="MaLoaiVideo" ColumnName="MaLoaiVideo" />
           <ScalarProperty Name="TenLoaiVideo" ColumnName="TenLoaiVideo" />
+          <ScalarProperty Name="MaLoaiVideo" ColumnName="MaLoaiVideo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayLists">
+      <EntityTypeMapping TypeName="QuanLyCCVModel.PlayList">
+        <MappingFragment StoreEntitySet="PlayList">
+          <ScalarProperty Name="IDPlayList" ColumnName="IDPlayList" />
+          <ScalarProperty Name="IDVideo" ColumnName="IDVideo" />
+          <ScalarProperty Name="TenPlayList" ColumnName="TenPlayList" />
+          <ScalarProperty Name="IDProfile" ColumnName="IDProfile" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Profiles">
       <EntityTypeMapping TypeName="QuanLyCCVModel.Profile">
         <MappingFragment StoreEntitySet="Profile">
-          <ScalarProperty Name="MaProfile" ColumnName="MaProfile" />
-          <ScalarProperty Name="TenHienThi" ColumnName="TenHienThi" />
-          <ScalarProperty Name="AvatarLink" ColumnName="AvatarLink" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="AvatarLink" ColumnName="AvatarLink" />
+          <ScalarProperty Name="TenHienThi" ColumnName="TenHienThi" />
+          <ScalarProperty Name="MaProfile" ColumnName="MaProfile" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TaiKhoans">
       <EntityTypeMapping TypeName="QuanLyCCVModel.TaiKhoan">
         <MappingFragment StoreEntitySet="TaiKhoan">
-          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
-          <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
-          <ScalarProperty Name="LoaiTaiKhoan" ColumnName="LoaiTaiKhoan" />
-          <ScalarProperty Name="CapDo" ColumnName="CapDo" />
-          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="TenHienThi" ColumnName="TenHienThi" />
           <ScalarProperty Name="IDThe" ColumnName="IDThe" />
           <ScalarProperty Name="MaXacNhan" ColumnName="MaXacNhan" />
+          <ScalarProperty Name="TenHienThi" ColumnName="TenHienThi" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NgayHetHan" ColumnName="NgayHetHan" />
+          <ScalarProperty Name="CapDo" ColumnName="CapDo" />
+          <ScalarProperty Name="LoaiTaiKhoan" ColumnName="LoaiTaiKhoan" />
+          <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ThanhToans">
       <EntityTypeMapping TypeName="QuanLyCCVModel.ThanhToan">
         <MappingFragment StoreEntitySet="ThanhToan">
-          <ScalarProperty Name="MaThanhToan" ColumnName="MaThanhToan" />
-          <ScalarProperty Name="TenThanhToan" ColumnName="TenThanhToan" />
-          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
-          <ScalarProperty Name="CapDoMua" ColumnName="CapDoMua" />
           <ScalarProperty Name="IDThe" ColumnName="IDThe" />
+          <ScalarProperty Name="CapDoMua" ColumnName="CapDoMua" />
+          <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+          <ScalarProperty Name="TenThanhToan" ColumnName="TenThanhToan" />
+          <ScalarProperty Name="MaThanhToan" ColumnName="MaThanhToan" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Thes">
       <EntityTypeMapping TypeName="QuanLyCCVModel.The">
         <MappingFragment StoreEntitySet="The">
-          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Videos">
       <EntityTypeMapping TypeName="QuanLyCCVModel.Video">
         <MappingFragment StoreEntitySet="Video">
-          <ScalarProperty Name="MaVideo" ColumnName="MaVideo" />
-          <ScalarProperty Name="TenVideo" ColumnName="TenVideo" />
-          <ScalarProperty Name="LinkVideo" ColumnName="LinkVideo" />
-          <ScalarProperty Name="MaLoai_Video" ColumnName="MaLoai_Video" />
-          <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
-          <ScalarProperty Name="LinkTrailer" ColumnName="LinkTrailer" />
-          <ScalarProperty Name="CapDoVideo" ColumnName="CapDoVideo" />
-          <ScalarProperty Name="Like" ColumnName="Like" />
-          <ScalarProperty Name="Dislike" ColumnName="Dislike" />
-          <ScalarProperty Name="NgaySanXuat" ColumnName="NgaySanXuat" />
-          <ScalarProperty Name="NgayUpload" ColumnName="NgayUpload" />
-          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="LuotXem" ColumnName="LuotXem" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="NgayUpload" ColumnName="NgayUpload" />
+          <ScalarProperty Name="NgaySanXuat" ColumnName="NgaySanXuat" />
+          <ScalarProperty Name="Dislike" ColumnName="Dislike" />
+          <ScalarProperty Name="Like" ColumnName="Like" />
+          <ScalarProperty Name="CapDoVideo" ColumnName="CapDoVideo" />
+          <ScalarProperty Name="LinkTrailer" ColumnName="LinkTrailer" />
+          <ScalarProperty Name="LinkImage" ColumnName="LinkImage" />
+          <ScalarProperty Name="MaLoai_Video" ColumnName="MaLoai_Video" />
+          <ScalarProperty Name="LinkVideo" ColumnName="LinkVideo" />
+          <ScalarProperty Name="TenVideo" ColumnName="TenVideo" />
+          <ScalarProperty Name="MaVideo" ColumnName="MaVideo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="YeuThich_XemGanDay">
       <EntityTypeMapping TypeName="QuanLyCCVModel.YeuThich_XemGanDay">
         <MappingFragment StoreEntitySet="YeuThich_XemGanDay">
-          <ScalarProperty Name="MaProfile" ColumnName="MaProfile" />
-          <ScalarProperty Name="MaVideo" ColumnName="MaVideo" />
-          <ScalarProperty Name="LoaiLuuTru" ColumnName="LoaiLuuTru" />
           <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="LoaiLuuTru" ColumnName="LoaiLuuTru" />
+          <ScalarProperty Name="MaVideo" ColumnName="MaVideo" />
+          <ScalarProperty Name="MaProfile" ColumnName="MaProfile" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

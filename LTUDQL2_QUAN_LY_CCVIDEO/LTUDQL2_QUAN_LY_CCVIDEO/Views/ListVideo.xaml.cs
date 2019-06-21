@@ -49,22 +49,45 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             InitializeComponent();
             List<List<VideoInfo>> lst = new List<List<VideoInfo>>();
             List<String> lstVideo = DBProvider.getLoaiVideo();
-            cbCats.ItemsSource = lstVideo;
             this.pf = pf;
             this.tk = tk;
+            List<MenuItem> lstCats = new List<MenuItem>();
+
+            foreach (String t in lstVideo)
+            {
+                MenuItem a = new MenuItem();
+                a.Header = t;
+                a.Tag = t;
+                a.Click += new RoutedEventHandler(this.btnButton_Click);
+                lstCats.Add(a);
+            }
+            cbCats.ItemsSource = lstCats;
 
             cbCats.DisplayMemberPath = "TenLoaiVideo";
+
+            List<String> lstPlaylistProfile = DBProvider.getDSPlayList(pf);
+            List<MenuItem> lstplayList = new List<MenuItem>();
+
+            foreach (String t in lstPlaylistProfile)
+            {
+                MenuItem a = new MenuItem();
+                a.Header = t;
+                a.Tag = t;
+                a.Click += new RoutedEventHandler(this.btnGetPlayList_Click);
+                lstplayList.Add(a);
+            }
+
+            menuplayList.ItemsSource = lstplayList;
             switch (maLoai)
             {
+                
                 case 0:
                     lst.Add(DBProvider.getMyVideo(pf));
                     
                     break;
-                case 1:
-                    break;
-
+               
                 default:
-                    lst.Add(DBProvider.getListVideo());
+                    lst.Add(DBProvider.getListVideoByID(maLoai));
 
 
                     break;
@@ -74,6 +97,72 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             
 
             DataContext = lst;
+        }
+        public ListVideo(string playList, TaiKhoan tk, Profile pf)
+        {
+            InitializeComponent();
+            this.pf = pf;
+            this.tk = tk;
+            List<List<VideoInfo>> lst = new List<List<VideoInfo>>();
+
+            List<String> lstVideo = DBProvider.getLoaiVideo();
+            List<String> lstPlaylistProfile = DBProvider.getDSPlayList(pf);
+
+            List<MenuItem> lstCats = new List<MenuItem>();
+            List<MenuItem> lstplayList = new List<MenuItem>();
+
+            foreach (String t in lstVideo)
+            {
+                MenuItem a = new MenuItem();
+                a.Header = t;
+                a.Tag = t;
+                a.Click += new RoutedEventHandler(this.btnButton_Click);
+                lstCats.Add(a);
+            }
+            cbCats.ItemsSource = lstCats;
+
+            cbCats.DisplayMemberPath = "TenLoaiVideo";
+
+
+
+            foreach (String t in lstPlaylistProfile)
+            {
+                MenuItem a = new MenuItem();
+                a.Header = t;
+                a.Tag = t;
+                a.Click += new RoutedEventHandler(this.btnGetPlayList_Click);
+                lstplayList.Add(a);
+            }
+
+            menuplayList.ItemsSource = lstplayList;
+
+            lst.Add(DBProvider.getPlayListVideo(this.pf, DBProvider.getIDPLByName(playList).IDPlayList));
+
+            DataContext = lst;
+        }
+
+        private void btnGetPlayList_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem a = sender as MenuItem;
+            ListVideo wd = new ListVideo(a.Tag.ToString(), this.tk, this.pf);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
+        private void myList_Click(object sender, RoutedEventArgs e)
+        {
+            ListVideo wd = new ListVideo(0, tk, pf);
+            wd.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd.Show();
+            this.Close();
+        }
+        void btnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem a = sender as MenuItem;
+            ListVideo wd1 = new ListVideo(DBProvider.getIDLoaiVByName(a.Tag.ToString()), tk, pf);
+            wd1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            wd1.Show();
+            this.Close();
         }
 
         int timebegin = 500, timeDuration = 300;
@@ -100,27 +189,27 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
                 timebegin = 500;
             }
 
-            var sxDA = new DoubleAnimation();
-            sxDA.To = 1.1;
-            sxDA.BeginTime = TimeSpan.FromMilliseconds(0);
-            sxDA.Duration = TimeSpan.FromMilliseconds(200);
-            Storyboard.SetTarget(sxDA, gr);
-            Storyboard.SetTargetProperty(sxDA, new PropertyPath("LayoutTransform.ScaleX"));
+            //var sxDA = new DoubleAnimation();
+            //sxDA.To = 1.1;
+            //sxDA.BeginTime = TimeSpan.FromMilliseconds(0);
+            //sxDA.Duration = TimeSpan.FromMilliseconds(200);
+            //Storyboard.SetTarget(sxDA, gr);
+            //Storyboard.SetTargetProperty(sxDA, new PropertyPath("LayoutTransform.ScaleX"));
 
-            var syDA = new DoubleAnimation();
-            syDA.To = 1.1;
-            syDA.BeginTime = TimeSpan.FromMilliseconds(0);
-            syDA.Duration = TimeSpan.FromMilliseconds(200);
-            Storyboard.SetTarget(syDA, gr);
-            Storyboard.SetTargetProperty(syDA, new PropertyPath("LayoutTransform.ScaleY"));
+            //var syDA = new DoubleAnimation();
+            //syDA.To = 1.1;
+            //syDA.BeginTime = TimeSpan.FromMilliseconds(0);
+            //syDA.Duration = TimeSpan.FromMilliseconds(200);
+            //Storyboard.SetTarget(syDA, gr);
+            //Storyboard.SetTargetProperty(syDA, new PropertyPath("LayoutTransform.ScaleY"));
 
-            var sb = new Storyboard();
-            sb.Children.Add(sxDA);
-            sb.Children.Add(syDA);
+            //var sb = new Storyboard();
+            //sb.Children.Add(sxDA);
+            //sb.Children.Add(syDA);
 
 
 
-            sb.Begin();
+            //sb.Begin();
 
             
 
@@ -148,20 +237,20 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             {
                 me.Stop();
             }
-            var sxDA = new DoubleAnimation();
-            sxDA.Duration = TimeSpan.FromMilliseconds(300);
-            Storyboard.SetTarget(sxDA, gr);
-            Storyboard.SetTargetProperty(sxDA, new PropertyPath("LayoutTransform.ScaleX"));
+            //var sxDA = new DoubleAnimation();
+            //sxDA.Duration = TimeSpan.FromMilliseconds(300);
+            //Storyboard.SetTarget(sxDA, gr);
+            //Storyboard.SetTargetProperty(sxDA, new PropertyPath("LayoutTransform.ScaleX"));
 
-            var syDA = new DoubleAnimation();
-            syDA.Duration = TimeSpan.FromMilliseconds(300);
-            Storyboard.SetTarget(syDA, gr);
-            Storyboard.SetTargetProperty(syDA, new PropertyPath("LayoutTransform.ScaleY"));
+            //var syDA = new DoubleAnimation();
+            //syDA.Duration = TimeSpan.FromMilliseconds(300);
+            //Storyboard.SetTarget(syDA, gr);
+            //Storyboard.SetTargetProperty(syDA, new PropertyPath("LayoutTransform.ScaleY"));
 
-            var sb = new Storyboard();
-            sb.Children.Add(sxDA);
-            sb.Children.Add(syDA);
-            sb.Begin();
+            //var sb = new Storyboard();
+            //sb.Children.Add(sxDA);
+            //sb.Children.Add(syDA);
+            //sb.Begin();
 
         }
         #region Nhóm sự kiện chọn popup

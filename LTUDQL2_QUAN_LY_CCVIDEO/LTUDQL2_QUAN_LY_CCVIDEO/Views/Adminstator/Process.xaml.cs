@@ -22,8 +22,6 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
         public Process()
         {
             InitializeComponent();
-            tick.Visibility = Visibility.Collapsed;
-            success.Visibility = Visibility.Collapsed;
         }
         private void btnOut_Click(object sender, RoutedEventArgs e)
         {

@@ -12,44 +12,63 @@
         <UniformGrid Rows="4" Height="480" VerticalAlignment="Top">
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Images/ava1.png"
-                   Margin="50,5"/>
+                    <Image x:Name="img1" Width="100" Height="100"
+                   Margin="50,5,10,5"/>
+                    <Button x:Name="btnChage1"  Background="#FFECCA06" BorderBrush="Transparent"  Click="btnChage1_Click" Margin="20,0,10,0">Change Avatar</Button>
+
                     <TextBox x:Name="name1" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Strange</TextBox>
                     <CheckBox x:Name="Check1" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="Check1_Checked" Unchecked="Check1_Unchecked">Check for main profile</CheckBox>
+
+                    <TextBlock x:Name="url1" VerticalAlignment="Center"  Width="200" FontSize="15" TextWrapping="Wrap" Visibility="Collapsed"/>
                 </StackPanel>
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Images/ava2.png"
-                   Margin="50,5"/>
+                    <Image x:Name="img2" Width="100" Height="100"
+                   Margin="50,5,10,5"/>
+                    <Button x:Name="btnChage2" Background="#FFECCA06" BorderBrush="Transparent"  Click="btnChage2_Click" Margin="20,0,10,0">Change Avatar</Button>
+
                     <TextBox x:Name="name2" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Steve</TextBox>
                     <CheckBox x:Name="check2" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="check2_Checked" Unchecked="check2_Unchecked">Check for main profile</CheckBox>
+
+                    <TextBlock x:Name="url2" FontSize="15"  Width="200" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
+
                 </StackPanel>
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Images/ava3.png"
-                   Margin="50,5"/>
+                    <Image  x:Name="img3" Width="100" Height="100"
+                   Margin="50,5,10,5"/>
+                    <Button x:Name="btnChage3" Click="btnChage3_Click" Background="#FFECCA06" BorderBrush="Transparent"   Margin="20,0,10,0">Change Avatar</Button>
+
                     <TextBox x:Name="name3" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}">Scottlang</TextBox>
                     <CheckBox x:Name="check3" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="check3_Checked" Unchecked="check3_Unchecked">Check for main profile</CheckBox>
+
+                    <TextBlock x:Name="url3" FontSize="15"  Width="200" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
+
                 </StackPanel>
             </Border>
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Images/ava4.png"
-                   Margin="50,5"/>
+                    <Image  x:Name="img4" Width="100" Height="100"
+                   Margin="50,5,10,5"/>
+                    <Button x:Name="btnChage4" Background="#FFECCA06" BorderBrush="Transparent" Click="btnChage4_Click" Margin="20,0,10,0">Change Avatar</Button>
+
                     <TextBox x:Name="name4" materialDesign:HintAssist.Hint="Profile Name" VerticalAlignment="Center"
                       Width="250" Style="{StaticResource MaterialDesignFloatingHintTextBox}" >Banner</TextBox>
                     <CheckBox x:Name="check4" Margin="25" Foreground="Gray" Background="#FFECCA06" BorderBrush="#FFECCA06" Checked="check4_Checked" Unchecked="check4_Unchecked">Check for main profile</CheckBox>
+
+                    <TextBlock x:Name="url4" FontSize="15"  Width="200" VerticalAlignment="Center" TextWrapping="Wrap" Visibility="Collapsed"/>
+
                 </StackPanel>
             </Border>
 
 
         </UniformGrid>
-        <Button VerticalAlignment="Bottom" Width="150" HorizontalAlignment="Right" Margin="15"
-                Background="#FFECCA06" BorderBrush="Transparent" Click="Button_Click">Save Change</Button>
+        <Button VerticalAlignment="Bottom" Width="64" HorizontalAlignment="Right" Margin="0,0,15,15"
+                Background="#FFECCA06" BorderBrush="Transparent" Click="Button_Click" Height="52">Save Change</Button>
     </Grid>
 </UserControl>

@@ -27,8 +27,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         public Nullable<System.DateTime> NgayHetHan { get; set; }
         public string Password { get; set; }
         public string TenHienThi { get; set; }
-        public string IDThe { get; set; }
         public int MaXacNhan { get; set; }
+        public string IDThe { get; set; }
     
         public virtual CapDoTaiKhoan CapDoTaiKhoan { get; set; }
         public virtual ICollection<Profile> Profiles { get; set; }

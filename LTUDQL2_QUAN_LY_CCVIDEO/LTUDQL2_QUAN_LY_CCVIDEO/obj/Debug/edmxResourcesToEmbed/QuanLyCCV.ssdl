@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="QuanLyCCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="QuanLyCCVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CapDoTaiKhoan">
     <Key>
       <PropertyRef Name="MaCapDo" />
@@ -15,6 +15,17 @@
     <Property Name="MaLoaiVideo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLoaiVideo" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="PlayList">
+    <Key>
+      <PropertyRef Name="IDProfile" />
+      <PropertyRef Name="IDVideo" />
+      <PropertyRef Name="IDPlayList" />
+    </Key>
+    <Property Name="IDProfile" Type="int" Nullable="false" />
+    <Property Name="TenPlayList" Type="nvarchar" MaxLength="255" />
+    <Property Name="IDVideo" Type="int" Nullable="false" />
+    <Property Name="IDPlayList" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Profile">
     <Key>
       <PropertyRef Name="MaProfile" />
@@ -23,6 +34,7 @@
     <Property Name="TenHienThi" Type="varchar" MaxLength="255" />
     <Property Name="AvatarLink" Type="varchar" MaxLength="255" />
     <Property Name="TaiKhoan" Type="int" />
+    <Property Name="Status" Type="int" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -35,8 +47,8 @@
     <Property Name="NgayHetHan" Type="datetime" />
     <Property Name="Password" Type="varchar" MaxLength="255" />
     <Property Name="TenHienThi" Type="nvarchar" MaxLength="255" />
-    <Property Name="IDThe" Type="varchar" MaxLength="255" />
     <Property Name="MaXacNhan" Type="int" Nullable="false" />
+    <Property Name="IDThe" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="ThanhToan">
     <Key>
@@ -86,7 +98,31 @@
     <Property Name="LoaiLuuTru" Type="int" Nullable="false" />
     <Property Name="ThoiGian" Type="datetime" />
   </EntityType>
-  <Association Name="FK__Profile__TaiKhoa__59FA5E80">
+  <Association Name="FK__PlayList__IDProf__4CA06362">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="PlayList" Type="Self.PlayList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="MaProfile" />
+      </Principal>
+      <Dependent Role="PlayList">
+        <PropertyRef Name="IDProfile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlayList__IDVide__4F7CD00D">
+    <End Role="Video" Type="Self.Video" Multiplicity="1" />
+    <End Role="PlayList" Type="Self.PlayList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Video">
+        <PropertyRef Name="MaVideo" />
+      </Principal>
+      <Dependent Role="PlayList">
+        <PropertyRef Name="IDVideo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile__TaiKhoa__20C1E124">
     <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
     <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
     <ReferentialConstraint>
@@ -98,7 +134,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TaiKhoan__CapDo__5AEE82B9">
+  <Association Name="FK__TaiKhoan__CapDo__21B6055D">
     <End Role="CapDoTaiKhoan" Type="Self.CapDoTaiKhoan" Multiplicity="0..1" />
     <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
     <ReferentialConstraint>
@@ -110,7 +146,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TaiKhoan__IDThe__5BE2A6F2">
+  <Association Name="FK__TaiKhoan__IDThe__2A4B4B5E">
     <End Role="The" Type="Self.The" Multiplicity="0..1" />
     <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
     <ReferentialConstraint>
@@ -122,7 +158,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ThanhToan__IDThe__5CD6CB2B">
+  <Association Name="FK__ThanhToan__IDThe__239E4DCF">
     <End Role="The" Type="Self.The" Multiplicity="0..1" />
     <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
     <ReferentialConstraint>
@@ -134,7 +170,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ThanhToan__TaiKh__5DCAEF64">
+  <Association Name="FK__ThanhToan__TaiKh__24927208">
     <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
     <End Role="ThanhToan" Type="Self.ThanhToan" Multiplicity="*" />
     <ReferentialConstraint>
@@ -170,7 +206,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__YeuThich___MaPro__60A75C0F">
+  <Association Name="FK__YeuThich___MaPro__276EDEB3">
     <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
     <End Role="YeuThich_XemGanDay" Type="Self.YeuThich_XemGanDay" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,29 +233,38 @@
   <EntityContainer Name="QuanLyCCVModelStoreContainer">
     <EntitySet Name="CapDoTaiKhoan" EntityType="Self.CapDoTaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiVideo" EntityType="Self.LoaiVideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayList" EntityType="Self.PlayList" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="The" EntityType="Self.The" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YeuThich_XemGanDay" EntityType="Self.YeuThich_XemGanDay" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Profile__TaiKhoa__59FA5E80" Association="Self.FK__Profile__TaiKhoa__59FA5E80">
+    <AssociationSet Name="FK__PlayList__IDProf__4CA06362" Association="Self.FK__PlayList__IDProf__4CA06362">
+      <End Role="Profile" EntitySet="Profile" />
+      <End Role="PlayList" EntitySet="PlayList" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlayList__IDVide__4F7CD00D" Association="Self.FK__PlayList__IDVide__4F7CD00D">
+      <End Role="Video" EntitySet="Video" />
+      <End Role="PlayList" EntitySet="PlayList" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile__TaiKhoa__20C1E124" Association="Self.FK__Profile__TaiKhoa__20C1E124">
       <End Role="TaiKhoan" EntitySet="TaiKhoan" />
       <End Role="Profile" EntitySet="Profile" />
     </AssociationSet>
-    <AssociationSet Name="FK__TaiKhoan__CapDo__5AEE82B9" Association="Self.FK__TaiKhoan__CapDo__5AEE82B9">
+    <AssociationSet Name="FK__TaiKhoan__CapDo__21B6055D" Association="Self.FK__TaiKhoan__CapDo__21B6055D">
       <End Role="CapDoTaiKhoan" EntitySet="CapDoTaiKhoan" />
       <End Role="TaiKhoan" EntitySet="TaiKhoan" />
     </AssociationSet>
-    <AssociationSet Name="FK__TaiKhoan__IDThe__5BE2A6F2" Association="Self.FK__TaiKhoan__IDThe__5BE2A6F2">
+    <AssociationSet Name="FK__TaiKhoan__IDThe__2A4B4B5E" Association="Self.FK__TaiKhoan__IDThe__2A4B4B5E">
       <End Role="The" EntitySet="The" />
       <End Role="TaiKhoan" EntitySet="TaiKhoan" />
     </AssociationSet>
-    <AssociationSet Name="FK__ThanhToan__IDThe__5CD6CB2B" Association="Self.FK__ThanhToan__IDThe__5CD6CB2B">
+    <AssociationSet Name="FK__ThanhToan__IDThe__239E4DCF" Association="Self.FK__ThanhToan__IDThe__239E4DCF">
       <End Role="The" EntitySet="The" />
       <End Role="ThanhToan" EntitySet="ThanhToan" />
     </AssociationSet>
-    <AssociationSet Name="FK__ThanhToan__TaiKh__5DCAEF64" Association="Self.FK__ThanhToan__TaiKh__5DCAEF64">
+    <AssociationSet Name="FK__ThanhToan__TaiKh__24927208" Association="Self.FK__ThanhToan__TaiKh__24927208">
       <End Role="TaiKhoan" EntitySet="TaiKhoan" />
       <End Role="ThanhToan" EntitySet="ThanhToan" />
     </AssociationSet>
@@ -231,7 +276,7 @@
       <End Role="LoaiVideo" EntitySet="LoaiVideo" />
       <End Role="Video" EntitySet="Video" />
     </AssociationSet>
-    <AssociationSet Name="FK__YeuThich___MaPro__60A75C0F" Association="Self.FK__YeuThich___MaPro__60A75C0F">
+    <AssociationSet Name="FK__YeuThich___MaPro__276EDEB3" Association="Self.FK__YeuThich___MaPro__276EDEB3">
       <End Role="Profile" EntitySet="Profile" />
       <End Role="YeuThich_XemGanDay" EntitySet="YeuThich_XemGanDay" />
     </AssociationSet>

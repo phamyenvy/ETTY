@@ -86,7 +86,7 @@
                 <TextBlock Grid.Row="1"   Name="tblPremium_1"  FontSize="25" FontWeight="Thin" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFBFBFB" Margin="15">
                         First month free
                         <LineBreak/>
-                        HD available
+                        Premium Film available
 
                 </TextBlock>
                 <TextBlock Grid.Row="0"  Name="tblVIP"  FontSize="45" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF3D116">
@@ -99,9 +99,9 @@
                 <TextBlock Grid.Row="1"   Name="tblVIP_1"  FontSize="25" FontWeight="Thin" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFBFBFB" Margin="15">
                         First month free
                         <LineBreak/>
-                        HD available
+                        Premium Film available
                         <LineBreak/>
-                        Ultra HD available
+                        VIP Film available
 
                 </TextBlock>
             </Grid>

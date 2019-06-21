@@ -35,8 +35,14 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             lbl2.Content = a[1].TenHienThi;
             lbl3.Content = a[2].TenHienThi;
             lbl4.Content = a[3].TenHienThi;
-            
+            btnProfile1.Background = new ImageBrush(new BitmapImage(new Uri(a[0].AvatarLink)));
+            btnProfile2.Background = new ImageBrush(new BitmapImage(new Uri(a[1].AvatarLink)));
+            btnProfile3.Background = new ImageBrush(new BitmapImage(new Uri(a[2].AvatarLink)));
+            btnProfile4.Background = new ImageBrush(new BitmapImage(new Uri(a[3].AvatarLink)));
 
+
+
+            
             tkMain = tk;
             lst = a;
             if(tk.LoaiTaiKhoan == 0) //kiểm tra có phải admin hya ko

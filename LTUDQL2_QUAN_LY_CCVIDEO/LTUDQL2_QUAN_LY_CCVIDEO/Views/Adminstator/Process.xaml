@@ -11,17 +11,11 @@
         >
     <StackPanel Margin="40" >
         <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}"
-                      x:Name="pbLoad" Foreground="#FFFED701" Maximum="95" Minimum="0" IsIndeterminate="True">
+                Margin="0,50" Width="50"    x:Name="pbLoad" Foreground="#FFFED701" Maximum="95" Minimum="0" IsIndeterminate="True">
 
         </ProgressBar>
-        
-        <materialDesign:PackIcon HorizontalAlignment="Center" Margin="0" Kind="CheckboxMarkedCircleOutline" Height="50" Width="35" Foreground="#FFFED701" x:Name="tick"/>
-
-        <Label Width="150" Height="50" FontSize="25"  FontWeight="Thin" HorizontalContentAlignment="Center" Foreground="#FFFED701" x:Name="success">
-            Successful!
-        </Label>
         <Button  x:Name="btnOut"
           Style="{StaticResource MaterialDesignFlatButton}"
-          HorizontalAlignment="Center" Foreground="#FF746D47" Background="#FFFED701" Height="28" Width="67"  Content="Close" Margin="70,0,70,0" Click="btnOut_Click"/>
+          HorizontalAlignment="Center" Foreground="#FF746D47" Background="#FFFED701" Height="28" Width="68"  Content="Close" Margin="74,50" Click="btnOut_Click"/>
     </StackPanel>
 </Window>

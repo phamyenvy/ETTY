@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Nam3-HK2\LTUDQL2\DoAn01\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\QuanLyCCV.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\study\LTUDQL2\ETTY\LTUDQL2_QUAN_LY_CCVIDEO\LTUDQL2_QUAN_LY_CCVIDEO\QuanLyCCV.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

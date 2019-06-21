@@ -63,6 +63,13 @@
                         <materialDesign:PackIcon Kind="Plus" Height="17"
                                                     Width="17" Foreground="#FFFCE22B"  />
                     </ToggleButton>
+                    <ToggleButton Tag="{Binding Path=ID}" x:Name="btnAddPlayList"  BorderBrush="Transparent" 
+                                   Grid.Column="0" Grid.Row="0" Visibility="Collapsed" Style="{StaticResource MaterialDesignActionLightToggleButton}"
+                                  VerticalAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="5"
+                                  Width="25" ToolTip="Add play list" Background="Transparent" Click="btnAddPlayList_Click" >
+                        <materialDesign:PackIcon Kind="PlaylistPlus" Height="17"
+                                                    Width="17" Foreground="#FFFCE22B"  />
+                    </ToggleButton>
 
                 </Grid>
 
@@ -73,7 +80,8 @@
     </Window.Resources>
     <StackPanel Background="#FFCBAC00">
         <materialDesign:ColorZone Mode="Inverted" Height="100" Padding="16" Background="#1A2530">
-            <DockPanel Margin="50,0">
+            <DockPanel Margin="30,0">
+                
                 <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges">
                     <ListBox >
                         <ListBoxItem Name="lstItemSetting" Selected="lstItemSetting_Selected">
@@ -87,6 +95,10 @@
                         </ListBoxItem>
                     </ListBox>
                 </materialDesign:PopupBox>
+                <Button Margin="20,0" VerticalAlignment="Top" Click="lstItemSetting_Selected" x:Name="btnProfile" Width="60" Height="60"  BorderBrush="Transparent"
+                         DockPanel.Dock="Right" >
+                    
+                </Button>
                 <Image  Margin="0,-11,0,-10" Source="/Images/a.png" Width="76"/>
 
                 <materialDesign:ColorZone DockPanel.Dock="Right" Mode="Standard" Padding="8 4 8 4" CornerRadius="2" Panel.ZIndex="1"
@@ -115,6 +127,8 @@
                         
                     </MenuItem>
                     <MenuItem Header="My List" Name="myList" Click="myList_Click"></MenuItem>
+                    <MenuItem Header="Playlist" Name="playList"></MenuItem>
+
                     <MenuItem Header="Adminstator" Name="Adminstator" Click="Adminstator_Click" Visibility="Collapsed"></MenuItem>
 
                 </Menu>
