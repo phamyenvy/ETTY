@@ -33,11 +33,8 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
             InitializeComponent();
 
             btnExitFullScreen.IsEnabled = false;
-            if(!DBProvider.isYeuThichVideo(pf.MaProfile,int.Parse(vd.ID),3))
-            {
-                DBProvider.setAddView(int.Parse(vd.ID));
+            DBProvider.setAddView(int.Parse(vd.ID));
                 
-            }
             DBProvider.setYeuThichVideo(pf.MaProfile, int.Parse(vd.ID), 3);
 
 

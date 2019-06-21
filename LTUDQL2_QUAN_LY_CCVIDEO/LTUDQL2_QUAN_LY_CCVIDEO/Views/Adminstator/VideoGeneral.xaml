@@ -8,18 +8,26 @@
 
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator"
              mc:Ignorable="d" 
-             d:DesignHeight="561" d:DesignWidth="945" Initialized="UserControl_Initialized">
+             d:DesignHeight="561" d:DesignWidth="945">
     <UserControl.Resources>
         
         <ObjectDataProvider x:Key="levels" ObjectType="{x:Type v:DBProvider}" MethodName="getCapDo"/>
         <ObjectDataProvider x:Key="cats" ObjectType="{x:Type v:DBProvider}" MethodName="GetCats"/>
     </UserControl.Resources>
     <Grid Background="White">
-        <DataGrid Margin="5,5,5,60"  IsReadOnly="True" x:Name="dtgVideo" ItemsSource="{Binding}"
-                  CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
-                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+        <DataGrid Margin="5,5,5,60" x:Name="dtgVideo" ItemsSource="{Binding}" AutoGenerateColumns="False"
+                  CanUserSortColumns="True" CanUserAddRows="False"
+                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8" CurrentCellChanged="dtgVideo_CurrentCellChanged">
 
             <DataGrid.Columns>
+                <!--<DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Width="150"
+                                    Text="{Binding TenVideo, Mode=TwoWay}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="ID" 
                                     EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" 
                                     Binding="{Binding MaVideo}"/>
@@ -79,16 +87,6 @@
                 </DataTemplate>
             </DataGrid.RowDetailsTemplate>
         </DataGrid>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
-            <Button x:Name="btnEditVideo" Click="btnEditVideo_Click" 
-                    Margin="15"  Background="#FFE5E4E8" BorderBrush="#FFFED700">
-                <materialDesign:PackIcon Kind="LeadPencil" Height="20" Width="20" Foreground="Black"/>
-            </Button>
-            <Button x:Name="btnSaveVideo" Click="btnSaveVideo_Click" Margin="15"  Background="#FFE5E4E8" BorderBrush="#FFFED700">
-                <materialDesign:PackIcon Kind="ContentSaveAll" Height="20" Width="20" Foreground="Black"/>
-            </Button>
-
-        </StackPanel>
 
     </Grid>
 </UserControl>

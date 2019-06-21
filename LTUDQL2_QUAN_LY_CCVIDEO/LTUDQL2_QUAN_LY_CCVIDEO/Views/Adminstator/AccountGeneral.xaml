@@ -7,17 +7,17 @@
              xmlns:v="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Model"
              xmlns:local="clr-namespace:LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator"
              mc:Ignorable="d" 
-             d:DesignHeight="561" d:DesignWidth="945" Initialized="UserControl_Initialized">
+             d:DesignHeight="561" d:DesignWidth="945">
 
     <UserControl.Resources>
         <ObjectDataProvider x:Key="levels" ObjectType="{x:Type v:DBProvider}" MethodName="getCapDo"/>
     </UserControl.Resources>
     
     <Grid Background="White">
-        <DataGrid Margin="10,10,10,60" IsReadOnly="True" x:Name="dtgAcc"
+        <DataGrid Margin="10,10,10,60" x:Name="dtgAcc"
                   ItemsSource="{Binding}"
                   CanUserSortColumns="True" CanUserAddRows="False" AutoGenerateColumns="False"
-                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+                          materialDesign:DataGridAssist.CellPadding="13 8 8 8" materialDesign:DataGridAssist.ColumnHeaderPadding="8" CurrentCellChanged="dtgAcc_CurrentCellChanged">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" 
@@ -56,17 +56,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
-            <Button x:Name="btnEditAcc" Margin="15"  Click="btnEditAcc_Click"
-                    Background="#FFE5E4E8" BorderBrush="#FFFED700" >
-                <materialDesign:PackIcon Kind="LeadPencil" Height="20" Width="20" Foreground="Black"/>
-            </Button>
-            <Button x:Name="btnSaveAcc" Margin="15"  Click="btnSaveAcc_Click"
-                    Background="#FFE5E4E8" BorderBrush="#FFFED700">
-                <materialDesign:PackIcon Kind="ContentSaveAll" Height="20" Width="20" Foreground="Black"/>
-            </Button>
-
-        </StackPanel>
+       
 
     </Grid>
 </UserControl>
