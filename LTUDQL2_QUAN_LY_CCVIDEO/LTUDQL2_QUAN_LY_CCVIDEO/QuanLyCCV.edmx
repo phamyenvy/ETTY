@@ -65,6 +65,7 @@
           <Property Name="CapDoMua" Type="int" />
           <Property Name="IDThe" Type="varchar" MaxLength="255" />
           <Property Name="NgayThanhToan" Type="datetime" />
+          <Property Name="SoTien" Type="int" />
         </EntityType>
         <EntityType Name="The">
           <Key>
@@ -422,6 +423,7 @@
           <Property Name="CapDoMua" Type="Int32" />
           <Property Name="IDThe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="NgayThanhToan" Type="DateTime" Precision="3" />
+          <Property Name="SoTien" Type="Int32" />
           <NavigationProperty Name="TaiKhoan1" Relationship="QuanLyCCVModel.FK__ThanhToan__TaiKh__24927208" FromRole="ThanhToan" ToRole="TaiKhoan" />
           <NavigationProperty Name="The" Relationship="QuanLyCCVModel.FK__ThanhToan__IDThe__239E4DCF" FromRole="ThanhToan" ToRole="The" />
         </EntityType>
@@ -665,6 +667,7 @@
           <EntitySetMapping Name="ThanhToans">
             <EntityTypeMapping TypeName="QuanLyCCVModel.ThanhToan">
               <MappingFragment StoreEntitySet="ThanhToan">
+                <ScalarProperty Name="SoTien" ColumnName="SoTien" />
                 <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
                 <ScalarProperty Name="IDThe" ColumnName="IDThe" />
                 <ScalarProperty Name="CapDoMua" ColumnName="CapDoMua" />

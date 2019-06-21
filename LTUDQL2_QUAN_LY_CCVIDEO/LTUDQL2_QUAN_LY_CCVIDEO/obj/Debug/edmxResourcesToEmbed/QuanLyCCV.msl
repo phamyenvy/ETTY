@@ -57,6 +57,7 @@
     <EntitySetMapping Name="ThanhToans">
       <EntityTypeMapping TypeName="QuanLyCCVModel.ThanhToan">
         <MappingFragment StoreEntitySet="ThanhToan">
+          <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
           <ScalarProperty Name="IDThe" ColumnName="IDThe" />
           <ScalarProperty Name="CapDoMua" ColumnName="CapDoMua" />
           <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />

@@ -59,6 +59,7 @@
     <Property Name="TaiKhoan" Type="int" />
     <Property Name="CapDoMua" Type="int" />
     <Property Name="IDThe" Type="varchar" MaxLength="255" />
+    <Property Name="NgayThanhToan" Type="datetime" />
   </EntityType>
   <EntityType Name="The">
     <Key>

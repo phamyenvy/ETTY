@@ -58,10 +58,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views
                 {
                     TaiKhoan tks = DBProvider.paySuccess(mail, cbLevel.SelectedValue as CapDoTaiKhoan);
                     MessageBox.Show("Thanh toán thành công!");
-                    ProfileSettingWd wd1 = new ProfileSettingWd(tks, pf);
-                    wd1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                    wd1.Show();
-                    this.Close();
+                    if (pf != null)
+                    {
+                        ProfileSettingWd wd1 = new ProfileSettingWd(tks, pf);
+                        wd1.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        wd1.Show();
+                        this.Close();
+                    }
                 }
                 else
                 {

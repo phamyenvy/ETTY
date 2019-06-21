@@ -699,12 +699,12 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Model
        
         public static bool isPaid(TaiKhoan tk)
         {
-            setAutoLevelAccount(tk);
+            //setAutoLevelAccount(tk);
             using (var qlccv = new QuanLyCCVEntities())
             {
                 TaiKhoan t = qlccv.TaiKhoans.Where(o => o.MaTaiKhoan == tk.MaTaiKhoan).SingleOrDefault();
 
-                if(t.LoaiTaiKhoan==1 || t.LoaiTaiKhoan == 0) //1 user đã thanh toán, 0 là admin
+                if(t.NgayHetHan >= DateTime.Today || t.LoaiTaiKhoan == 0) //1 user đã thanh toán, 0 là admin
                 {
                     return true;
                 }
