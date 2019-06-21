@@ -10,7 +10,7 @@
         WindowStartupLocation="CenterScreen"
         Title="FinishRegisterDialog" Height="300" Width="300" WindowStyle="None" BorderBrush="#FF231203" BorderThickness="2" ResizeMode="NoResize"
         >
-    <StackPanel Margin="40" >
+    <StackPanel Margin="10,40" >
         <StackPanel Name="Uploading" Visibility="Visible">
             <ProgressBar 
                       x:Name="pbLoad" Foreground="#FFFED701" Maximum="95" Minimum="0" Height="10"  IsIndeterminate="False">
