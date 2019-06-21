@@ -102,6 +102,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
                 if (data != null)
                 {
                     IMDBVideo video = JsonConvert.DeserializeObject<IMDBVideo>(data);
+
                     Admin wd = null;
                     if (this.pf != null) {
                          wd = new Admin(video, tk, pf);
@@ -129,6 +130,13 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO.Views.Adminstator
 
     public class IMDBVideo
     {
+        //private string title
+        //private string year;
+        //private string imdbID;
+        //private string poster;
+        //private string plot;
+        //private DateTime released;
+
         public string Title { get; set; }
         public string Year { get; set; }
         public string ImdbID { get; set; }
