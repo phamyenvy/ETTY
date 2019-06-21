@@ -19,6 +19,7 @@ namespace LTUDQL2_QUAN_LY_CCVIDEO
         public Nullable<int> TaiKhoan { get; set; }
         public Nullable<int> CapDoMua { get; set; }
         public string IDThe { get; set; }
+        public Nullable<System.DateTime> NgayThanhToan { get; set; }
     
         public virtual TaiKhoan TaiKhoan1 { get; set; }
         public virtual The The { get; set; }

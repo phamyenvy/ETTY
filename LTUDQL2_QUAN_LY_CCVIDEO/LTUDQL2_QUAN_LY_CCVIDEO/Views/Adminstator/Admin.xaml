@@ -19,12 +19,25 @@
 
         </Grid.Background>
        
-        <Grid Height="100" VerticalAlignment="Top" >
+        <StackPanel Height="100" VerticalAlignment="Top"  Orientation="Horizontal">
             <Button Height="80" x:Name="btnBackToHome" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" BorderBrush="Transparent" Click="btnBackToHome_Click">
                 <materialDesign:PackIcon Kind="ArrowLeft"  Height="50" Width="50" Foreground="#FFFFE234"/>
             </Button>
-            <!--<Image MouseDown="Image_MouseDown"  Source="D:\LTUDQL2\a.png" Height="120" Width="150" Margin="0"/>-->
-        </Grid>
+            
+            <Button Height="80" x:Name="btnChartPie" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" ToolTip="Search in IMDB" BorderBrush="Transparent" Click="TopViewed_Selected">
+                <materialDesign:PackIcon Kind="ChartPie"  Height="50" Width="50" Foreground="#FFFFE234"/>
+            </Button>
+            <Button Height="80" x:Name="btnSearchIMDB" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" ToolTip="Search in IMDB" BorderBrush="Transparent" Click="SearchItem_Selected">
+                <materialDesign:PackIcon Kind="SearchWeb"  Height="50" Width="50" Foreground="#FFFFE234"/>
+            </Button>
+            <Button Height="80" x:Name="btnUpLoad" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" ToolTip="Upload Video" BorderBrush="Transparent" Click="UploadItem_Selected">
+                <materialDesign:PackIcon Kind="Upload"  Height="50" Width="50" Foreground="#FFFFE234"/>
+            </Button>
+            <Button Height="80" x:Name="btnAcc" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Background="Transparent" ToolTip="Search in IMDB" BorderBrush="Transparent" Click="AccountItem_Selected">
+                <materialDesign:PackIcon Kind="HomeAccount"  Height="50" Width="50" Foreground="#FFFFE234"/>
+            </Button>
+            <Image MouseDown="Image_MouseDown"  Source="D:\LTUDQL2\a.png" Height="120" Width="150" Margin="100,-50"/>
+        </StackPanel>
         <Grid Margin="0,100,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -37,9 +50,9 @@
                         <TreeViewItem Name="TopViewed" Header="Top Viewed" Selected="TopViewed_Selected"/>
                     </TreeViewItem>
                     <TreeViewItem Header="Video Manager" IsExpanded="True">
+                        <TreeViewItem Name="GeneralItem" Header="General" Selected="GeneralItem_Selected"/>
                         <TreeViewItem Name="SearchItem" Header="Search in IMDB" Selected="SearchItem_Selected"/>
                         <TreeViewItem Name="UploadItem" Header="Upload" Selected="UploadItem_Selected"/>
-                        <TreeViewItem Name="GeneralItem" Header="Edit / Delete" Selected="GeneralItem_Selected"/>
                     </TreeViewItem>
                     <TreeViewItem Name="AccountItem" Header="Account Manager" Selected="AccountItem_Selected" >
 
